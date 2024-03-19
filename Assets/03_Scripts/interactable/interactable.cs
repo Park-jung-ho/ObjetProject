@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class interactable : MonoBehaviour
+public class interactable2D : MonoBehaviour
 {
     public GameObject interactableKey;
 
@@ -24,19 +24,17 @@ public class interactable : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            other.GetComponent<PlayerController>().SetIneractObject(this);
-        }
+        EnableKey();
     }
     public void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            other.GetComponent<PlayerController>().DelIneractObject(this);
-        }
+        DisableKey();
     }
-
+    public bool isActiveOn()
+    {
+        if (interactableKey.activeSelf) return true;
+        return false;
+    }
     public void EnableKey()
     {
         interactableKey.SetActive(true);

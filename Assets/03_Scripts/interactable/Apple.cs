@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class Apple : interactable
+public class Apple : interactable2D
 {
     // Start is called before the first frame update
     void Start()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class AppleTree : interactable
+public class AppleTree : interactable2D
 {
     public GameObject Apple;
 
@@ -21,6 +21,6 @@ public class AppleTree : interactable
     {
         base.Interact();
         Apple.GetComponent<DOTweenAnimation>().DOPlayById("drop");
-        Apple.GetComponent<interactable>().enabled = true;
+        Apple.GetComponent<interactable2D>().enabled = true;
     }
 }
