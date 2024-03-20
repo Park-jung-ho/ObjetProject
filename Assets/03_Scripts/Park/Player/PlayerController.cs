@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController2D : MonoBehaviour
 {
-
+    public Mouse cursor;
     private Vector3 moveInput;
     public float moveSpeed;
 
@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
 
     [SerializeField]
-    private interactable InteractingObject;
+    private interactable2D InteractingObject;
 
     void Awake()
     {
@@ -48,22 +48,12 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("ly",moveInput.y);
         }
     }
-    void OnInteract()
+    void OnInteract(InputValue value)
     {
-        Debug.Log("PRESS E");
-        if (InteractingObject == null) return;
-        InteractingObject.Interact();
+        Debug.Log(value);
     }
-
-    public void SetIneractObject(interactable obj)
+    void OnClick()
     {
-        if (InteractingObject != null) DelIneractObject(InteractingObject);
-        InteractingObject = obj;
-        obj.EnableKey();
-    }
-    public void DelIneractObject(interactable obj)
-    {
-        if (InteractingObject == obj) InteractingObject = null;
-        obj.DisableKey();
+        cursor.Onclick();
     }
 }
