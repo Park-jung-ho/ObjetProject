@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class DialogManager : SerializedMonoBehaviour
@@ -24,9 +26,17 @@ public class DialogManager : SerializedMonoBehaviour
     public TMP_Text[] choices;
 
     [Title("Dialog Dict")]
-    public Dictionary<string,Dialog> Dialog_Dict;
+    public List<Dialog> StoryList;
 
-    private Queue<DialogText> dialogTexts; 
+    private Dialog currentDialog; 
+
+    [SerializeField]
+    private DialogText currentDialogText;
+
+
+    private PlayerInput playerInput;
+    private bool isChangeNow;
+
 
 
     void Awake()
@@ -44,16 +54,33 @@ public class DialogManager : SerializedMonoBehaviour
     }
     void Start()
     {
+        isChangeNow = true;
         HidePanel();
-        dialogTexts = new Queue<DialogText>();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+    
+    }
+    public void SetInput(bool isOn)
+    {
+        if (isOn) isChangeNow = true;
+        playerInput.enabled = isOn;
+    }
+    void OnClick()
+    {
+        if (isChangeNow)
         {
-            ShowDialog();
+            isChangeNow = false;
+            return;
         }
+        if (currentDialogText.dialogType == DialogType.Choice) return;
+        ShowDialog(currentDialogText.next);
+    }
+    public void SelectChoice(int choiceIdx)
+    {
+        ShowDialog(currentDialogText.choices[choiceIdx].next);
     }
 
     void OpenPanel()
@@ -70,55 +97,63 @@ public class DialogManager : SerializedMonoBehaviour
     }
 
     [Button]
-    public void StartDialog(string key)
+    public void StartDialog(int stroyID)
     {
-        Dialog dialog = Dialog_Dict[key];
-        DialogUIanimator.SetTrigger("IsOn");
+        PlayerController2D.instance.SetInput(false);
+
+        SetInput(true);
         OpenPanel();
 
-        name.text = dialog.name;
-        image.sprite = dialog.image;
-        foreach (DialogText dialogText in dialog.sentences)
-        {
-            dialogTexts.Enqueue(dialogText);
-        }
+        DialogUIanimator.SetTrigger("IsOn");
+
+        currentDialog = StoryList[stroyID];
+
+        name.text = currentDialog.name;
+        image.sprite = currentDialog.image;
         
-        ShowDialog();
+        ShowDialog(0);
     }
 
-    public void ShowDialog()
+    public void ShowDialog(int id)
     {
-        if (dialogTexts.Count == 0)
+        if (id == -1)
         {
             EndDialog();
+            // set next story
             return;
         }
 
-        DialogText Currentdialog = dialogTexts.Dequeue();
+        currentDialogText = currentDialog.sentences[id];
 
-        if (Currentdialog.dialogType == DialogType.Text)
+        if (currentDialogText.dialogType == DialogType.Text)
         {
             ChoicePanel.SetActive(false);
             TextPanel.SetActive(true);
-            text.text = Currentdialog.text;
+            text.text = currentDialogText.text;
             
         }
-        if (Currentdialog.dialogType == DialogType.Choice)
+        if (currentDialogText.dialogType == DialogType.Choice)
         {
             ChoicePanel.SetActive(true);
             TextPanel.SetActive(false);
 
-            choicetext.text = Currentdialog.text;
-            for (int i = 0; i < 3; i++)
+            choicetext.text = currentDialogText.text;
+            for (int i = 0; i < currentDialogText.choices.Length; i++)
             {
-                choices[i].text = Currentdialog.choices[i];
+                choices[i].text = currentDialogText.choices[i].text;
             }
+        }
+        if (currentDialogText.dialogType == DialogType.Quest)
+        {
+            // set quest heres
         }
     }
 
     [Button]
     public void EndDialog()
     {
+        SetInput(false);
+        PlayerController2D.instance.SetInput(true);
         DialogUIanimator.SetTrigger("IsOff");
         HidePanel();
     }

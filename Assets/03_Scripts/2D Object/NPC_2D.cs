@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPC_2D : interactable2D
 {
-    public string name;
+    public int stroyID;
     void Start()
     {
         
@@ -17,6 +17,6 @@ public class NPC_2D : interactable2D
 
     public override void Interact()
     {
-        DialogManager.instance.StartDialog(name);
+        DialogManager.instance.StartDialog(stroyID);
     }
 }

@@ -47,7 +47,7 @@
                     "id": "09e844ab-e050-4d05-a9ef-58d731db51b5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": true
                 }
             ],
@@ -338,11 +338,11 @@
                 },
                 {
                     "name": "Click",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "f4f9230b-08e1-4612-b56c-91f9fb853047",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": true
                 },
                 {
