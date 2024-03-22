@@ -145,7 +145,10 @@ public class DialogManager : SerializedMonoBehaviour
         }
         if (currentDialogText.dialogType == DialogType.Quest)
         {
-            // set quest heres
+            ChoicePanel.SetActive(false);
+            TextPanel.SetActive(true);
+            text.text = currentDialogText.text;
+            QuestManager.instance.StartQuest(currentDialogText.qusetID);
         }
     }
 

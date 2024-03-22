@@ -26,8 +26,10 @@ public struct DialogText
     public DialogType dialogType;
     public int next;
     public string text;
-
+    [FoldoutGroup("choice")]
     public Choice[] choices;
+    [FoldoutGroup("quest")]
+    public string qusetID;
 }
 
 [System.Serializable]

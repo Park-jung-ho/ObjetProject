@@ -20,6 +20,7 @@ MonoBehaviour:
     next: 1
     text: "\uC548\uB155 \uB098\uB294 \uC874\uC774\uC57C"
     choices: []
+    qusetID: 
   - dialogType: 1
     next: 0
     text: "\uC0AC\uACFC \uC880 \uAC00\uC838\uB2E4\uC904\uB798?"
@@ -28,11 +29,14 @@ MonoBehaviour:
       next: 2
     - text: "\uC2EB\uC5B4"
       next: 3
+    qusetID: 
   - dialogType: 2
     next: -1
     text: "\uADF8\uB7FC \uC0AC\uACFC 10\uAC1C\uB9CC \uAC00\uC838\uB2E4\uC918"
     choices: []
+    qusetID: 1
   - dialogType: 0
     next: -1
     text: "\uADF8\uB798........"
     choices: []
+    qusetID: 
