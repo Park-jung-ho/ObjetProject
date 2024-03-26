@@ -9,7 +9,7 @@ public class Apple : interactable2D
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<CircleCollider2D>().enabled = false;
     }
 
     // Update is called once per frame
@@ -20,10 +20,16 @@ public class Apple : interactable2D
 
     public override void Interact()
     {
-        GetComponent<DOTweenAnimation>().DOPlayById("get");
+        // GetComponent<DOTweenAnimation>().DOPlayById("get");
         InventoryManager.instance.AddItem(item);
+        GoToInven();
     }
 
+    public void OnEndDrop()
+    {
+        transform.SetParent(transform.root);
+        GetComponent<CircleCollider2D>().enabled = true;
+    }
     public void GoToInven()
     {
         gameObject.SetActive(false);

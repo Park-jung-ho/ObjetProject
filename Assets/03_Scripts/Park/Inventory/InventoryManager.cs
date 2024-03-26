@@ -74,6 +74,33 @@ public class InventoryManager : MonoBehaviour
         return 0;
     }
 
+    public void DelItem(string ItemID, int count)
+    {
+        foreach (InventorySlot slot in inventorySlots)
+        {
+            InventoryItem slotItem = slot.GetComponentInChildren<InventoryItem>();
+            if (slotItem != null &&
+                slotItem.item.ID == ItemID)
+            {
+                while (true)
+                {
+                    if (slotItem.count <= 0)
+                    {
+                        Destroy(slotItem.gameObject);
+                    }
+                    if (count <= 0)
+                    {
+                        break;
+                    }
+                    slotItem.count--;
+                    count--;
+                    slotItem.RefreshCount();
+                }
+            }
+            if (count <= 0) break;
+        }
+    }
+
 
     public void SpawnNewItem(Item item, InventorySlot slot)
     {

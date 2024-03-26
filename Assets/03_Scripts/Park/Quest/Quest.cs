@@ -7,6 +7,7 @@ using UnityEngine;
 public class Quest : ScriptableObject
 {
     public string ID;
+    public NPC_2D npc;
     public string npcName;
     public string questTitle;
     public string itemName;

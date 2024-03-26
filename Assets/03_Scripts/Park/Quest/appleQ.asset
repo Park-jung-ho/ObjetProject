@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: appleQ
   m_EditorClassIdentifier: 
   ID: 1
+  npc: {fileID: 0}
   npcName: john
   questTitle: "\uC0AC\uACFC"
   itemName: apple

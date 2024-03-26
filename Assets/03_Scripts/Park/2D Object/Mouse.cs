@@ -19,14 +19,12 @@ public class Mouse : MonoBehaviour
     [SerializeField]
     private interactable2D obj;
 
-    // Start is called before the first frame update
     void Start()
     {
-        Cursor.SetCursor(cursor_idle,Vector2.zero,CursorMode.ForceSoftware);
+        // Cursor.SetCursor(cursor_idle,Vector2.zero,CursorMode.ForceSoftware);
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -37,7 +35,7 @@ public class Mouse : MonoBehaviour
             if (type != MouseType.idle)
             {
                 obj = null;
-                Cursor.SetCursor(cursor_idle,Vector2.zero,CursorMode.ForceSoftware);
+                Cursor.SetCursor(cursor_idle,Vector2.zero,CursorMode.Auto);
                 type = MouseType.idle;
             }
         }
@@ -48,12 +46,12 @@ public class Mouse : MonoBehaviour
             {
                 if (obj.CanClick())
                 {
-                    Cursor.SetCursor(cursor_Interact1,Vector2.zero,CursorMode.ForceSoftware);
+                    Cursor.SetCursor(cursor_Interact1,Vector2.zero,CursorMode.Auto);
                     type = MouseType.npc0;
                 }
                 else
                 {
-                    Cursor.SetCursor(cursor_Interact0,Vector2.zero,CursorMode.ForceSoftware);
+                    Cursor.SetCursor(cursor_Interact0,Vector2.zero,CursorMode.Auto);
                     type = MouseType.npc1;
                 }
             }

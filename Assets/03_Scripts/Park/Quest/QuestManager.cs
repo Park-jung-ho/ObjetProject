@@ -18,7 +18,11 @@ public class QuestManager : SerializedMonoBehaviour
 
     [SerializeField]
     private Quest currentQuest;
-    public int currentCount;
+    private int currentCount;
+    [SerializeField]
+    private bool canClearQuest;
+    [SerializeField]
+    private NPC_2D questNPC;
 
     void Awake()
     {
@@ -41,7 +45,15 @@ public class QuestManager : SerializedMonoBehaviour
         questTitle.text = currentQuest.questTitle;
         questItemCount.text = currentCount.ToString() + " / " + currentQuest.count.ToString();
         questItemCount.color = Color.white;
+        canClearQuest = false;
         QuestUI.SetActive(true);
+        
+        questNPC.OnQuest();
+    }
+
+    public bool canClear()
+    {
+        return canClearQuest;
     }
 
     public void isQuestItem(string itemID)
@@ -54,11 +66,14 @@ public class QuestManager : SerializedMonoBehaviour
             if (currentCount == currentQuest.count)
             {
                 questItemCount.color = Color.green;
+                canClearQuest = true;
             }
         }
     }
     public void EndQuest()
     {
+        InventoryManager.instance.DelItem(currentQuest.itemName,currentQuest.count);
+        questNPC.EndQuest();
         currentQuest = null;
         QuestUI.SetActive(false);
     }

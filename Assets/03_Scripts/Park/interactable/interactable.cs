@@ -7,6 +7,7 @@ public class interactable2D : MonoBehaviour
 
     public GameObject interactableKey;
     public ObjectType type;
+    [SerializeField]
     private bool isInteractable = false;
     void Start()
     {
@@ -38,14 +39,15 @@ public class interactable2D : MonoBehaviour
     {
         return isInteractable;
     }
-    public void EnableKey()
-    {
-        interactableKey.SetActive(true);
-    }
-    public void DisableKey()
-    {
-        interactableKey.SetActive(false);
-    }
+
+    // public void EnableKey()
+    // {
+    //     interactableKey.SetActive(true);
+    // }
+    // public void DisableKey()
+    // {
+    //     interactableKey.SetActive(false);
+    // }
 }
 
 public enum ObjectType

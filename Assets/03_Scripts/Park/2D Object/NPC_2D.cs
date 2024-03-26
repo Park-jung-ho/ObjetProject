@@ -5,6 +5,11 @@ using UnityEngine;
 public class NPC_2D : interactable2D
 {
     public int stroyID;
+    public int questNotClear;
+    public int questClear;
+
+    [SerializeField]
+    private bool questOn;
     void Start()
     {
         
@@ -17,6 +22,30 @@ public class NPC_2D : interactable2D
 
     public override void Interact()
     {
-        DialogManager.instance.StartDialog(stroyID);
+        if (questOn)
+        {
+            if (QuestManager.instance.canClear())
+            {
+                DialogManager.instance.StartDialog(questClear);
+                QuestManager.instance.EndQuest();
+            }
+            else
+            {
+                DialogManager.instance.StartDialog(questNotClear);
+            }
+        }
+        else
+        {
+            DialogManager.instance.StartDialog(stroyID);
+        }
+    }
+
+    public void OnQuest()
+    {
+        questOn = true;
+    }
+    public void EndQuest()
+    {
+        questOn = false;
     }
 }
