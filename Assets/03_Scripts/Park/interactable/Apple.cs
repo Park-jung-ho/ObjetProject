@@ -3,26 +3,44 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class Apple : interactable2D
+public class Apple : MonoBehaviour, interactable2D
 {
     public Item item;
-    // Start is called before the first frame update
+    private Vector2 rootPos;
+    private bool isInteractable = false;
+    private Transform parentTransform;
+
     void Start()
     {
         GetComponent<CircleCollider2D>().enabled = false;
+        rootPos = transform.position;
+        parentTransform = transform.parent;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-    public override void Interact()
+    public bool CanClick()
+    {
+        return isInteractable;
+    }
+    public void Interact()
     {
         // GetComponent<DOTweenAnimation>().DOPlayById("get");
-        InventoryManager.instance.AddItem(item);
-        GoToInven();
+        bool successToInven = InventoryManager.instance.AddItem(item);
+        if (successToInven) GoToInven();
+    }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+        isInteractable = true;
+    }
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+        isInteractable = false;
     }
 
     public void OnEndDrop()
@@ -32,6 +50,16 @@ public class Apple : interactable2D
     }
     public void GoToInven()
     {
+        transform.SetParent(parentTransform);
         gameObject.SetActive(false);
+
+        Invoke(nameof(gotoTree),5f);
+    }
+
+    public void gotoTree()
+    {
+        gameObject.SetActive(true);
+        transform.position = rootPos;
+        transform.parent.GetComponent<AppleTree>().respawnApple(transform);
     }
 }

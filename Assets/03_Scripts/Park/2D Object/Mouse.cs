@@ -6,15 +6,20 @@ using UnityEngine;
 public class Mouse : MonoBehaviour
 {
     public MouseType type = MouseType.idle;
-    public Texture2D cursor_idle;
+
+    public SpriteRenderer currentCursor;
+    public Color canAlpha;
+    public Color cantAlpha;
+
+    public Sprite cursor_idle;
     [FoldoutGroup("Npc")]
-    public Texture2D cursor_Interact0;
+    public Sprite cursor_npc0;
     [FoldoutGroup("Npc")]
-    public Texture2D cursor_Interact1;
+    public Sprite cursor_npc1;
     [FoldoutGroup("Object")]
-    public Texture2D cursor_Object0;
+    public Sprite cursor_Object0;
     [FoldoutGroup("Object")]
-    public Texture2D cursor_Object1;
+    public Sprite cursor_Object1;
 
     [SerializeField]
     private interactable2D obj;
@@ -22,12 +27,16 @@ public class Mouse : MonoBehaviour
     void Start()
     {
         // Cursor.SetCursor(cursor_idle,Vector2.zero,CursorMode.ForceSoftware);
-        
+        Cursor.visible = false;
+        currentCursor = GetComponent<SpriteRenderer>();
+        currentCursor.sprite = cursor_idle;
     }
 
     void Update()
     {
+        if (Cursor.visible) Cursor.visible = false;
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = pos;
         RaycastHit2D hit = Physics2D.Raycast(pos,Vector2.one,0f,LayerMask.GetMask("Default"));
         Debug.DrawRay(pos,pos,Color.red,1f);
         if (hit.collider == null)
@@ -35,8 +44,10 @@ public class Mouse : MonoBehaviour
             if (type != MouseType.idle)
             {
                 obj = null;
-                Cursor.SetCursor(cursor_idle,Vector2.zero,CursorMode.Auto);
                 type = MouseType.idle;
+                currentCursor.sprite = cursor_idle;
+                currentCursor.color = canAlpha;
+                // Cursor.SetCursor(cursor_idle,Vector2.zero,CursorMode.Auto);
             }
         }
         else
@@ -46,13 +57,17 @@ public class Mouse : MonoBehaviour
             {
                 if (obj.CanClick())
                 {
-                    Cursor.SetCursor(cursor_Interact1,Vector2.zero,CursorMode.Auto);
                     type = MouseType.npc0;
+                    currentCursor.sprite = cursor_npc1;
+                    currentCursor.color = canAlpha;
+                    // Cursor.SetCursor(cursor_Interact1,Vector2.zero,CursorMode.Auto);
                 }
                 else
                 {
-                    Cursor.SetCursor(cursor_Interact0,Vector2.zero,CursorMode.Auto);
                     type = MouseType.npc1;
+                    currentCursor.sprite = cursor_npc0;
+                    currentCursor.color = cantAlpha;
+                    // Cursor.SetCursor(cursor_Interact0,Vector2.zero,CursorMode.Auto);
                 }
             }
         }

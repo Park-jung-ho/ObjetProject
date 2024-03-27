@@ -31,19 +31,20 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        // image.raycastTarget = false;
-        // parentAfterDrag = transform.parent;
-        // transform.SetParent(transform.root);
+        image.raycastTarget = false;
+        parentAfterDrag = transform.parent;
+        transform.SetParent(transform.root);
+        countText.gameObject.SetActive(false);
     }
     public void OnDrag(PointerEventData eventData)
     {
-        // Vector2 mousepos = Input.mousePosition;
-        // Debug.Log(mousepos);    
-        // transform.position = mousepos;
+        Vector2 mousepos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = mousepos;
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        // image.raycastTarget = true;
-        // transform.SetParent(parentAfterDrag);
+        image.raycastTarget = true;
+        transform.SetParent(parentAfterDrag);
+        RefreshCount();
     }
 }

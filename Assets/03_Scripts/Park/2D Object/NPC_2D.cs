@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC_2D : interactable2D
+public class NPC_2D : MonoBehaviour, interactable2D
 {
     public int stroyID;
     public int questNotClear;
     public int questClear;
+
+    private bool isInteractable = false;
 
     [SerializeField]
     private bool questOn;
@@ -20,7 +22,11 @@ public class NPC_2D : interactable2D
         
     }
 
-    public override void Interact()
+    public bool CanClick()
+    {
+        return isInteractable;
+    }
+    public void Interact()
     {
         if (questOn)
         {
@@ -39,7 +45,18 @@ public class NPC_2D : interactable2D
             DialogManager.instance.StartDialog(stroyID);
         }
     }
-
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+        isInteractable = true;
+        // EnableKey();
+    }
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+        isInteractable = false;
+        // DisableKey();
+    }
     public void OnQuest()
     {
         questOn = true;

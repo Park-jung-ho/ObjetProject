@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class AppleTree : interactable2D
+public class AppleTree : MonoBehaviour, interactable2D
 {
-    public GameObject Apple;
     public int appleCount = 10;
     public string Interact_quest_ID;
+    [SerializeField]
+    private bool isInteractable = false;
 
-    public Stack<GameObject> apples;
+    [ShowInInspector]
+    public Stack<Transform> apples;
 
+    
     void Start()
     {
-        apples = new Stack<GameObject>();
-        for (int i = 0; i < appleCount; i++)
+        apples = new Stack<Transform>();
+        for (int i = 0; i < transform.childCount; i++)
         {
-            GameObject apple = Instantiate(Apple,transform);
-            apple.transform.position = new Vector2(transform.position.x,transform.position.y + 1);
-            apples.Push(apple);
-            apple.SetActive(false);
+            apples.Push(transform.GetChild(i));
         }
     }
 
@@ -28,13 +29,33 @@ public class AppleTree : interactable2D
         
     }
 
-    public override void Interact()
+    public bool CanClick()
     {
-        base.Interact();
+        return isInteractable;
+    }
+
+    public void Interact()
+    {
         if (apples.Count == 0) return;
-        GameObject apple = apples.Pop();
-        apple.SetActive(true);
+        Transform apple = apples.Pop();
+        
         apple.GetComponent<DOTweenAnimation>().DOPlayById("drop");
-        apple.GetComponent<interactable2D>().enabled = true;
+    }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+        isInteractable = true;
+        // EnableKey();
+    }
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+        isInteractable = false;
+        // DisableKey();
+    }
+
+    public void respawnApple(Transform apple)
+    {
+        apples.Push(apple);
     }
 }
