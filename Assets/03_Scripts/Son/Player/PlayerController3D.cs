@@ -5,7 +5,8 @@ public class PlayerController3D : MonoBehaviour
     public float moveSpeed = 5f;
     public float sensitivity = 500f;
     public float rotationX = 0f;
-    public float rotationY = 0f;
+    public float rotationY = 90f;
+    public float rotateLimit = 45f;
     private Rigidbody rb;
 
     void Start()
@@ -38,7 +39,7 @@ public class PlayerController3D : MonoBehaviour
         rotationY += mouseMoveX * sensitivity * Time.deltaTime;
         rotationX += mouseMoveY * sensitivity * Time.deltaTime;
 
-        rotationX = Mathf.Clamp(rotationX, -30f, 35f); // 시야 각도 제한
+        rotationX = Mathf.Clamp(rotationX, -rotateLimit, rotateLimit); // 시야 각도 제한
 
         transform.eulerAngles = new Vector3(-rotationX, rotationY, 0);
     }

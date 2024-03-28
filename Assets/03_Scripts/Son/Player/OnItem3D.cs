@@ -38,7 +38,17 @@ public class OnItem3D : MonoBehaviour
     }
     void DropItem(int itemnum)
     {
-        Instantiate(dropItems[itemnum], this.transform.position, Quaternion.identity);
+        switch (itemnum)
+        {
+            case 0:
+                Instantiate(dropItems[itemnum], this.transform.position, Quaternion.identity);
+                break;
+            case 1:
+                dropItems[itemnum].transform.position = transform.position;
+                dropItems[itemnum].SetActive(true);
+                break;
+
+        }
         foreach (GameObject item in items)
         {
             item.SetActive(false);

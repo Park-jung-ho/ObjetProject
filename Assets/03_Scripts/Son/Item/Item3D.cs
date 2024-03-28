@@ -11,15 +11,7 @@ public class Item3D : ScriptableObject
     public enum ItemType
     {
         Apple,
+        Box,
         Used
-    }
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
     }
 }

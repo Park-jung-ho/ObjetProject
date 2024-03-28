@@ -43,7 +43,8 @@ public class ActionController3D : MonoBehaviour
             {
                 string typename = hitinfo.transform.GetComponent<ItemPickUp3D>().item.itemType.ToString();
                 onItem3D.ItemChange(typename);
-                Destroy(hitinfo.transform.gameObject);
+                if (hitinfo.transform.tag == "Apple") Destroy(hitinfo.transform.gameObject);
+                if (hitinfo.transform.tag == "Box") hitinfo.transform.gameObject.SetActive(false);
             }
         }
     }
@@ -51,7 +52,7 @@ public class ActionController3D : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitinfo, range, layerMask))
         {
-            if (hitinfo.transform.tag == "Item")
+            if (hitinfo.transform.tag == "Item" || hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("Item"))
             {
                 ItemInfoAppear();
             }

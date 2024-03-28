@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2051a54923dfe6c4a89917a2ac2eea14, type: 3}
-  m_Name: Apple
+  m_Name: Box
   m_EditorClassIdentifier: 
-  itemName: Apple
-  itemType: 0
-  itemPrefab: {fileID: 7198296815646678793, guid: f7319247583a01a4a8997d2ef4e1269c, type: 3}
+  itemName: Box
+  itemType: 1
+  itemPrefab: {fileID: 0}
