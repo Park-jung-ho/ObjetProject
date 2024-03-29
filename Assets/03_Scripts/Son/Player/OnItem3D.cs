@@ -41,10 +41,10 @@ public class OnItem3D : MonoBehaviour
         switch (itemnum)
         {
             case 0:
-                Instantiate(dropItems[itemnum], this.transform.position, Quaternion.identity);
+                Instantiate(dropItems[itemnum], items[itemnum].transform.position, Quaternion.identity);
                 break;
             case 1:
-                dropItems[itemnum].transform.position = transform.position;
+                dropItems[itemnum].transform.position = items[itemnum].transform.position;
                 dropItems[itemnum].SetActive(true);
                 break;
 
