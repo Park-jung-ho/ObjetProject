@@ -29,7 +29,7 @@ public class ActionController3D : MonoBehaviour
     }
     void TryAction()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButton(0))
         {
             CheckItem();
             CanPickUp();

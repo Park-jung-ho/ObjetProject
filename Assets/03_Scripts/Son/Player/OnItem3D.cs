@@ -17,7 +17,7 @@ public class OnItem3D : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && isItem) DropItem(lastItemNum);
+        if (Input.GetMouseButton(1) && isItem) DropItem(lastItemNum);
     }
     public void ItemChange(string typeName)
     {
