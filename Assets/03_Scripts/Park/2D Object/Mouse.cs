@@ -38,7 +38,7 @@ public class Mouse : MonoBehaviour
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = pos;
         RaycastHit2D hit = Physics2D.Raycast(pos,Vector2.one,0f,LayerMask.GetMask("Default"));
-        Debug.DrawRay(pos,pos,Color.red,1f);
+        // Debug.DrawRay(pos,pos,Color.red,1f);
         if (hit.collider == null)
         {
             if (type != MouseType.idle)

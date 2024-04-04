@@ -699,7 +699,87 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca55201633b97d3408f439eb84ecb249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueEntrySceneEvents: []
+  dialogueEntrySceneEvents:
+  - guid: d682d922-163c-475a-b3e0-c3dfd038cd71
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1753462656}
+          m_TargetAssemblyTypeName: TimelineController, Assembly-CSharp
+          m_MethodName: setLoop
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 17cbf01d-c6c1-41e1-9faa-665132797308
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1753462656}
+          m_TargetAssemblyTypeName: TimelineController, Assembly-CSharp
+          m_MethodName: setLoop
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - guid: 3ea15ce7-07c0-448a-a5e1-9e7efdfd8ecf
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1753462656}
+          m_TargetAssemblyTypeName: TimelineController, Assembly-CSharp
+          m_MethodName: setLoop
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - guid: 8b57a153-943c-46f6-8328-c953748b91cf
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1753462656}
+          m_TargetAssemblyTypeName: TimelineController, Assembly-CSharp
+          m_MethodName: setLoop
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - guid: 51c4c8e6-f4e1-44db-b564-94304a220ce4
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1753462656}
+          m_TargetAssemblyTypeName: TimelineController, Assembly-CSharp
+          m_MethodName: setLoop
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &58108948
 Transform:
   m_ObjectHideFlags: 0
@@ -4096,7 +4176,7 @@ Transform:
   m_GameObject: {fileID: 713286971}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.44, y: -2.19, z: -10}
+  m_LocalPosition: {x: -18.537777, y: -2.52999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5391,6 +5471,7 @@ GameObject:
   - component: {fileID: 992626134}
   - component: {fileID: 992626135}
   - component: {fileID: 992626136}
+  - component: {fileID: 992626137}
   m_Layer: 0
   m_Name: timmy
   m_TagString: NPC
@@ -5406,7 +5487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992626126}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.99, y: 0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5724,6 +5805,27 @@ MonoBehaviour:
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0}{1}'
     subtitleColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!95 &992626137
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992626126}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &995591300 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
@@ -6464,7 +6566,7 @@ Transform:
   m_GameObject: {fileID: 1141505573}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.521953, y: -1.1848183, z: -10.118885}
+  m_LocalPosition: {x: -16.61973, y: -1.5248082, z: -10.118885}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7786,18 +7888,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 1753462656}
-          m_TargetAssemblyTypeName: TimelineController, Assembly-CSharp
-          m_MethodName: playCutsceneAuto
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
     runOnConversationEndEventsAtEndOfFrame: 0
     onConversationCancelled:
       m_PersistentCalls:
@@ -7925,6 +8015,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 125852, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
   m_PrefabInstance: {fileID: 2040639476}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1351559979 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
+  m_PrefabInstance: {fileID: 2040639476}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351559976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8b685e62a9aeb4a9472b30ec2d86d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1366528127
 GameObject:
   m_ObjectHideFlags: 0
@@ -23565,10 +23666,18 @@ PlayableDirector:
     value: {fileID: 713286975}
   - key: {fileID: -6435668569081478288, guid: 51d7e23c44125cd489223ef7c5d57a2b, type: 2}
     value: {fileID: 1753462655}
+  - key: {fileID: -7244963835337090096, guid: 3559149042cfd1744bbc3cf2f6c5732c, type: 2}
+    value: {fileID: 713286975}
+  - key: {fileID: -3552094730888508018, guid: 3559149042cfd1744bbc3cf2f6c5732c, type: 2}
+    value: {fileID: 1804364227}
+  - key: {fileID: 911937934681316905, guid: 3559149042cfd1744bbc3cf2f6c5732c, type: 2}
+    value: {fileID: 992626137}
   m_ExposedReferences:
     m_References:
+    - dd4714cd6b3b52e44948ecd487d5b882: {fileID: 70139}
     - ddcbbc4b74ddfe446ab4f3f9da4bd137: {fileID: 0}
     - 5d2e99309af5d7743873a81935661d65: {fileID: 70139}
+    - d1ecf167b201887409a61bd5e1c9637e: {fileID: 1141505575}
     - ebbe0d8980403ab43add480d1199e426: {fileID: 1232987742}
 --- !u!4 &1753462654
 Transform:
@@ -23602,6 +23711,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 622ed5a33bf41a54a9702dac5d5a397b, type: 2}
     - {fileID: 11400000, guid: c853affefc474b749893f25d0fd6c6f9, type: 2}
     - {fileID: 11400000, guid: f364b5b17787e2f4697120cc87472603, type: 2}
+    - {fileID: 11400000, guid: 8b418d9c8fc41d543a37cc2bc0db412f, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -23618,12 +23728,38 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1753462656}
+          m_TargetAssemblyTypeName: TimelineController, Assembly-CSharp
+          m_MethodName: setLoop
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1350037839}
-          m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.ProximitySelector,
+        - m_Target: {fileID: 1753462656}
+          m_TargetAssemblyTypeName: TimelineController, Assembly-CSharp
+          m_MethodName: loopWhileDialogue
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1804364230}
+          m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemTrigger,
             Assembly-CSharp-firstpass
-          m_MethodName: 
+          m_MethodName: OnUse
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -23635,11 +23771,10 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1804364230}
-          m_TargetAssemblyTypeName: PixelCrushers.DialogueSystem.DialogueSystemTrigger,
-            Assembly-CSharp-firstpass
-          m_MethodName: OnUse
-          m_Mode: 1
+        - m_Target: {fileID: 1351559979}
+          m_TargetAssemblyTypeName: UnityEngine.Component, UnityEngine
+          m_MethodName: SendMessage
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -26109,14 +26244,14 @@ PrefabInstance:
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.dialogueUI
       value: 
-      objectReference: {fileID: 177140, guid: 77d31c2998b2bd148b0ede2a5ab00489, type: 3}
+      objectReference: {fileID: 177140, guid: d85c0846235244f48826ca67631aace9, type: 3}
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.subtitleSettings.continueButton
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.subtitleSettings.minSubtitleSeconds
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.localizationSettings.useSystemLanguage
@@ -26128,7 +26263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11426072, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: displaySettings.subtitleSettings.requireContinueOnLastLine
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22325660, guid: 58ac37417e60e534f91138088a3e6f70, type: 3}
       propertyPath: m_Camera

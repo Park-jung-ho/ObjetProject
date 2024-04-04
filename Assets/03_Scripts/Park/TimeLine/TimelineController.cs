@@ -9,7 +9,7 @@ public class TimelineController : MonoBehaviour
 {
     public PlayableDirector playableDirector;
     public TimelineAsset[] timelines; 
-
+    private bool isLoop = false;
 
     void Start()
     {
@@ -33,5 +33,14 @@ public class TimelineController : MonoBehaviour
         playableDirector.playableAsset = timelines[id];
         playableDirector.Play();
     }
-    
+    public void loopWhileDialogue(float t)
+    {
+        if (!isLoop) return;
+        playableDirector.time -= t;
+        playableDirector.Evaluate();
+    }
+    public void setLoop(bool type)
+    {
+        isLoop = type;
+    }
 }
