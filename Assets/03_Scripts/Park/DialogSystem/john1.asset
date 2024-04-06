@@ -12,31 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf46e6c68c0df346a310138126e82a4, type: 3}
   m_Name: john1
   m_EditorClassIdentifier: 
-  image: {fileID: -1285400690, guid: bdacef054670ad140aa32e0dc93dee29, type: 3}
   name: john
   ID: 0
   sentences:
-  - dialogType: 0
-    next: 1
-    text: "\uC548\uB155 \uB098\uB294 \uC874\uC774\uC57C"
-    choices: []
-    qusetID: 
   - dialogType: 1
+    image: {fileID: 1200676234, guid: ff0ab58c5c111004bb4e413e8103bd80, type: 3}
     next: 0
-    text: "\uC0AC\uACFC \uC880 \uAC00\uC838\uB2E4\uC904\uB798?"
+    text: "\uBC29\uAE08 \uC774\uC0AC \uC628 \uC0AC\uB78C\uC5D0\uAC8C \uD560 \uB9D0\uC740
+      \uC544\uB2C8\uC9C0\uB9CC, \uC0AC\uACFC \uB530\uB294 \uAC83 \uC880  \uB3C4\uC640\uC8FC\uC2DC\uACA0\uC5B4\uC694?"
     choices:
-    - text: "\uADF8\uB798"
+    - text: "\uAE4C\uC9D3\uAC70 \uB3C4\uC640\uB4DC\uB9AC\uC8E0!"
+      next: 1
+    - text: "\uC880 \uD798\uB4E4\uACA0\uB294\uB370\uC694"
       next: 2
-    - text: "\uC2EB\uC5B4"
-      next: 3
     qusetID: 
   - dialogType: 2
+    image: {fileID: 439630941, guid: ff0ab58c5c111004bb4e413e8103bd80, type: 3}
     next: -1
-    text: "\uADF8\uB7FC \uC0AC\uACFC 10\uAC1C\uB9CC \uAC00\uC838\uB2E4\uC918"
+    text: "\uC798 \uBD80\uD0C1\uD574\uC694."
     choices: []
     qusetID: 1
   - dialogType: 0
+    image: {fileID: 948796610, guid: ff0ab58c5c111004bb4e413e8103bd80, type: 3}
     next: -1
-    text: "\uADF8\uB798........"
+    text: "\uD558\uB294 \uC218 \uC5C6\uC8E0."
     choices: []
     qusetID: 

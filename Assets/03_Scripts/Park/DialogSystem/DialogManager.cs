@@ -109,7 +109,6 @@ public class DialogManager : SerializedMonoBehaviour
         currentDialog = StoryList[stroyID];
 
         name.text = currentDialog.name;
-        image.sprite = currentDialog.image;
         
         ShowDialog(0);
     }
@@ -119,11 +118,17 @@ public class DialogManager : SerializedMonoBehaviour
         if (id == -1)
         {
             EndDialog();
+            if (currentDialogText.isCutscene)
+            {
+                TimelineController.instance.playCutscene(currentDialogText.cutSceneID);
+            }
             // set next story
             return;
         }
 
         currentDialogText = currentDialog.sentences[id];
+
+        image.sprite = currentDialogText.image;
 
         if (currentDialogText.dialogType == DialogType.Text)
         {
@@ -141,6 +146,7 @@ public class DialogManager : SerializedMonoBehaviour
             for (int i = 0; i < currentDialogText.choices.Length; i++)
             {
                 choices[i].text = currentDialogText.choices[i].text;
+                choices[i].transform.parent.gameObject.SetActive(true);
             }
         }
         if (currentDialogText.dialogType == DialogType.Quest)

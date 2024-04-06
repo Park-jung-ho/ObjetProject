@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf46e6c68c0df346a310138126e82a4, type: 3}
   m_Name: johnQuest1
   m_EditorClassIdentifier: 
-  image: {fileID: -1285400690, guid: bdacef054670ad140aa32e0dc93dee29, type: 3}
   name: john
   ID: 2
   sentences:
   - dialogType: 0
+    image: {fileID: 0}
     next: -1
-    text: "\uACE0\uB9C8\uC6CC"
+    text: "\uD53C\uACE4\uD588\uC744\uD150\uB370 \uB3C4\uC640\uC918\uC11C \uACE0\uB9C8\uC6CC\uC694."
     choices: []
     qusetID: 

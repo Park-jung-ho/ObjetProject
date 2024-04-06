@@ -7,10 +7,24 @@ using UnityEngine.Timeline;
 
 public class TimelineController : MonoBehaviour
 {
+    public static TimelineController instance;
     public PlayableDirector playableDirector;
     public TimelineAsset[] timelines; 
     private bool isLoop = false;
 
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Debug.LogError("TimelineController 중복!!");
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         

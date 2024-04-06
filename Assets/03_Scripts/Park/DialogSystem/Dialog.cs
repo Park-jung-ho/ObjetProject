@@ -24,7 +24,11 @@ public struct Choice
 public struct DialogText
 {
     public DialogType dialogType;
+    public Sprite image;
     public int next;
+    public bool isCutscene;
+    public int cutSceneID;
+    [TextArea(4, 10)]
     public string text;
     [FoldoutGroup("choice")]
     public Choice[] choices;
@@ -36,7 +40,6 @@ public struct DialogText
 [CreateAssetMenu(menuName = "ObjetProject/Dialog")]
 public class Dialog : ScriptableObject
 {
-    public Sprite image;
     public string name;
     public int ID;
     public DialogText[] sentences;
