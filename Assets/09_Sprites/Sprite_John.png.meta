@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f425d15d1c16288498c0e70dfcaf49fd
+guid: 04eb86f5570a09c409a0a4cdec530467
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,505 +123,505 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite_Timmy_0
+      name: Sprite_John_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 56
+        y: 62
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec4c14bcb43c05347ba0302cf1d671d5
-      internalID: -1223256503
+      spriteID: 5712a2823c917e345a0237443600ee64
+      internalID: -782998016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_1
+      name: Sprite_John_1
       rect:
         serializedVersion: 2
         x: 19
-        y: 56
+        y: 62
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dac681fe09483c5468935eada6cb6681
-      internalID: -233051699
+      spriteID: 461a0f1a57a0ac74c9ccf5513df60f8b
+      internalID: -95162770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_2
+      name: Sprite_John_2
       rect:
         serializedVersion: 2
         x: 38
-        y: 56
+        y: 62
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fce4a67428c9d1747a51f9481bcbece9
-      internalID: -405127917
+      spriteID: af44319f6272c1d498b75503724c211d
+      internalID: -757592562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_3
+      name: Sprite_John_3
       rect:
         serializedVersion: 2
         x: 57
-        y: 56
+        y: 62
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11802c6b60971f94caa75836334654ed
-      internalID: -2104936540
+      spriteID: b9582eae8a35713469a5da65db0cf3e4
+      internalID: 1740569284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_4
+      name: Sprite_John_4
       rect:
         serializedVersion: 2
         x: 76
-        y: 56
+        y: 62
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f526b6eac64566428f22640bca265cf
-      internalID: 591802811
+      spriteID: d9c71bcbef1f9144990b533b84deb47d
+      internalID: -671229294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_5
+      name: Sprite_John_5
       rect:
         serializedVersion: 2
         x: 95
-        y: 56
+        y: 62
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9645fea24528764e87418e1b8d3782a
-      internalID: 306342144
+      spriteID: 13cd4205d53c28f4aa5c34637ba3fcf8
+      internalID: 306864565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_6
+      name: Sprite_John_6
       rect:
         serializedVersion: 2
         x: 114
-        y: 56
+        y: 62
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11d226f7d5b12d64ea8807c2423a2bf8
-      internalID: 906788594
+      spriteID: 72c297e0273393f498bcd759e6d0cc43
+      internalID: -1136400862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_7
+      name: Sprite_John_7
       rect:
         serializedVersion: 2
         x: 133
-        y: 56
+        y: 62
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57e78e7ab1c685a488e33a76c9d672b9
-      internalID: -1505318274
+      spriteID: 8dd7b978023139f4fb0ae1f5e400e657
+      internalID: -2073978795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_8
+      name: Sprite_John_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 28
+        y: 31
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e88270edb15f8654db45ffa7ccb32be1
-      internalID: -1514927576
+      spriteID: 49b3e24fbea8d704fb0e0825cd51a1df
+      internalID: 2089008688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_9
+      name: Sprite_John_9
       rect:
         serializedVersion: 2
         x: 19
-        y: 28
+        y: 31
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 535f70f2d664dbe4bb1534f7736758d4
-      internalID: 63365020
+      spriteID: ca43e11491b470249a342c633391b047
+      internalID: -1369641061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_10
+      name: Sprite_John_10
       rect:
         serializedVersion: 2
         x: 38
-        y: 28
+        y: 31
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 641be647d80f0254eaa55920d5f39c16
-      internalID: -41272408
+      spriteID: 933800ca06719f945834911224719d00
+      internalID: -750513610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_11
+      name: Sprite_John_11
       rect:
         serializedVersion: 2
         x: 57
-        y: 28
+        y: 31
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 835aa6ba91fa8374d9d4ce12a93c63e3
-      internalID: 592435978
+      spriteID: 855129df51a1f344da9e5705b6444add
+      internalID: -59791553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_12
+      name: Sprite_John_12
       rect:
         serializedVersion: 2
         x: 76
-        y: 28
+        y: 31
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 777aa46173dc6234a8719dcf9ca19dd2
-      internalID: -1224338041
+      spriteID: cf7b824fe38fa3e45a54533b479d7aac
+      internalID: -172228905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_13
+      name: Sprite_John_13
       rect:
         serializedVersion: 2
         x: 95
-        y: 28
+        y: 31
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1120160c7fc691a4b90a8271d374ad46
-      internalID: -1803391912
+      spriteID: a8fdb2b45dafe534f9ad6e61d7930c2d
+      internalID: -1222051559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_14
+      name: Sprite_John_14
       rect:
         serializedVersion: 2
         x: 114
-        y: 28
+        y: 31
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0034ff713fba23a439af09242945a1bf
-      internalID: 1969974246
+      spriteID: 14b2da693d3abb444b4081b6e0ec81dd
+      internalID: -1719381628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_15
+      name: Sprite_John_15
       rect:
         serializedVersion: 2
         x: 133
-        y: 28
+        y: 31
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d61c7977a67b5d145a96adf44090f814
-      internalID: -872776002
+      spriteID: f9679ca4ec74cc942adc635883db35cc
+      internalID: 1580756839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_16
+      name: Sprite_John_16
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45ecbd8425f7ca74f926eb2d6e8b8031
-      internalID: 546923499
+      spriteID: 42bc4b6893feb934297b82e7b25cd2c2
+      internalID: 530400756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_17
+      name: Sprite_John_17
       rect:
         serializedVersion: 2
         x: 19
         y: 0
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aafbecbc7774d1409d49fac9ab70f17
-      internalID: -828815192
+      spriteID: d9abfbdc64bdd44418551a19575b03c3
+      internalID: 1205388031
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_18
+      name: Sprite_John_18
       rect:
         serializedVersion: 2
         x: 38
         y: 0
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea634a271ff6f6847bc344beadd3863a
-      internalID: -1095973498
+      spriteID: 809778324e98e0d429f0f83e4e1091bd
+      internalID: -666991662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_19
+      name: Sprite_John_19
       rect:
         serializedVersion: 2
         x: 57
         y: 0
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1174eb3124bcaf4dae53131029cf1df
-      internalID: 321294683
+      spriteID: 483dfe64bb1bd0c419b0eaa6dce43b22
+      internalID: -653448857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_20
+      name: Sprite_John_20
       rect:
         serializedVersion: 2
         x: 76
         y: 0
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7486a64a73634bc45b7788e165b690c7
-      internalID: 584187939
+      spriteID: 968598a1494532f488796227b1d919b5
+      internalID: -1110193894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_21
+      name: Sprite_John_21
       rect:
         serializedVersion: 2
         x: 95
         y: 0
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f4fee9530f7333459b377dc00cd5fc8
-      internalID: 345293122
+      spriteID: 10f9dab4818bba145bb5c6a212b340ce
+      internalID: -2003292811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_22
+      name: Sprite_John_22
       rect:
         serializedVersion: 2
         x: 114
         y: 0
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12ca268bbeac6364a92ccda8fd152081
-      internalID: -1749282213
+      spriteID: 06f2167edf6ace94c8fd74e6b42ef4da
+      internalID: -1366707910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Timmy_23
+      name: Sprite_John_23
       rect:
         serializedVersion: 2
         x: 133
         y: 0
         width: 19
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72786eb40d06d654db835c849630e490
-      internalID: 1894128899
+      spriteID: aa2293f3104a76749a36a43521232756
+      internalID: 358916740
       vertices: []
       indices: 
       edges: []
@@ -629,7 +629,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0434402cc7f6bf1488298af0c1a6fea5
+    spriteID: c7039edc1ee8d034eafb8469233dfe84
     internalID: 0
     vertices: []
     indices: 
@@ -637,30 +637,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprite_Timmy_0: -1223256503
-      Sprite_Timmy_1: -233051699
-      Sprite_Timmy_10: -41272408
-      Sprite_Timmy_11: 592435978
-      Sprite_Timmy_12: -1224338041
-      Sprite_Timmy_13: -1803391912
-      Sprite_Timmy_14: 1969974246
-      Sprite_Timmy_15: -872776002
-      Sprite_Timmy_16: 546923499
-      Sprite_Timmy_17: -828815192
-      Sprite_Timmy_18: -1095973498
-      Sprite_Timmy_19: 321294683
-      Sprite_Timmy_2: -405127917
-      Sprite_Timmy_20: 584187939
-      Sprite_Timmy_21: 345293122
-      Sprite_Timmy_22: -1749282213
-      Sprite_Timmy_23: 1894128899
-      Sprite_Timmy_3: -2104936540
-      Sprite_Timmy_4: 591802811
-      Sprite_Timmy_5: 306342144
-      Sprite_Timmy_6: 906788594
-      Sprite_Timmy_7: -1505318274
-      Sprite_Timmy_8: -1514927576
-      Sprite_Timmy_9: 63365020
+      Sprite_John_0: -782998016
+      Sprite_John_1: -95162770
+      Sprite_John_10: -750513610
+      Sprite_John_11: -59791553
+      Sprite_John_12: -172228905
+      Sprite_John_13: -1222051559
+      Sprite_John_14: -1719381628
+      Sprite_John_15: 1580756839
+      Sprite_John_16: 530400756
+      Sprite_John_17: 1205388031
+      Sprite_John_18: -666991662
+      Sprite_John_19: -653448857
+      Sprite_John_2: -757592562
+      Sprite_John_20: -1110193894
+      Sprite_John_21: -2003292811
+      Sprite_John_22: -1366707910
+      Sprite_John_23: 358916740
+      Sprite_John_3: 1740569284
+      Sprite_John_4: -671229294
+      Sprite_John_5: 306864565
+      Sprite_John_6: -1136400862
+      Sprite_John_7: -2073978795
+      Sprite_John_8: 2089008688
+      Sprite_John_9: -1369641061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: idle_D_player
+  m_Name: Timmy_idle_U
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -55,11 +55,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 337580236, guid: d19f8cb906924a941936a74837a334a5, type: 3}
+      value: {fileID: -2104936540, guid: f425d15d1c16288498c0e70dfcaf49fd, type: 3}
     - time: 0.33333334
-      value: {fileID: -1525701680, guid: d19f8cb906924a941936a74837a334a5, type: 3}
+      value: {fileID: -405127917, guid: f425d15d1c16288498c0e70dfcaf49fd, type: 3}
     - time: 0.6666667
-      value: {fileID: 337580236, guid: d19f8cb906924a941936a74837a334a5, type: 3}
+      value: {fileID: -2104936540, guid: f425d15d1c16288498c0e70dfcaf49fd, type: 3}
     attribute: m_Sprite
     path: Sprite
     classID: 212
@@ -91,9 +91,9 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 337580236, guid: d19f8cb906924a941936a74837a334a5, type: 3}
-    - {fileID: -1525701680, guid: d19f8cb906924a941936a74837a334a5, type: 3}
-    - {fileID: 337580236, guid: d19f8cb906924a941936a74837a334a5, type: 3}
+    - {fileID: -2104936540, guid: f425d15d1c16288498c0e70dfcaf49fd, type: 3}
+    - {fileID: -405127917, guid: f425d15d1c16288498c0e70dfcaf49fd, type: 3}
+    - {fileID: -2104936540, guid: f425d15d1c16288498c0e70dfcaf49fd, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
