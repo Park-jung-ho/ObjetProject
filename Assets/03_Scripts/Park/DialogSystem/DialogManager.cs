@@ -51,6 +51,7 @@ public class DialogManager : SerializedMonoBehaviour
             Debug.LogError("DialogManager 중복!!");
             Destroy(gameObject);
         }
+        Application.targetFrameRate = 60;
     }
     void Start()
     {
