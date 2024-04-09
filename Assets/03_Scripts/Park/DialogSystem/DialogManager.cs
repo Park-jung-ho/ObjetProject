@@ -97,7 +97,11 @@ public class DialogManager : SerializedMonoBehaviour
         ChoicePanel.SetActive(false);
     }
 
-    [Button]
+    public void setStory(int stroyID)
+    {
+        
+    }
+
     public void StartDialog(int stroyID)
     {
         PlayerController2D.instance.SetInput(false);
@@ -159,7 +163,6 @@ public class DialogManager : SerializedMonoBehaviour
         }
     }
 
-    [Button]
     public void EndDialog()
     {
         SetInput(false);

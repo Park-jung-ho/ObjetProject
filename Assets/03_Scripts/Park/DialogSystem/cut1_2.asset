@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf46e6c68c0df346a310138126e82a4, type: 3}
+  m_Name: cut1_2
+  m_EditorClassIdentifier: 
+  name: "\uC874"
+  ID: 0
+  sentences:
+  - dialogType: 0
+    image: {fileID: 0}
+    next: 1
+    isCutscene: 0
+    cutSceneID: 0
+    text: "\uC5B4?"
+    choices: []
+    qusetID: 
+  - dialogType: 0
+    image: {fileID: 0}
+    next: -1
+    isCutscene: 1
+    cutSceneID: 3
+    text: "\uD2F0\uBBF8. \uB108\uB294 \uBC14\uB85C \uB9C8\uC744\uB85C \uB3CC\uC544\uAC00
+      \uC788\uC5B4."
+    choices: []
+    qusetID: 

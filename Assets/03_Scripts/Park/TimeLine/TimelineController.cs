@@ -40,6 +40,11 @@ public class TimelineController : MonoBehaviour
         playableDirector.playableAsset = timelines[id];
         playableDirector.Play();
     }
+    public void playCutscene(PlayableAsset tl)
+    {
+        playableDirector.playableAsset = tl;
+        playableDirector.Play();
+    }
     public void playCutsceneAuto()
     {
         int id = DialogueLua.GetVariable("timeline").AsInt;

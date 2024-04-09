@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf46e6c68c0df346a310138126e82a4, type: 3}
+  m_Name: cut1_4
+  m_EditorClassIdentifier: 
+  name: "\uC874"
+  ID: 0
+  isQuest: 0
+  sentences:
+  - dialogType: 1
+    image: {fileID: 0}
+    next: -1
+    nextNode: 0
+    isCutscene: 0
+    cutSceneID: 0
+    text: "\uC548\uB155\uD558\uC138\uC694. \uC624\uB298 \uC0C8\uB85C \uC774\uC0AC\uC624\uC2E0
+      \uBD84\uC774\uACA0\uAD70\uC694."
+    choices:
+    - text: "\uB9DE\uC544\uC694"
+      next: 1
+    - text: "\uC5B4\uB5BB\uAC8C \uC544\uC168\uC5B4\uC694?"
+      next: 2
+    qusetID: 
+  - dialogType: 0
+    image: {fileID: 0}
+    next: -1
+    nextNode: 0
+    isCutscene: 1
+    cutSceneID: 5
+    text: "\uBC18\uAC11\uC2B5\uB2C8\uB2E4. \uC81C\uAC00 \uC9D1\uAE4C\uC9C0 \uC548\uB0B4\uD574\uB4DC\uB9B4\uAC8C\uC694."
+    choices: []
+    qusetID: 
+  - dialogType: 0
+    image: {fileID: 0}
+    next: 1
+    nextNode: 0
+    isCutscene: 0
+    cutSceneID: 0
+    text: "\uC6CC\uB099 \uC655\uB798\uAC00 \uC801\uC740 \uB3D9\uB124\uB77C\uC11C
+      \uB9D0\uC774\uC8E0."
+    choices: []
+    qusetID: 

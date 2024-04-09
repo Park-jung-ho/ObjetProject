@@ -12,14 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf46e6c68c0df346a310138126e82a4, type: 3}
   m_Name: cut1_1
   m_EditorClassIdentifier: 
-  name: "\uD2F0\uBBF8"
+  name: "\uC874"
   ID: 0
   sentences:
   - dialogType: 0
     image: {fileID: 0}
-    next: -1
+    next: 1
     isCutscene: 0
     cutSceneID: 0
     text: "\uD2F0\uBBF8!!!!!!!!!!!"
+    choices: []
+    qusetID: 
+  - dialogType: 0
+    image: {fileID: 0}
+    next: -1
+    isCutscene: 1
+    cutSceneID: 2
+    text: "\uD55C\uCC38 \uCC3E\uC558\uC796\uC544 \uD2F0\uBBF8. \uBA40\uB9AC \uB098\uC624\uBA74
+      \uC548\uB41C\uB2E4\uB2C8\uAE4C"
     choices: []
     qusetID: 

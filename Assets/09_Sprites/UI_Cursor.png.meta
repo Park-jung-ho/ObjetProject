@@ -121,18 +121,150 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: UI_Cursor_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 5
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bae66e80396a96408a0cb57b1ee5a8a
+      internalID: 402406150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Cursor_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57def19e95a3c4445a3dd239004c788b
+      internalID: -1740014263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Cursor_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948be334923d50b44aa3fb3db5852437
+      internalID: -1121580685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Cursor_3
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 5
+        width: 11
+        height: 11
+      alignment: 9
+      pivot: {x: 0.051414836, y: 0.95878047}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa68021fbf60934d8c1ae3f93da3247
+      internalID: 2034054355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Cursor_4
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 5
+        width: 11
+        height: 11
+      alignment: 9
+      pivot: {x: 0.07180509, y: 0.918}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb50902671336af44b146907eccb6716
+      internalID: 1914569377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Cursor_5
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 5
+        width: 11
+        height: 11
+      alignment: 9
+      pivot: {x: 0.09219534, y: 0.918}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a01e474af070a46ac0fc87f72e28d6
+      internalID: 1250850983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4b3da91b537a82f4da51811aa80845f5
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_Cursor_0: 402406150
+      UI_Cursor_1: -1740014263
+      UI_Cursor_2: -1121580685
+      UI_Cursor_3: 2034054355
+      UI_Cursor_4: 1914569377
+      UI_Cursor_5: 1250850983
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

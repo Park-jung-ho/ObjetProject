@@ -26,6 +26,7 @@ public struct DialogText
     public DialogType dialogType;
     public Sprite image;
     public int next;
+    public int nextNode;
     public bool isCutscene;
     public int cutSceneID;
     [TextArea(4, 10)]
@@ -42,5 +43,6 @@ public class Dialog : ScriptableObject
 {
     public string name;
     public int ID;
+    public bool isQuest = false;
     public DialogText[] sentences;
 }
