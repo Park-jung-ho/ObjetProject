@@ -64,7 +64,7 @@ public class PlayerController2D : MonoBehaviour
     }
     public void SetInput(bool isOn)
     {
-        if (isOn) isChangeNow = true;
+        if (!playerInput.enabled && isOn) isChangeNow = true;
         playerInput.enabled = isOn;
     }
 

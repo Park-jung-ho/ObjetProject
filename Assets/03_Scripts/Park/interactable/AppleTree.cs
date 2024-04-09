@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class AppleTree : MonoBehaviour, interactable2D
 {
+    public interactType type {get; set;}
     public int appleCount = 10;
     public string Interact_quest_ID;
     [SerializeField]
@@ -22,6 +23,7 @@ public class AppleTree : MonoBehaviour, interactable2D
         {
             apples.Push(transform.GetChild(i));
         }
+        type = interactType.Object;
     }
 
     void Update()

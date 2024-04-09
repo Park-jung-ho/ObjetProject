@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NPC_2D : MonoBehaviour, interactable2D
 {
+    public interactType type {get; set;}
     public int stroyID;
     public int questNotClear;
     public int questClear;
@@ -14,7 +15,7 @@ public class NPC_2D : MonoBehaviour, interactable2D
     private bool questOn;
     void Start()
     {
-        
+        type = interactType.NPC;
     }
 
     void Update()

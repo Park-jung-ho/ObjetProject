@@ -66,7 +66,7 @@ public class DialogManager : SerializedMonoBehaviour
     }
     public void SetInput(bool isOn)
     {
-        if (isOn) isChangeNow = true;
+        if (!playerInput.enabled && isOn) isChangeNow = true;
         playerInput.enabled = isOn;
     }
     void OnClick()
@@ -107,9 +107,9 @@ public class DialogManager : SerializedMonoBehaviour
         PlayerController2D.instance.SetInput(false);
 
         SetInput(true);
-        OpenPanel();
 
         DialogUIanimator.SetTrigger("IsOn");
+        OpenPanel();
 
         currentDialog = StoryList[stroyID];
 
@@ -168,6 +168,10 @@ public class DialogManager : SerializedMonoBehaviour
         SetInput(false);
         PlayerController2D.instance.SetInput(true);
         DialogUIanimator.SetTrigger("IsOff");
+        for (int i = 0; i < currentDialogText.choices.Length; i++)
+        {
+            choices[i].transform.parent.gameObject.SetActive(false);
+        }
         HidePanel();
     }
 }

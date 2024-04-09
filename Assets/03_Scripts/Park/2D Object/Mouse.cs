@@ -57,17 +57,33 @@ public class Mouse : MonoBehaviour
             {
                 if (obj.CanClick())
                 {
-                    type = MouseType.npc0;
-                    currentCursor.sprite = cursor_npc1;
-                    currentCursor.color = canAlpha;
-                    // Cursor.SetCursor(cursor_Interact1,Vector2.zero,CursorMode.Auto);
+                    if (obj.type == interactType.NPC)
+                    {
+                        type = MouseType.npc1;
+                        currentCursor.sprite = cursor_npc1;
+                        currentCursor.color = canAlpha;
+                    }
+                    if (obj.type == interactType.Object)
+                    {
+                        type = MouseType.obj1;
+                        currentCursor.sprite = cursor_Object1;
+                        currentCursor.color = canAlpha;
+                    }
                 }
                 else
                 {
-                    type = MouseType.npc1;
-                    currentCursor.sprite = cursor_npc0;
-                    currentCursor.color = cantAlpha;
-                    // Cursor.SetCursor(cursor_Interact0,Vector2.zero,CursorMode.Auto);
+                    if (obj.type == interactType.NPC)
+                    {
+                        type = MouseType.npc1;
+                        currentCursor.sprite = cursor_npc0;
+                        currentCursor.color = cantAlpha;
+                    }
+                    if (obj.type == interactType.Object)
+                    {
+                        type = MouseType.obj0;
+                        currentCursor.sprite = cursor_Object0;
+                        currentCursor.color = cantAlpha;
+                    }
                 }
             }
         }

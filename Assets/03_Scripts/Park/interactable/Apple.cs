@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour, interactable2D
 {
+    public interactType type {get; set;}
     public Item item;
     private Vector2 rootPos;
     private bool isInteractable = false;
@@ -15,6 +16,7 @@ public class Apple : MonoBehaviour, interactable2D
         GetComponent<CircleCollider2D>().enabled = false;
         rootPos = transform.position;
         parentTransform = transform.parent;
+        type = interactType.Object;
     }
 
     void Update()
