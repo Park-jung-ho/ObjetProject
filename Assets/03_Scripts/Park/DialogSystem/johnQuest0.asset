@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf46e6c68c0df346a310138126e82a4, type: 3}
   m_Name: johnQuest0
   m_EditorClassIdentifier: 
-  name: "\uC874"
+  NPCname: "\uC874"
   ID: 1
+  isQuest: 0
   sentences:
   - dialogType: 0
     image: {fileID: 0}
     next: -1
+    GoToNextStory: 0
+    nextStoryNode: 0
     isCutscene: 0
     cutSceneID: 0
     text: "\uC0AC\uACFC\uAC00 \uC880 \uB354 \uD544\uC694\uD574\uC694"

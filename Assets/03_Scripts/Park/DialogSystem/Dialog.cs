@@ -26,7 +26,8 @@ public struct DialogText
     public DialogType dialogType;
     public Sprite image;
     public int next;
-    public int nextNode;
+    public bool GoToNextStory;
+    public int nextStoryNode;
     public bool isCutscene;
     public int cutSceneID;
     [TextArea(4, 10)]
@@ -41,7 +42,7 @@ public struct DialogText
 [CreateAssetMenu(menuName = "ObjetProject/Dialog")]
 public class Dialog : ScriptableObject
 {
-    public string name;
+    public string NPCname;
     public int ID;
     public bool isQuest = false;
     public DialogText[] sentences;

@@ -12,30 +12,31 @@ public class DialogManager : SerializedMonoBehaviour
 {
     public static DialogManager instance;
 
-
+    
     [Title("Setting")]
+    public GameObject DialogPanel;
     public Animator DialogUIanimator;
     public Image image;
-    public TMP_Text name;
+    public TMP_Text NPCname;
+    public float typingTime;
     [Title("TEXT PANEL")]
     public GameObject TextPanel;
     public TMP_Text text;
     [Title("CHOICE PANEL")]
     public GameObject ChoicePanel;
-    public TMP_Text choicetext;
+    // public TMP_Text choicetext;
     public TMP_Text[] choices;
 
     [Title("Dialog Dict")]
-    public List<Dialog> StoryList;
+    public Dictionary<string,Dialog> StoryList;
 
     private Dialog currentDialog; 
 
     [SerializeField]
     private DialogText currentDialogText;
 
-
-    private PlayerInput playerInput;
-    private bool isChangeNow;
+    [SerializeField]
+    private bool isTyping;
 
 
 
@@ -51,29 +52,24 @@ public class DialogManager : SerializedMonoBehaviour
             Debug.LogError("DialogManager 중복!!");
             Destroy(gameObject);
         }
-        Application.targetFrameRate = 60;
     }
     void Start()
     {
-        isChangeNow = true;
         HidePanel();
-        playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
     {
     
     }
-    public void SetInput(bool isOn)
+    
+    public void OnClick()
     {
-        if (!playerInput.enabled && isOn) isChangeNow = true;
-        playerInput.enabled = isOn;
-    }
-    void OnClick()
-    {
-        if (isChangeNow)
+        Debug.Log("CLICKED");
+        if (isTyping)
         {
-            isChangeNow = false;
+            Debug.Log("isTyping false");
+            isTyping = false;
             return;
         }
         if (currentDialogText.dialogType == DialogType.Choice) return;
@@ -87,12 +83,12 @@ public class DialogManager : SerializedMonoBehaviour
     void OpenPanel()
     {
         image.gameObject.SetActive(true);
-        name.gameObject.SetActive(true);
+        NPCname.gameObject.SetActive(true);
     }
     void HidePanel()
     {
         image.gameObject.SetActive(false);
-        name.gameObject.SetActive(false);
+        NPCname.gameObject.SetActive(false);
         TextPanel.SetActive(false);
         ChoicePanel.SetActive(false);
     }
@@ -102,20 +98,65 @@ public class DialogManager : SerializedMonoBehaviour
         
     }
 
-    public void StartDialog(int stroyID)
+    public void StartDialog(string stroyID)
     {
-        PlayerController2D.instance.SetInput(false);
-
-        SetInput(true);
-
         DialogUIanimator.SetTrigger("IsOn");
         OpenPanel();
 
         currentDialog = StoryList[stroyID];
 
-        name.text = currentDialog.name;
+        NPCname.text = currentDialog.NPCname;
         
         ShowDialog(0);
+        PlayerController2D.instance.ChangeState(PlayerState.dialog);
+    }
+
+    IEnumerator typing()
+    {
+        isTyping = true;
+        Debug.Log("isTyping true");
+        float waitTime = typingTime;
+        text.text = "";
+        TextPanel.SetActive(true);
+        if (currentDialogText.dialogType != DialogType.Choice)
+        {
+            for (int i = 0; i < currentDialogText.choices.Length; i++)
+            {
+                choices[i].transform.parent.gameObject.SetActive(false);
+            }
+            ChoicePanel.SetActive(false);
+        }
+        foreach (var c in currentDialogText.text)
+        {
+            if (!isTyping)
+            {
+                text.text = currentDialogText.text;
+                isTyping = true;
+                break;
+            }
+            text.text += c;
+            // add typing sound here
+            yield return new WaitForSeconds(waitTime);
+        }
+        if (currentDialogText.dialogType == DialogType.Choice)
+        {
+            ChoicePanel.SetActive(true);
+            for (int i = 0; i < currentDialogText.choices.Length; i++)
+            {
+                choices[i].text = currentDialogText.choices[i].text;
+                choices[i].transform.parent.gameObject.SetActive(true);
+            }
+        }
+        if (currentDialogText.dialogType == DialogType.Quest)
+        {
+            QuestManager.instance.StartQuest(currentDialogText.qusetID);
+        }
+
+
+
+
+        isTyping = false;
+        Debug.Log("end Typing");
     }
 
     public void ShowDialog(int id)
@@ -127,7 +168,11 @@ public class DialogManager : SerializedMonoBehaviour
             {
                 TimelineController.instance.playCutscene(currentDialogText.cutSceneID);
             }
-            // set next story
+            if (currentDialogText.GoToNextStory)
+            {
+                // set next story
+                GameManager.instance.SetStory(currentDialogText.nextStoryNode);
+            }
             return;
         }
 
@@ -135,43 +180,22 @@ public class DialogManager : SerializedMonoBehaviour
 
         image.sprite = currentDialogText.image;
 
-        if (currentDialogText.dialogType == DialogType.Text)
-        {
-            ChoicePanel.SetActive(false);
-            TextPanel.SetActive(true);
-            text.text = currentDialogText.text;
-            
-        }
-        if (currentDialogText.dialogType == DialogType.Choice)
-        {
-            ChoicePanel.SetActive(true);
-            TextPanel.SetActive(false);
-
-            choicetext.text = currentDialogText.text;
-            for (int i = 0; i < currentDialogText.choices.Length; i++)
-            {
-                choices[i].text = currentDialogText.choices[i].text;
-                choices[i].transform.parent.gameObject.SetActive(true);
-            }
-        }
-        if (currentDialogText.dialogType == DialogType.Quest)
-        {
-            ChoicePanel.SetActive(false);
-            TextPanel.SetActive(true);
-            text.text = currentDialogText.text;
-            QuestManager.instance.StartQuest(currentDialogText.qusetID);
-        }
+        StartCoroutine("typing");
     }
 
     public void EndDialog()
     {
-        SetInput(false);
-        PlayerController2D.instance.SetInput(true);
         DialogUIanimator.SetTrigger("IsOff");
-        for (int i = 0; i < currentDialogText.choices.Length; i++)
+        text.text = "";
+        NPCname.text = "";
+        if (currentDialogText.dialogType == DialogType.Choice)
         {
-            choices[i].transform.parent.gameObject.SetActive(false);
+            for (int i = 0; i < currentDialogText.choices.Length; i++)
+            {
+                choices[i].transform.parent.gameObject.SetActive(false);
+            }
         }
         HidePanel();
+        PlayerController2D.instance.ChangeState(PlayerState.play);
     }
 }

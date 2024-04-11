@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController2D : MonoBehaviour
 {
+    [SerializeField]
+    public PlayerState state = PlayerState.play;
+    
     public static PlayerController2D instance;
     public Mouse cursor;
     private Vector3 moveInput;
@@ -14,9 +17,8 @@ public class PlayerController2D : MonoBehaviour
     private Rigidbody2D rigidbody2D;
     private Animator animator;
     private PlayerInput playerInput;
-    private bool isChangeNow;
 
-
+    
     [SerializeField]
     private interactable2D InteractingObject;
 
@@ -34,7 +36,6 @@ public class PlayerController2D : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
-        isChangeNow = false;
     }
     void Start()
     {
@@ -43,18 +44,12 @@ public class PlayerController2D : MonoBehaviour
     
     void Update()
     {
-        move();
-    }
 
-    [Button]
-    public void ChangeInputToPlayer()
-    {
-        playerInput.SwitchCurrentActionMap("Player");
     }
-    [Button]
-    public void ChangeInputToUI()
+    
+    void FixedUpdate()
     {
-        playerInput.SwitchCurrentActionMap("UI");
+        move();
     }
     
     void move()
@@ -62,14 +57,11 @@ public class PlayerController2D : MonoBehaviour
         // transform.position += moveInput * moveSpeed * Time.deltaTime;
         rigidbody2D.velocity = moveInput * moveSpeed;
     }
-    public void SetInput(bool isOn)
-    {
-        if (!playerInput.enabled && isOn) isChangeNow = true;
-        playerInput.enabled = isOn;
-    }
 
     void OnMove(InputValue value)
     {
+        if (state == PlayerState.dialog) return;
+
         moveInput = value.Get<Vector2>();
         animator.SetFloat("x",moveInput.x);
         animator.SetFloat("y",moveInput.y);
@@ -82,11 +74,22 @@ public class PlayerController2D : MonoBehaviour
     }
     void OnClick()
     {
-        if (isChangeNow)
-        {
-            isChangeNow = false;
-            return;
-        }
-        cursor.Onclick();
+        if (state == PlayerState.play) cursor.Onclick();
+        else if (state == PlayerState.dialog) DialogManager.instance.OnClick();
     }
+
+    public void ChangeState(PlayerState newState)
+    {
+        state = newState;
+    }
+    public PlayerState CurrentState()
+    {
+        return state;
+    }
+}
+
+public enum PlayerState
+{
+    play,
+    dialog,
 }

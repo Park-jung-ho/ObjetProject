@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogTrigger : MonoBehaviour
 {
     public Dialog dialog;
+    
     // Start is called before the first frame update
     void Start()
     {

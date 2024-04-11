@@ -5,17 +5,25 @@ using UnityEngine;
 public class NPC_2D : MonoBehaviour, interactable2D
 {
     public interactType type {get; set;}
-    public int stroyID;
-    public int questNotClear;
-    public int questClear;
+    private QuestState questState;
+
+    public SpriteRenderer questStateSprite;
+    public string DialogID;
+    public string questNotClear;
+    public string questClear;
 
     private bool isInteractable = false;
 
     [SerializeField]
     private bool questOn;
-    void Start()
+    void Awake()
     {
         type = interactType.NPC;
+        
+    }
+    void Start()
+    {
+
     }
 
     void Update()
@@ -29,21 +37,19 @@ public class NPC_2D : MonoBehaviour, interactable2D
     }
     public void Interact()
     {
-        if (questOn)
+        if (questState == QuestState.None ||
+            questState == QuestState.CanStart)
         {
-            if (QuestManager.instance.canClear())
-            {
-                DialogManager.instance.StartDialog(questClear);
-                QuestManager.instance.EndQuest();
-            }
-            else
-            {
-                DialogManager.instance.StartDialog(questNotClear);
-            }
+            DialogManager.instance.StartDialog(DialogID);
         }
-        else
+        else if (questState == QuestState.Started)
         {
-            DialogManager.instance.StartDialog(stroyID);
+            DialogManager.instance.StartDialog(questNotClear);
+        }
+        else if (questState == QuestState.CanEnd)
+        {
+            DialogManager.instance.StartDialog(questClear);
+            QuestManager.instance.EndQuest();
         }
     }
     public void OnTriggerEnter2D(Collider2D other)
@@ -58,12 +64,48 @@ public class NPC_2D : MonoBehaviour, interactable2D
         isInteractable = false;
         // DisableKey();
     }
-    public void OnQuest()
+    public void SetNewDialog(string start)
     {
-        questOn = true;
+        DialogID = start;
+        
+        ChangeQuestState(QuestState.None);
     }
-    public void EndQuest()
+    public void SetNewQuest(string start, string notend, string canend)
     {
-        questOn = false;
+        DialogID = start;
+        questNotClear = notend;
+        questClear = canend;
+        ChangeQuestState(QuestState.CanStart);
+    }
+    public void ChangeQuestState(QuestState newState)
+    {
+        questState = newState;
+        if (questState == QuestState.None)
+        {
+            SetQuestState(false);
+        }
+        else if (questState == QuestState.CanStart)
+        {
+            SetQuestState(true);
+            ChangeQuestStateSprite(QuestManager.instance.questSprites[0]);
+        }
+        else if (questState == QuestState.Started)
+        {
+            SetQuestState(true);
+            ChangeQuestStateSprite(QuestManager.instance.questSprites[1]);
+        }
+        else if (questState == QuestState.CanEnd)
+        {
+            SetQuestState(true);
+            ChangeQuestStateSprite(QuestManager.instance.questSprites[2]);
+        }
+    }
+    public void SetQuestState(bool isOn)
+    {
+        questStateSprite.gameObject.SetActive(isOn);
+    }
+    public void ChangeQuestStateSprite(Sprite sprite)
+    {
+        questStateSprite.sprite = sprite;
     }
 }

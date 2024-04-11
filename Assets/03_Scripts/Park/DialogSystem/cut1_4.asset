@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf46e6c68c0df346a310138126e82a4, type: 3}
   m_Name: cut1_4
   m_EditorClassIdentifier: 
-  name: "\uC874"
+  NPCname: "\uC874"
   ID: 0
   isQuest: 0
   sentences:
   - dialogType: 1
     image: {fileID: 0}
     next: -1
-    nextNode: 0
+    GoToNextStory: 0
+    nextStoryNode: 0
     isCutscene: 0
     cutSceneID: 0
     text: "\uC548\uB155\uD558\uC138\uC694. \uC624\uB298 \uC0C8\uB85C \uC774\uC0AC\uC624\uC2E0
@@ -33,7 +34,8 @@ MonoBehaviour:
   - dialogType: 0
     image: {fileID: 0}
     next: -1
-    nextNode: 0
+    GoToNextStory: 0
+    nextStoryNode: 0
     isCutscene: 1
     cutSceneID: 5
     text: "\uBC18\uAC11\uC2B5\uB2C8\uB2E4. \uC81C\uAC00 \uC9D1\uAE4C\uC9C0 \uC548\uB0B4\uD574\uB4DC\uB9B4\uAC8C\uC694."
@@ -42,7 +44,8 @@ MonoBehaviour:
   - dialogType: 0
     image: {fileID: 0}
     next: 1
-    nextNode: 0
+    GoToNextStory: 0
+    nextStoryNode: 0
     isCutscene: 0
     cutSceneID: 0
     text: "\uC6CC\uB099 \uC655\uB798\uAC00 \uC801\uC740 \uB3D9\uB124\uB77C\uC11C

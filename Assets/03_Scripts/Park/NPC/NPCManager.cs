@@ -5,11 +5,21 @@ using UnityEngine;
 
 public class NPCManager : MonoBehaviour
 {
+    public static NPCManager instance;
     [ShowInInspector]
     public Dictionary<string,NPC_2D> NPCs;
-
+    
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.Log("매니저 중복");
+            Destroy(this);
+        }
         NPCs = new Dictionary<string, NPC_2D>();
     }
     void Start()
@@ -21,9 +31,10 @@ public class NPCManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public NPC_2D findNPC(string name)
     {
-        
+        NPC_2D npc = NPCs[name];
+        if (npc == null) Debug.Log("Dont find NPC : " + name);
+        return npc;
     }
 }

@@ -23,7 +23,7 @@ public class Mouse : MonoBehaviour
 
     [SerializeField]
     private interactable2D obj;
-
+    
     void Start()
     {
         // Cursor.SetCursor(cursor_idle,Vector2.zero,CursorMode.ForceSoftware);
@@ -39,7 +39,8 @@ public class Mouse : MonoBehaviour
         transform.position = pos;
         RaycastHit2D hit = Physics2D.Raycast(pos,Vector2.one,0f,LayerMask.GetMask("Default"));
         // Debug.DrawRay(pos,pos,Color.red,1f);
-        if (hit.collider == null)
+        if (hit.collider == null ||
+            PlayerController2D.instance.CurrentState() == PlayerState.dialog)
         {
             if (type != MouseType.idle)
             {
@@ -47,7 +48,6 @@ public class Mouse : MonoBehaviour
                 type = MouseType.idle;
                 currentCursor.sprite = cursor_idle;
                 currentCursor.color = canAlpha;
-                // Cursor.SetCursor(cursor_idle,Vector2.zero,CursorMode.Auto);
             }
         }
         else
@@ -88,7 +88,7 @@ public class Mouse : MonoBehaviour
             }
         }
     }
-
+    
     public void Onclick()
     {
         if (obj == null || !obj.CanClick()) return;

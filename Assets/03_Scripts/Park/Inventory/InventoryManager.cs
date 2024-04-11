@@ -87,6 +87,7 @@ public class InventoryManager : MonoBehaviour
                     if (slotItem.count <= 0)
                     {
                         Destroy(slotItem.gameObject);
+                        break;
                     }
                     if (count <= 0)
                     {

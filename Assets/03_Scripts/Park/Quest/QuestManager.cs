@@ -10,6 +10,7 @@ public class QuestManager : SerializedMonoBehaviour
     public static QuestManager instance;
 
     public Dictionary<string,Quest> questList;
+    public List<Sprite> questSprites;
 
     [Title("UI")]
     public GameObject QuestUI;
@@ -19,8 +20,6 @@ public class QuestManager : SerializedMonoBehaviour
     [SerializeField]
     private Quest currentQuest;
     private int currentCount;
-    [SerializeField]
-    private bool canClearQuest;
     [SerializeField]
     private NPC_2D questNPC;
 
@@ -37,23 +36,24 @@ public class QuestManager : SerializedMonoBehaviour
         }
         DontDestroyOnLoad(this);
     }
-    
+
     [Button]
     public void StartQuest(string questID)
     {
         currentQuest = questList[questID];
+        if (currentQuest == null)
+        {
+            Debug.LogWarning("quest ID -" + questID + "- is null");
+            return;
+        }
+        questNPC = NPCManager.instance.findNPC(currentQuest.npcName);
         questTitle.text = currentQuest.questTitle;
+        currentCount = InventoryManager.instance.FindItem(currentQuest.itemName);
         questItemCount.text = currentCount.ToString() + " / " + currentQuest.count.ToString();
         questItemCount.color = Color.white;
-        canClearQuest = false;
         QuestUI.SetActive(true);
         
-        questNPC.OnQuest();
-    }
-
-    public bool canClear()
-    {
-        return canClearQuest;
+        questNPC.ChangeQuestState(QuestState.Started);
     }
 
     public void isQuestItem(string itemID)
@@ -66,15 +66,25 @@ public class QuestManager : SerializedMonoBehaviour
             if (currentCount == currentQuest.count)
             {
                 questItemCount.color = Color.green;
-                canClearQuest = true;
+                questNPC.ChangeQuestState(QuestState.CanEnd);
             }
         }
     }
+
     public void EndQuest()
     {
         InventoryManager.instance.DelItem(currentQuest.itemName,currentQuest.count);
-        questNPC.EndQuest();
-        currentQuest = null;
+        questNPC.ChangeQuestState(QuestState.None);
         QuestUI.SetActive(false);
+        currentQuest = null;
     }
+}
+
+public enum QuestState
+{
+    None,
+    CanStart,
+    Started,
+    CanEnd,
+
 }
