@@ -10,6 +10,9 @@ public class Mouse : MonoBehaviour
     public SpriteRenderer currentCursor;
     public Color canAlpha;
     public Color cantAlpha;
+    
+    [SerializeField]
+    private interactable2D obj;
 
     public Sprite cursor_idle;
     [FoldoutGroup("Npc")]
@@ -21,8 +24,6 @@ public class Mouse : MonoBehaviour
     [FoldoutGroup("Object")]
     public Sprite cursor_Object1;
 
-    [SerializeField]
-    private interactable2D obj;
     
     void Start()
     {

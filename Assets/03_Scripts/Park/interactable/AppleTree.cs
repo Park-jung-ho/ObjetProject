@@ -30,7 +30,10 @@ public class AppleTree : MonoBehaviour, interactable2D
     {
         
     }
-
+    public void trigger(bool can)
+    {
+        isInteractable = can;
+    }
     public bool CanClick()
     {
         return isInteractable;

@@ -7,16 +7,11 @@ public class Apple : MonoBehaviour, interactable2D
 {
     public interactType type {get; set;}
     public Item item;
-    private Vector2 rootPos;
+    [SerializeField]
     private bool isInteractable = false;
-    private bool onTree;
-    private Transform parentTransform;
 
     void Start()
     {
-        onTree = true;
-        rootPos = transform.position;
-        parentTransform = transform.parent;
         type = interactType.Object;
     }
 
@@ -24,36 +19,22 @@ public class Apple : MonoBehaviour, interactable2D
     {
         
     }
-
+    public void trigger(bool can)
+    {
+        isInteractable = can;
+    }
     public bool CanClick()
     {
         return isInteractable;
     }
     public void Interact()
     {
-        // GetComponent<DOTweenAnimation>().DOPlayById("get");
         bool successToInven = InventoryManager.instance.AddItem(item);
         if (successToInven) GoToInven();
     }
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (onTree || !other.CompareTag("Player")) return;
-        isInteractable = true;
-    }
-    public void OnTriggerExit2D(Collider2D other)
-    {
-        if (onTree || !other.CompareTag("Player")) return;
-        isInteractable = false;
-    }
 
-    public void OnEndDrop()
-    {
-        transform.SetParent(transform.root);
-        onTree = false;
-    }
     public void GoToInven()
     {
-        transform.SetParent(parentTransform);
         gameObject.SetActive(false);
 
         Invoke(nameof(gotoTree),5f);
@@ -62,7 +43,5 @@ public class Apple : MonoBehaviour, interactable2D
     public void gotoTree()
     {
         gameObject.SetActive(true);
-        transform.position = rootPos;
-        transform.parent.GetComponent<AppleTree>().respawnApple(transform);
     }
 }

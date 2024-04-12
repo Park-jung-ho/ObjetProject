@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 6513331574711482668}
   - component: {fileID: 7866459896102462353}
   - component: {fileID: 1806276664290701081}
-  - component: {fileID: 7655966147070838232}
-  - component: {fileID: 7961773146623697347}
   m_Layer: 0
   m_Name: appleTree
   m_TagString: Untagged
@@ -163,56 +161,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7655966147070838232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2997772812910944382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40967a50a2654ce47b29b45c5f9fa0a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  appleCount: 10
-  Interact_quest_ID: 
-  isInteractable: 0
---- !u!58 &7961773146623697347
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2997772812910944382}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.5
 --- !u!1001 &6000516797631742184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -231,11 +179,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3510466724380903857, guid: 17b769f54055d1742925934a23a3c27e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.59
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3510466724380903857, guid: 17b769f54055d1742925934a23a3c27e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.53
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 3510466724380903857, guid: 17b769f54055d1742925934a23a3c27e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -309,11 +257,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3510466724380903857, guid: 17b769f54055d1742925934a23a3c27e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3510466724380903857, guid: 17b769f54055d1742925934a23a3c27e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.84
       objectReference: {fileID: 0}
     - target: {fileID: 3510466724380903857, guid: 17b769f54055d1742925934a23a3c27e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -349,7 +297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7962358525071678811, guid: 17b769f54055d1742925934a23a3c27e, type: 3}
       propertyPath: m_Name
-      value: apple (1)
+      value: apple
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -375,11 +323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3510466724380903857, guid: 17b769f54055d1742925934a23a3c27e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.24
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 3510466724380903857, guid: 17b769f54055d1742925934a23a3c27e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.56
+      value: 1.48
       objectReference: {fileID: 0}
     - target: {fileID: 3510466724380903857, guid: 17b769f54055d1742925934a23a3c27e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -415,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7962358525071678811, guid: 17b769f54055d1742925934a23a3c27e, type: 3}
       propertyPath: m_Name
-      value: apple (2)
+      value: apple
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
