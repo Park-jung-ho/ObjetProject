@@ -134,7 +134,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.27}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.46
 --- !u!1001 &1776928860031499019
@@ -196,51 +196,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1292381998986275413, guid: 0cccaf692e155524ebe5b93c62c587aa, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5088055089152642713}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cccaf692e155524ebe5b93c62c587aa, type: 3}
---- !u!1 &668676752242807134 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1292381998986275413, guid: 0cccaf692e155524ebe5b93c62c587aa, type: 3}
-  m_PrefabInstance: {fileID: 1776928860031499019}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &5088055089152642713
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668676752242807134}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.27}
-  serializedVersion: 2
-  m_Radius: 1
 --- !u!4 &1884290192714425456 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 184291962825727867, guid: 0cccaf692e155524ebe5b93c62c587aa, type: 3}
@@ -256,11 +213,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2713545793281614294, guid: 04ad2a7596d44b44d9a1a84070d1c07c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.012
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2713545793281614294, guid: 04ad2a7596d44b44d9a1a84070d1c07c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.272
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2713545793281614294, guid: 04ad2a7596d44b44d9a1a84070d1c07c, type: 3}
       propertyPath: m_LocalPosition.z

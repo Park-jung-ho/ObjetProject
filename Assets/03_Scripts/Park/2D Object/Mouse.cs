@@ -10,7 +10,7 @@ public class Mouse : MonoBehaviour
     public SpriteRenderer currentCursor;
     public Color canAlpha;
     public Color cantAlpha;
-    
+
     [SerializeField]
     private interactable2D obj;
 
@@ -38,9 +38,15 @@ public class Mouse : MonoBehaviour
         if (Cursor.visible) Cursor.visible = false;
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = pos;
-        RaycastHit2D hit = Physics2D.Raycast(pos,Vector2.one,0f,LayerMask.GetMask("Default"));
+        RaycastHit2D[] hits = Physics2D.RaycastAll(pos,Vector2.zero,Mathf.Infinity,LayerMask.GetMask("Default"));
+        obj = null;
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (obj != null) break;
+            obj = hit.collider.GetComponent<interactable2D>();
+        }
         // Debug.DrawRay(pos,pos,Color.red,1f);
-        if (hit.collider == null ||
+        if (obj == null ||
             PlayerController2D.instance.CurrentState() == PlayerState.dialog)
         {
             if (type != MouseType.idle)
@@ -53,40 +59,37 @@ public class Mouse : MonoBehaviour
         }
         else
         {
-            obj = hit.collider.GetComponent<interactable2D>();
-            if (obj != null)
+            if (obj.CanClick())
             {
-                if (obj.CanClick())
+                if (obj.type == interactType.NPC)
                 {
-                    if (obj.type == interactType.NPC)
-                    {
-                        type = MouseType.npc1;
-                        currentCursor.sprite = cursor_npc1;
-                        currentCursor.color = canAlpha;
-                    }
-                    if (obj.type == interactType.Object)
-                    {
-                        type = MouseType.obj1;
-                        currentCursor.sprite = cursor_Object1;
-                        currentCursor.color = canAlpha;
-                    }
+                    type = MouseType.npc1;
+                    currentCursor.sprite = cursor_npc1;
+                    currentCursor.color = canAlpha;
                 }
-                else
+                if (obj.type == interactType.Object)
                 {
-                    if (obj.type == interactType.NPC)
-                    {
-                        type = MouseType.npc1;
-                        currentCursor.sprite = cursor_npc0;
-                        currentCursor.color = cantAlpha;
-                    }
-                    if (obj.type == interactType.Object)
-                    {
-                        type = MouseType.obj0;
-                        currentCursor.sprite = cursor_Object0;
-                        currentCursor.color = cantAlpha;
-                    }
+                    type = MouseType.obj1;
+                    currentCursor.sprite = cursor_Object1;
+                    currentCursor.color = canAlpha;
                 }
             }
+            else
+            {
+                if (obj.type == interactType.NPC)
+                {
+                    type = MouseType.npc1;
+                    currentCursor.sprite = cursor_npc0;
+                    currentCursor.color = cantAlpha;
+                }
+                if (obj.type == interactType.Object)
+                {
+                    type = MouseType.obj0;
+                    currentCursor.sprite = cursor_Object0;
+                    currentCursor.color = cantAlpha;
+                }
+            }
+            
         }
     }
     

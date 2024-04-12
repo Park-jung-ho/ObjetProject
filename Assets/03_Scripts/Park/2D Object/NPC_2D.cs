@@ -55,18 +55,7 @@ public class NPC_2D : MonoBehaviour, interactable2D
             QuestManager.instance.EndQuest();
         }
     }
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!other.CompareTag("Player")) return;
-        isInteractable = true;
-        // EnableKey();
-    }
-    public void OnTriggerExit2D(Collider2D other)
-    {
-        if (!other.CompareTag("Player")) return;
-        isInteractable = false;
-        // DisableKey();
-    }
+    
     public void SetNewDialog(string start)
     {
         DialogID = start;
