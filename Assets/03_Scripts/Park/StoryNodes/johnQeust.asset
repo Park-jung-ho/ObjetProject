@@ -16,4 +16,5 @@ MonoBehaviour:
   StartNPCName: john
   dialog: {fileID: 11400000, guid: 6af3b3cb4c4785b4b9161999f54bb51e, type: 2}
   quest: {fileID: 11400000, guid: 45a64ea7b0e7f5a429d8287af9223931, type: 2}
+  CutSceneTriggeridx: 
   NextStoryNode: []

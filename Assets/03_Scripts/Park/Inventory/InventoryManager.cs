@@ -62,18 +62,20 @@ public class InventoryManager : MonoBehaviour
 
     public int FindItem(string ItemID)
     {
+        int newCount = 0;
         foreach (InventorySlot slot in inventorySlots)
         {
             InventoryItem slotItem = slot.GetComponentInChildren<InventoryItem>();
             if (slotItem != null &&
                 slotItem.item.ID == ItemID)
             {
-                return slotItem.count;
+                newCount += slotItem.count;
             }
         }
-        return 0;
+        return newCount;
     }
 
+    
     public void DelItem(string ItemID, int count)
     {
         foreach (InventorySlot slot in inventorySlots)
@@ -82,6 +84,11 @@ public class InventoryManager : MonoBehaviour
             if (slotItem != null &&
                 slotItem.item.ID == ItemID)
             {
+                if (count == -1)
+                {
+                    Destroy(slotItem.gameObject);
+                    continue;
+                }
                 while (true)
                 {
                     if (slotItem.count <= 0)
@@ -99,6 +106,28 @@ public class InventoryManager : MonoBehaviour
                 }
             }
             if (count <= 0) break;
+        }
+    }
+    public void ChangeItemCount(string ItemID, int count)
+    {
+        bool del = false;
+        foreach (InventorySlot slot in inventorySlots)
+        {
+            InventoryItem slotItem = slot.GetComponentInChildren<InventoryItem>();
+            if (slotItem != null &&
+                slotItem.item.ID == ItemID)
+            {
+                if (del)
+                {
+                    Destroy(slotItem.gameObject);
+                }
+                else
+                {
+                    slotItem.count = count;
+                    slotItem.RefreshCount();
+                    del = true;
+                }
+            }
         }
     }
 

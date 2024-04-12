@@ -18,11 +18,55 @@ MonoBehaviour:
   sentences:
   - dialogType: 0
     image: {fileID: 0}
-    next: -1
+    next: 1
     GoToNextStory: 0
     nextStoryNode: 0
     isCutscene: 0
     cutSceneID: 0
     text: "\uD53C\uACE4\uD588\uC744\uD150\uB370 \uB3C4\uC640\uC918\uC11C \uACE0\uB9C8\uC6CC\uC694."
+    choices: []
+    qusetID: 
+  - dialogType: 0
+    image: {fileID: 0}
+    next: 2
+    GoToNextStory: 0
+    nextStoryNode: 0
+    isCutscene: 0
+    cutSceneID: 0
+    text: "\uC5B4? \uADF8\uB7F0\uB370 \uC0AC\uACFC\uAC00..."
+    choices: []
+    qusetID: 
+  - dialogType: 1
+    image: {fileID: 0}
+    next: 0
+    GoToNextStory: 0
+    nextStoryNode: 0
+    isCutscene: 0
+    cutSceneID: 0
+    text: "5\uAC1C \uBC16\uC5D0 \uC5C6\uB124\uC694?"
+    choices:
+    - text: "\uADF8\uAC8C \uBB34\uC2A8 \uC18C\uB9AC\uC8E0"
+      next: 3
+    - text: "\uBD84\uBA85\uD788 \uC0AC\uACFC\uB294 \uCDA9\uBD84\uD788 \uC788\uC5C8\uB294\uB370"
+      next: 4
+    qusetID: 
+  - dialogType: 0
+    image: {fileID: 0}
+    next: -1
+    GoToNextStory: 0
+    nextStoryNode: 0
+    isCutscene: 0
+    cutSceneID: 0
+    text: "\uB9D0 \uADF8\uB300\uB85C \uC5D0\uC694. \uD55C\uBC88 \uD655\uC778\uD574\uBCF4\uC138\uC694."
+    choices: []
+    qusetID: 
+  - dialogType: 0
+    image: {fileID: 0}
+    next: -1
+    GoToNextStory: 0
+    nextStoryNode: 0
+    isCutscene: 0
+    cutSceneID: 0
+    text: "\uD639\uC2DC \uC624\uB2E4 \uD758\uB9AC\uC2E0 \uAC83 \uC544\uB2D0\uAE4C\uC694?"
     choices: []
     qusetID: 

@@ -14,7 +14,7 @@ public class PlayerController2D : MonoBehaviour
     private Vector3 moveInput;
     public float moveSpeed;
 
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rigidbody2d;
     private Animator animator;
     private PlayerInput playerInput;
 
@@ -33,7 +33,7 @@ public class PlayerController2D : MonoBehaviour
             Debug.Log("Player 중복!");
             Destroy(this);
         }
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
     }
@@ -55,7 +55,7 @@ public class PlayerController2D : MonoBehaviour
     void move()
     {
         // transform.position += moveInput * moveSpeed * Time.deltaTime;
-        rigidbody2D.velocity = moveInput * moveSpeed;
+        rigidbody2d.velocity = moveInput * moveSpeed;
     }
 
     void OnMove(InputValue value)

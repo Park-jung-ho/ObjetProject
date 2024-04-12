@@ -22,19 +22,27 @@ public class NPCManager : MonoBehaviour
         }
         NPCs = new Dictionary<string, NPC_2D>();
     }
+
     void Start()
+    {
+        setNPCs();
+    }
+
+    public void setNPCs()
     {
         foreach (GameObject npcObj in GameObject.FindGameObjectsWithTag("NPC"))
         {
             NPC_2D npc = npcObj.GetComponent<NPC_2D>();
+            if (NPCs.ContainsKey(npc.name)) continue;
             NPCs.Add(npc.name,npc);
         }
     }
 
     public NPC_2D findNPC(string name)
     {
+        if (!NPCs.ContainsKey(name)) setNPCs();
         NPC_2D npc = NPCs[name];
-        if (npc == null) Debug.Log("Dont find NPC : " + name);
+        if (npc == null) Debug.LogWarning("Dont find NPC : " + name);
         return npc;
     }
 }

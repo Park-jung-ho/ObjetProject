@@ -10,5 +10,6 @@ public class StoryNode : ScriptableObject
     public string StartNPCName;
     public Dialog dialog;
     public Quest quest;
+    public List<int> CutSceneTriggeridx;
     public StoryNode[] NextStoryNode;
 }

@@ -36,6 +36,25 @@ public class QuestManager : SerializedMonoBehaviour
         }
         DontDestroyOnLoad(this);
     }
+    public void setQuestUI()
+    {
+        questTitle.text = currentQuest.questTitle;
+        currentCount = InventoryManager.instance.FindItem(currentQuest.itemName);
+
+        if (currentCount >= currentQuest.count)
+        {
+            questItemCount.color = Color.green;
+            questNPC.ChangeQuestState(QuestState.CanEnd);
+        }
+        else
+        {
+            questItemCount.color = Color.white;
+            questNPC.ChangeQuestState(QuestState.Started);
+        }
+
+        questItemCount.text = currentCount.ToString() + " / " + currentQuest.count.ToString();
+        QuestUI.SetActive(true);
+    }
 
     [Button]
     public void StartQuest(string questID)
@@ -47,11 +66,8 @@ public class QuestManager : SerializedMonoBehaviour
             return;
         }
         questNPC = NPCManager.instance.findNPC(currentQuest.npcName);
-        questTitle.text = currentQuest.questTitle;
-        currentCount = InventoryManager.instance.FindItem(currentQuest.itemName);
-        questItemCount.text = currentCount.ToString() + " / " + currentQuest.count.ToString();
-        questItemCount.color = Color.white;
-        QuestUI.SetActive(true);
+        
+        setQuestUI();
         
         questNPC.ChangeQuestState(QuestState.Started);
     }
@@ -62,21 +78,31 @@ public class QuestManager : SerializedMonoBehaviour
             currentQuest.itemName == itemID)
         {
             currentCount++;
-            questItemCount.text = currentCount.ToString() + " / " + currentQuest.count.ToString();
-            if (currentCount == currentQuest.count)
-            {
-                questItemCount.color = Color.green;
-                questNPC.ChangeQuestState(QuestState.CanEnd);
-            }
+            setQuestUI();
         }
     }
 
     public void EndQuest()
     {
+        if (currentQuest.isTrick > 0)
+        {
+            questTrick(currentQuest.isTrick);
+            return;
+        }
         InventoryManager.instance.DelItem(currentQuest.itemName,currentQuest.count);
         questNPC.ChangeQuestState(QuestState.None);
         QuestUI.SetActive(false);
         currentQuest = null;
+    }
+
+    public void questTrick(int num)
+    {
+        if (num == 1)
+        {
+            InventoryManager.instance.ChangeItemCount(currentQuest.itemName,5);
+            GameManager.instance.triggerController.setCutSceneTriggerOn(1);
+        }
+        setQuestUI();
     }
 }
 

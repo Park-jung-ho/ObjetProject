@@ -65,10 +65,8 @@ public class DialogManager : SerializedMonoBehaviour
     
     public void OnClick()
     {
-        Debug.Log("CLICKED");
         if (isTyping)
         {
-            Debug.Log("isTyping false");
             isTyping = false;
             return;
         }
@@ -114,7 +112,6 @@ public class DialogManager : SerializedMonoBehaviour
     IEnumerator typing()
     {
         isTyping = true;
-        Debug.Log("isTyping true");
         float waitTime = typingTime;
         text.text = "";
         TextPanel.SetActive(true);
@@ -156,7 +153,6 @@ public class DialogManager : SerializedMonoBehaviour
 
 
         isTyping = false;
-        Debug.Log("end Typing");
     }
 
     public void ShowDialog(int id)

@@ -9,6 +9,7 @@ public class Quest : ScriptableObject
     public string ID;
     public string NotClearDialogID;
     public string ClearDialogID;
+    public int isTrick;
     public string npcName;
     public string questTitle;
     public string itemName;

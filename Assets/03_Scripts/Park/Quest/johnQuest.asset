@@ -15,6 +15,7 @@ MonoBehaviour:
   ID: 1
   NotClearDialogID: johnQuest0
   ClearDialogID: johnQuest1
+  isTrick: 1
   npcName: john
   questTitle: "\uC0AC\uACFC"
   itemName: apple

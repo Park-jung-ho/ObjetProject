@@ -9,11 +9,12 @@ public class Apple : MonoBehaviour, interactable2D
     public Item item;
     private Vector2 rootPos;
     private bool isInteractable = false;
+    private bool onTree;
     private Transform parentTransform;
 
     void Start()
     {
-        GetComponent<CircleCollider2D>().enabled = false;
+        onTree = true;
         rootPos = transform.position;
         parentTransform = transform.parent;
         type = interactType.Object;
@@ -36,19 +37,19 @@ public class Apple : MonoBehaviour, interactable2D
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (onTree || !other.CompareTag("Player")) return;
         isInteractable = true;
     }
     public void OnTriggerExit2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (onTree || !other.CompareTag("Player")) return;
         isInteractable = false;
     }
 
     public void OnEndDrop()
     {
         transform.SetParent(transform.root);
-        GetComponent<CircleCollider2D>().enabled = true;
+        onTree = false;
     }
     public void GoToInven()
     {

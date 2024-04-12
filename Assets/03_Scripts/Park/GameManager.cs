@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    public TriggerController triggerController;
     
     [SerializeField]
     private StoryNode currentStoryNode;
@@ -54,6 +56,12 @@ public class GameManager : MonoBehaviour
             }
         }
         // set cutSceneTrigger
+        Debug.Log(currentStoryNode.CutSceneTriggeridx.Count);
+        foreach (int idx in currentStoryNode.CutSceneTriggeridx)
+        {
+            Debug.Log(idx);
+            triggerController.setCutSceneTriggerOn(idx);    
+        }
         // add here...
     }
 }
