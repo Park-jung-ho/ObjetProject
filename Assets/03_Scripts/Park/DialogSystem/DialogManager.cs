@@ -80,15 +80,17 @@ public class DialogManager : SerializedMonoBehaviour
 
     void OpenPanel()
     {
-        image.gameObject.SetActive(true);
-        NPCname.gameObject.SetActive(true);
+        DialogPanel.SetActive(true);
+        // image.gameObject.SetActive(true);
+        // NPCname.gameObject.SetActive(true);
     }
     void HidePanel()
     {
-        image.gameObject.SetActive(false);
-        NPCname.gameObject.SetActive(false);
-        TextPanel.SetActive(false);
-        ChoicePanel.SetActive(false);
+        DialogPanel.SetActive(false);
+        // image.gameObject.SetActive(false);
+        // NPCname.gameObject.SetActive(false);
+        // TextPanel.SetActive(false);
+        // ChoicePanel.SetActive(false);
     }
 
     public void setStory(int stroyID)
@@ -98,8 +100,8 @@ public class DialogManager : SerializedMonoBehaviour
 
     public void StartDialog(string stroyID)
     {
-        DialogUIanimator.SetTrigger("IsOn");
         OpenPanel();
+        DialogUIanimator.SetTrigger("IsOn");
 
         currentDialog = StoryList[stroyID];
 

@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
             }
         }
         // set cutSceneTrigger
-        Debug.Log(currentStoryNode.CutSceneTriggeridx.Count);
         foreach (int idx in currentStoryNode.CutSceneTriggeridx)
         {
             Debug.Log(idx);
