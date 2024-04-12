@@ -13,7 +13,11 @@ public class makeApple3d : MonoBehaviour
     void Update()
     {
         transform.position = PlayerController2D.instance.transform.position;
-        if (appleCnt == 9) OnglitchEvent.Invoke();
+        if (appleCnt == 9)
+        {
+            OnglitchEvent.Invoke();
+            appleCnt = 0;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
