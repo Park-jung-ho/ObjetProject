@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4c54077f10b33e46b577eebbd588862, type: 3}
-  m_Name: johnQuest
+  m_Name: TestQuest
   m_EditorClassIdentifier: 
-  ID: 1
-  NotClearDialog: {fileID: 11400000, guid: 1adf92e6318d4d945b6028398c207912, type: 2}
-  ClearDialog: {fileID: 11400000, guid: 8e9ecaf517d292044847027c180ac541, type: 2}
-  isTrick: 1
-  npcName: john
-  questTitle: "\uC0AC\uACFC"
-  itemName: apple
-  count: 10
+  ID: 
+  NotClearDialog: {fileID: 11400000, guid: 0fb62563ca60abe43ae34f553e8c3134, type: 2}
+  ClearDialog: {fileID: 11400000, guid: 0fb62563ca60abe43ae34f553e8c3134, type: 2}
+  isTrick: 0
+  npcName: "\uD14C\uC2A4\uD2B8"
+  questTitle: "\uD14C\uC2A4\uD2B8"
+  itemName: test
+  count: 999
   NextStoryID: 0

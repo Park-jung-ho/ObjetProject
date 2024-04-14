@@ -7,8 +7,8 @@ using UnityEngine;
 public class Quest : ScriptableObject
 {
     public string ID;
-    public string NotClearDialogID;
-    public string ClearDialogID;
+    public Dialog NotClearDialog;
+    public Dialog ClearDialog;
     public int isTrick;
     public string npcName;
     public string questTitle;

@@ -31,7 +31,7 @@ public class PlayerController2D : MonoBehaviour
         else
         {
             Debug.Log("Player 중복!");
-            Destroy(this);
+            Destroy(gameObject);
         }
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

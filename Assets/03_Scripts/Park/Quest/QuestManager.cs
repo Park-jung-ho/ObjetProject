@@ -9,7 +9,7 @@ public class QuestManager : SerializedMonoBehaviour
 {
     public static QuestManager instance;
 
-    public Dictionary<string,Quest> questList;
+    public Dictionary<string,Quest> QuestList;
     public List<Sprite> questSprites;
 
     [Title("UI")]
@@ -32,10 +32,12 @@ public class QuestManager : SerializedMonoBehaviour
         else
         {
             Debug.Log("매니저 중복");
-            Destroy(this);
+            Destroy(gameObject);
         }
         DontDestroyOnLoad(this);
+        QuestList = new Dictionary<string, Quest>();
     }
+
     public void setQuestUI()
     {
         questTitle.text = currentQuest.questTitle;
@@ -56,10 +58,19 @@ public class QuestManager : SerializedMonoBehaviour
         QuestUI.SetActive(true);
     }
 
+    public void AddQuest(Quest quest)
+    {
+        if (!QuestList.ContainsKey(quest.name))
+        {
+            QuestList.Add(quest.name,quest);
+        }
+    }
+
+
     [Button]
     public void StartQuest(string questID)
     {
-        currentQuest = questList[questID];
+        currentQuest = QuestList[questID];
         if (currentQuest == null)
         {
             Debug.LogWarning("quest ID -" + questID + "- is null");

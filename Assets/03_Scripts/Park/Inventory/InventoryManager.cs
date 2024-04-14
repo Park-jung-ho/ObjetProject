@@ -21,7 +21,7 @@ public class InventoryManager : MonoBehaviour
         else
         {
             Debug.Log("매니저중복");
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 

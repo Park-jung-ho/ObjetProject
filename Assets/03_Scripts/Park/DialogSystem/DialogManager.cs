@@ -28,8 +28,9 @@ public class DialogManager : SerializedMonoBehaviour
     public TMP_Text[] choices;
 
     [Title("Dialog Dict")]
-    public Dictionary<string,Dialog> StoryList;
+    public Dictionary<string,Dialog> DialogList;
 
+    [SerializeField]
     private Dialog currentDialog; 
 
     [SerializeField]
@@ -52,6 +53,7 @@ public class DialogManager : SerializedMonoBehaviour
             Debug.LogError("DialogManager 중복!!");
             Destroy(gameObject);
         }
+        if (DialogList == null) DialogList = new Dictionary<string, Dialog>();
     }
     void Start()
     {
@@ -93,17 +95,20 @@ public class DialogManager : SerializedMonoBehaviour
         // ChoicePanel.SetActive(false);
     }
 
-    public void setStory(int stroyID)
+    public void AddDialog(Dialog dialog)
     {
-        
+        if (!DialogList.ContainsKey(dialog.name))
+        {
+            DialogList.Add(dialog.name,dialog);
+        }
     }
 
     public void StartDialog(string stroyID)
     {
+        currentDialog = DialogList[stroyID];
+
         OpenPanel();
         DialogUIanimator.SetTrigger("IsOn");
-
-        currentDialog = StoryList[stroyID];
 
         NPCname.text = currentDialog.NPCname;
         
@@ -166,11 +171,6 @@ public class DialogManager : SerializedMonoBehaviour
             {
                 TimelineController.instance.playCutscene(currentDialogText.cutSceneID);
             }
-            if (currentDialogText.GoToNextStory)
-            {
-                // set next story
-                GameManager.instance.SetStory(currentDialogText.nextStoryNode);
-            }
             return;
         }
 
@@ -183,6 +183,10 @@ public class DialogManager : SerializedMonoBehaviour
 
     public void EndDialog()
     {
+        if (currentDialogText.GoToNextStory)
+        {
+            GameManager.instance.SetStory(currentDialogText.nextStoryNode);
+        }
         DialogUIanimator.SetTrigger("IsOff");
         text.text = "";
         NPCname.text = "";

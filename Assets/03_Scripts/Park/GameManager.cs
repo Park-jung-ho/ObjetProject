@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
+    public GameState gameState;
     public TriggerController triggerController;
     
     [SerializeField]
@@ -21,25 +22,71 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("게임매니저 중복");
-            Destroy(this);
+            Destroy(gameObject);
         }
         DontDestroyOnLoad(this);
         Application.targetFrameRate = 60;
     }
+    void OnEnable() 
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable() 
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode) 
+    {
+        if (scene.name == "Title") gameState = GameState.Title;
+        if (scene.name != "Title") gameState = GameState.InGame;
+        // 씬 로드 시 필요한 실행 여기에
+        if (gameState == GameState.InGame)
+        {
+            triggerController = FindObjectOfType<TriggerController>();
+            LoadStory();
+        }
+    }
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
 
     void Start()
     {
-        SetStory(0);
+
     }
 
     void Update()
     {
         
     }
-
     public void SetStory(int id)
     {
         currentStoryNode = currentStoryNode.NextStoryNode[id];
+        LoadStory();
+    }
+    public void LoadStory()
+    {
+        if (currentStoryNode == null)
+        {
+            Debug.Log(string.Format("{0} 의 currentStoryNode 에 StoryNode 없음",this.name));
+            return;
+        }
+        
+        if (currentStoryNode.dialog != null)
+        {
+            DialogManager.instance.AddDialog(currentStoryNode.dialog);
+        }
+
+        if (currentStoryNode.quest != null)
+        {
+            QuestManager.instance.AddQuest(currentStoryNode.quest);
+            DialogManager.instance.AddDialog(currentStoryNode.quest.ClearDialog);
+            DialogManager.instance.AddDialog(currentStoryNode.quest.NotClearDialog);
+        }
+
         // set npc
         if (currentStoryNode.StartNPCName != "")
         {
@@ -51,16 +98,29 @@ public class GameManager : MonoBehaviour
             else
             {
                 NPCManager.instance.findNPC(currentStoryNode.StartNPCName).SetNewQuest(currentStoryNode.quest.name,
-                            currentStoryNode.quest.NotClearDialogID,
-                            currentStoryNode.quest.ClearDialogID);
+                            currentStoryNode.quest.NotClearDialog.name,
+                            currentStoryNode.quest.ClearDialog.name);
             }
         }
         // set cutSceneTrigger
-        foreach (int idx in currentStoryNode.CutSceneTriggeridx)
+        if (triggerController != null)
         {
-            Debug.Log(idx);
-            triggerController.setCutSceneTriggerOn(idx);    
+            foreach (int idx in currentStoryNode.CutSceneTriggeridx)
+            {
+                triggerController.setCutSceneTriggerOn(idx);    
+            }
+        }
+        else
+        {
+            Debug.Log("triggerController is null");
         }
         // add here...
     }
+}
+
+public enum GameState
+{
+    Title,
+    InGame,
+    Pause,
 }

@@ -40,7 +40,7 @@ MonoBehaviour:
     cutSceneID: 0
     text: "\uC798 \uBD80\uD0C1\uD574\uC694."
     choices: []
-    qusetID: 1
+    qusetID: johnQuest
   - dialogType: 0
     image: {fileID: 948796610, guid: ff0ab58c5c111004bb4e413e8103bd80, type: 3}
     next: -1

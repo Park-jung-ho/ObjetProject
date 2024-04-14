@@ -18,7 +18,7 @@ public class NPCManager : MonoBehaviour
         else
         {
             Debug.Log("매니저 중복");
-            Destroy(this);
+            Destroy(gameObject);
         }
         NPCs = new Dictionary<string, NPC_2D>();
     }
@@ -41,8 +41,12 @@ public class NPCManager : MonoBehaviour
     public NPC_2D findNPC(string name)
     {
         if (!NPCs.ContainsKey(name)) setNPCs();
+        if (!NPCs.ContainsKey(name))
+        {
+            Debug.LogWarning("Dont find NPC : " + name);
+            return null;
+        }
         NPC_2D npc = NPCs[name];
-        if (npc == null) Debug.LogWarning("Dont find NPC : " + name);
         return npc;
     }
 }
