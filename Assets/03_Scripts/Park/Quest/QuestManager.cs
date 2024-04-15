@@ -21,7 +21,7 @@ public class QuestManager : SerializedMonoBehaviour
     private Quest currentQuest;
     private int currentCount;
     [SerializeField]
-    private NPC_2D questNPC;
+    private NPC questNPC;
 
     void Awake()
     {

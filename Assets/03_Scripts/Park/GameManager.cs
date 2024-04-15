@@ -74,17 +74,10 @@ public class GameManager : MonoBehaviour
             Debug.Log(string.Format("{0} 의 currentStoryNode 에 StoryNode 없음",this.name));
             return;
         }
-        
-        if (currentStoryNode.dialog != null)
-        {
-            DialogManager.instance.AddDialog(currentStoryNode.dialog);
-        }
-
+    
         if (currentStoryNode.quest != null)
         {
             QuestManager.instance.AddQuest(currentStoryNode.quest);
-            DialogManager.instance.AddDialog(currentStoryNode.quest.ClearDialog);
-            DialogManager.instance.AddDialog(currentStoryNode.quest.NotClearDialog);
         }
 
         // set npc
@@ -93,13 +86,13 @@ public class GameManager : MonoBehaviour
             // set quest
             if (currentStoryNode.quest == null)
             {
-                NPCManager.instance.findNPC(currentStoryNode.StartNPCName).SetNewDialog(currentStoryNode.dialog.name);
+                NPCManager.instance.findNPC(currentStoryNode.StartNPCName).SetNewDialog(currentStoryNode.dialog);
             }
             else
             {
-                NPCManager.instance.findNPC(currentStoryNode.StartNPCName).SetNewQuest(currentStoryNode.quest.name,
-                            currentStoryNode.quest.NotClearDialog.name,
-                            currentStoryNode.quest.ClearDialog.name);
+                NPCManager.instance.findNPC(currentStoryNode.StartNPCName).SetNewQuest(currentStoryNode.dialog,
+                            currentStoryNode.quest.NotClearDialog,
+                            currentStoryNode.quest.ClearDialog);
             }
         }
         // set cutSceneTrigger

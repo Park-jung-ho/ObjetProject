@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC_2D : MonoBehaviour, interactable2D
+public class NPC : MonoBehaviour, interactable2D
 {
     public interactType type {get; set;}
     private QuestState questState;
 
     public SpriteRenderer questStateSprite;
-    public string DialogID;
-    public string questNotClear;
-    public string questClear;
+    public Dialog defaultDialog;
+    public Dialog storyDialog;
+    public Dialog questNotClear;
+    public Dialog questClear;
 
     private bool isInteractable = false;
 
@@ -40,31 +41,39 @@ public class NPC_2D : MonoBehaviour, interactable2D
     }
     public void Interact()
     {
+        if (storyDialog == null)
+        {
+            DialogManager.instance.StartDialog(defaultDialog);
+            return;
+        }
         if (questState == QuestState.None ||
             questState == QuestState.CanStart)
         {
-            DialogManager.instance.StartDialog(DialogID);
+            DialogManager.instance.StartDialog(storyDialog);
+            return;
         }
-        else if (questState == QuestState.Started)
+        if (questState == QuestState.Started)
         {
             DialogManager.instance.StartDialog(questNotClear);
+            return;
         }
-        else if (questState == QuestState.CanEnd)
+        if (questState == QuestState.CanEnd)
         {
             DialogManager.instance.StartDialog(questClear);
             QuestManager.instance.EndQuest();
+            return;
         }
     }
     
-    public void SetNewDialog(string start)
+    public void SetNewDialog(Dialog start)
     {
-        DialogID = start;
+        storyDialog = start;
         
         ChangeQuestState(QuestState.None);
     }
-    public void SetNewQuest(string start, string notend, string canend)
+    public void SetNewQuest(Dialog start, Dialog notend, Dialog canend)
     {
-        DialogID = start;
+        storyDialog = start;
         questNotClear = notend;
         questClear = canend;
         ChangeQuestState(QuestState.CanStart);
@@ -72,7 +81,7 @@ public class NPC_2D : MonoBehaviour, interactable2D
     public void ChangeQuestState(QuestState newState)
     {
         questState = newState;
-        if (questState == QuestState.None)
+        if      (questState == QuestState.None)
         {
             SetQuestState(false);
         }

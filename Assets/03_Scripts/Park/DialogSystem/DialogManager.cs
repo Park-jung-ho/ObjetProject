@@ -103,9 +103,14 @@ public class DialogManager : SerializedMonoBehaviour
         }
     }
 
-    public void StartDialog(string stroyID)
+    public void StartDialog(Dialog dialog)
     {
-        currentDialog = DialogList[stroyID];
+        if (dialog == null)
+        {
+            Debug.LogWarning("input dialog is NULL!!!!!");
+            return;
+        }
+        currentDialog = dialog;
 
         OpenPanel();
         DialogUIanimator.SetTrigger("IsOn");

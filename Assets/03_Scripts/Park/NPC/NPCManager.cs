@@ -7,7 +7,7 @@ public class NPCManager : MonoBehaviour
 {
     public static NPCManager instance;
     [ShowInInspector]
-    public Dictionary<string,NPC_2D> NPCs;
+    public Dictionary<string,NPC> NPCs;
     
     void Awake()
     {
@@ -20,7 +20,7 @@ public class NPCManager : MonoBehaviour
             Debug.Log("매니저 중복");
             Destroy(gameObject);
         }
-        NPCs = new Dictionary<string, NPC_2D>();
+        NPCs = new Dictionary<string, NPC>();
     }
 
     void Start()
@@ -32,13 +32,13 @@ public class NPCManager : MonoBehaviour
     {
         foreach (GameObject npcObj in GameObject.FindGameObjectsWithTag("NPC"))
         {
-            NPC_2D npc = npcObj.GetComponent<NPC_2D>();
+            NPC npc = npcObj.GetComponent<NPC>();
             if (NPCs.ContainsKey(npc.name)) continue;
             NPCs.Add(npc.name,npc);
         }
     }
 
-    public NPC_2D findNPC(string name)
+    public NPC findNPC(string name)
     {
         if (!NPCs.ContainsKey(name)) setNPCs();
         if (!NPCs.ContainsKey(name))
@@ -46,7 +46,7 @@ public class NPCManager : MonoBehaviour
             Debug.LogWarning("Dont find NPC : " + name);
             return null;
         }
-        NPC_2D npc = NPCs[name];
+        NPC npc = NPCs[name];
         return npc;
     }
 }
