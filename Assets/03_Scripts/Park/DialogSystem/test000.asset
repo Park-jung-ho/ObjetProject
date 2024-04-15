@@ -61,7 +61,7 @@ MonoBehaviour:
     cutSceneID: 0
     text: "\uB2E4\uC774\uC5BC\uB85C\uADF8 \uC2DC\uC2A4\uD15C \uD018\uC2A4\uD2B8 \uD14C\uC2A4\uD2B8"
     choices: []
-    qusetID: 0
+    qusetID: TestQuest
   - dialogType: 0
     image: {fileID: 0}
     next: -1

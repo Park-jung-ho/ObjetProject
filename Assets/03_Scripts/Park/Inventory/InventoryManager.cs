@@ -75,7 +75,6 @@ public class InventoryManager : MonoBehaviour
         return newCount;
     }
 
-    
     public void DelItem(string ItemID, int count)
     {
         foreach (InventorySlot slot in inventorySlots)

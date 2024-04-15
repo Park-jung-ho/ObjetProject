@@ -43,7 +43,7 @@ PlayableDirector:
   m_GameObject: {fileID: 4611860788413312849}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 7f35fda032b17f24a833271d9db5cc88, type: 2}
+  m_PlayableAsset: {fileID: 0}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -290,12 +290,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playableDirector: {fileID: 462728676755063292}
-  timelines:
-  - {fileID: 11400000, guid: 0078eb7beff5a8c458ab490cce483c95, type: 2}
-  - {fileID: 11400000, guid: 51d7e23c44125cd489223ef7c5d57a2b, type: 2}
-  - {fileID: 11400000, guid: b9d8de119ff867d4c85eac1745dd7220, type: 2}
-  - {fileID: 11400000, guid: 5ebe14583d98811429f0b35095bc0ed8, type: 2}
-  - {fileID: 11400000, guid: 520289ed7ef808d4b9f29719bce0c372, type: 2}
-  - {fileID: 11400000, guid: 2ccca888aeb62fb498c3c8e4ef92e712, type: 2}
-  - {fileID: 11400000, guid: cd0db159682dc7149bd4446d29feb217, type: 2}
-  - {fileID: 11400000, guid: 7f35fda032b17f24a833271d9db5cc88, type: 2}
+  timelines: []
