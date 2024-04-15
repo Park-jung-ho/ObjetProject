@@ -83,7 +83,7 @@ Material:
     - _QueueOffset: 0
     - _SrcBlend: 5
     - _Surface: 1
-    - _Vignette: 0
+    - _Vignette: 1
     - _VornoiScale: 5
     - _VornoiSpeed: 2
     - _ZTest: 4
