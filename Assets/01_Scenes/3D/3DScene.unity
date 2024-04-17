@@ -178,6 +178,10 @@ PrefabInstance:
       value: AppleItem (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1289306248809532123, guid: f7319247583a01a4a8997d2ef4e1269c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289306248809532123, guid: f7319247583a01a4a8997d2ef4e1269c, type: 3}
       propertyPath: m_TagString
       value: Apple
       objectReference: {fileID: 0}
@@ -342,6 +346,7 @@ GameObject:
   - component: {fileID: 283577057}
   - component: {fileID: 283577056}
   - component: {fileID: 283577055}
+  - component: {fileID: 283577059}
   - component: {fileID: 283577058}
   m_Layer: 0
   m_Name: Main Camera
@@ -368,7 +373,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -436,11 +441,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbfbd6f9ecc28d14c84d86071d960d80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3
+  range: 5
   layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 512
   onItem3D: {fileID: 489255873}
+--- !u!114 &283577059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283577054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!65 &400043424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1311,6 +1360,10 @@ PrefabInstance:
       value: AppleItem (4)
       objectReference: {fileID: 0}
     - target: {fileID: 1289306248809532123, guid: f7319247583a01a4a8997d2ef4e1269c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289306248809532123, guid: f7319247583a01a4a8997d2ef4e1269c, type: 3}
       propertyPath: m_TagString
       value: Apple
       objectReference: {fileID: 0}
@@ -1585,6 +1638,10 @@ PrefabInstance:
       value: AppleItem (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1289306248809532123, guid: f7319247583a01a4a8997d2ef4e1269c, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289306248809532123, guid: f7319247583a01a4a8997d2ef4e1269c, type: 3}
       propertyPath: m_TagString
       value: Apple
       objectReference: {fileID: 0}
@@ -1771,6 +1828,10 @@ PrefabInstance:
     - target: {fileID: 1289306248809532123, guid: f7319247583a01a4a8997d2ef4e1269c, type: 3}
       propertyPath: m_Name
       value: AppleItem (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289306248809532123, guid: f7319247583a01a4a8997d2ef4e1269c, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1289306248809532123, guid: f7319247583a01a4a8997d2ef4e1269c, type: 3}
       propertyPath: m_TagString
@@ -5193,7 +5254,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7233f0255ca10484b9b1c5669658d0d6, type: 2}
+  - {fileID: 2100000, guid: 40939d9a2cb0c704887df8757408aa55, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8570,6 +8631,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box Item
       objectReference: {fileID: 0}
+    - target: {fileID: 6252603261404615951, guid: b733b51408e8fa449982d9d65c7232a3, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11564,6 +11629,10 @@ PrefabInstance:
     - target: {fileID: 1289306248809532123, guid: f7319247583a01a4a8997d2ef4e1269c, type: 3}
       propertyPath: m_Name
       value: AppleItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289306248809532123, guid: f7319247583a01a4a8997d2ef4e1269c, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1289306248809532123, guid: f7319247583a01a4a8997d2ef4e1269c, type: 3}
       propertyPath: m_TagString

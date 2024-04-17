@@ -1,4 +1,3 @@
-using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,6 +51,7 @@ public class ActionController3D : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitinfo, range, layerMask))
         {
+            Debug.Log(hitinfo);
             if (hitinfo.transform.tag == "Item" || hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("Item"))
             {
                 ItemInfoAppear();
