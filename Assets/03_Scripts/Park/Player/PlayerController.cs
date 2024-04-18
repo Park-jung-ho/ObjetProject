@@ -60,7 +60,11 @@ public class PlayerController2D : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        if (state == PlayerState.dialog) return;
+        if (state == PlayerState.dialog)
+        {
+            moveInput = Vector3.zero;
+            return;
+        }
 
         moveInput = value.Get<Vector2>();
         animator.SetFloat("x",moveInput.x);

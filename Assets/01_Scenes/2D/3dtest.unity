@@ -853,10 +853,10 @@ MonoBehaviour:
       - m_Target: {fileID: 446416502926772148}
         m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
         m_MethodName: StartDialog
-        m_Mode: 5
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 0fb62563ca60abe43ae34f553e8c3134, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Dialog, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: test000
@@ -1114,6 +1114,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -29.02
       objectReference: {fileID: 0}
+    - target: {fileID: 723749894402108784, guid: 9b1f7c8fa11fc8d4093b0722b0938734, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 963194227}
     - target: {fileID: 2829449942890537900, guid: 9b1f7c8fa11fc8d4093b0722b0938734, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -1334,9 +1338,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2580218993409676047, guid: b540ed155f241dd469785ff1e091bce6, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 963194227}
+    - target: {fileID: 2580218993409676047, guid: b540ed155f241dd469785ff1e091bce6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3713232320368381247, guid: b540ed155f241dd469785ff1e091bce6, type: 3}
       propertyPath: m_Name
       value: DialogManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306937856519618278, guid: b540ed155f241dd469785ff1e091bce6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5975939793521996683, guid: b540ed155f241dd469785ff1e091bce6, type: 3}
       propertyPath: m_LocalPosition.x
