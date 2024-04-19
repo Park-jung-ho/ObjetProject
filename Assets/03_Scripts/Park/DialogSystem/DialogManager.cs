@@ -174,7 +174,7 @@ public class DialogManager : SerializedMonoBehaviour
             EndDialog();
             if (currentDialogText.isCutscene)
             {
-                TimelineController.instance.playCutscene(currentDialogText.cutSceneID);
+                TimelineController.instance.loopOut();
             }
             return;
         }
