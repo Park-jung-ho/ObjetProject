@@ -17,7 +17,7 @@ MonoBehaviour:
   isQuest: 0
   sentences:
   - dialogType: 0
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 2490cf3af9bbea74786f9608f4333313, type: 3}
     next: 1
     GoToNextStory: 0
     nextStoryNode: 0
@@ -27,13 +27,23 @@ MonoBehaviour:
     choices: []
     qusetID: 
   - dialogType: 0
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: 2490cf3af9bbea74786f9608f4333313, type: 3}
+    next: 2
+    GoToNextStory: 0
+    nextStoryNode: 0
+    isCutscene: 0
+    cutSceneID: 3
+    text: "\uD2F0\uBBF8. \uB108\uB294 \uBC14\uB85C \uB9C8\uC744\uB85C \uB3CC\uC544\uAC00
+      \uC788\uC5B4."
+    choices: []
+    qusetID: 
+  - dialogType: 0
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
     next: -1
     GoToNextStory: 0
     nextStoryNode: 0
     isCutscene: 1
-    cutSceneID: 3
-    text: "\uD2F0\uBBF8. \uB108\uB294 \uBC14\uB85C \uB9C8\uC744\uB85C \uB3CC\uC544\uAC00
-      \uC788\uC5B4."
+    cutSceneID: 0
+    text: "\uB134\n"
     choices: []
     qusetID: 

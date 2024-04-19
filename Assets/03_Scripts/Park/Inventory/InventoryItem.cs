@@ -45,6 +45,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         image.raycastTarget = true;
         transform.SetParent(parentAfterDrag);
+        transform.position = transform.parent.position;
         RefreshCount();
     }
 }

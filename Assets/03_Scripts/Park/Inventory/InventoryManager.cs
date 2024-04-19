@@ -50,6 +50,11 @@ public class InventoryManager : MonoBehaviour
                 QuestManager.instance.isQuestItem(item.ID);
                 return true;
             }
+        }
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            InventorySlot slot = inventorySlots[i];
+            InventoryItem slotItem = slot.GetComponentInChildren<InventoryItem>();
             if (slotItem == null)
             {
                 SpawnNewItem(item, slot);

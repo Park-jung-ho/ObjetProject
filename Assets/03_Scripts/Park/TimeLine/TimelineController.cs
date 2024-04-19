@@ -67,9 +67,9 @@ public class TimelineController : MonoBehaviour
     {
         LoopTime = playableDirector.time;
     }
-    public void SetLoopOutTime(float t)
+    public void SetLoopOutTime()
     {
-        LoopOutTime = t;
+        LoopOutTime = playableDirector.time;
     }
 
     public void setLoop(bool type)
