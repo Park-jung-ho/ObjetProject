@@ -34,7 +34,7 @@ public class ActionController3D : MonoBehaviour
     }
     void TryAction()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             CheckItem();
             CanPickUp();
@@ -51,8 +51,11 @@ public class ActionController3D : MonoBehaviour
                 if (hitinfo.transform.tag == "Apple") Destroy(hitinfo.transform.gameObject);
                 if (hitinfo.transform.tag == "Box") hitinfo.transform.gameObject.SetActive(false);
             }
-            if(hitinfo.transform != null && hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("NPC")) {
+            if(hitinfo.transform != null && hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("NPC") && !GetComponentInParent<PlayerController3D>().isTalk) {
+                Cursor.visible = true; 
                 if(hitinfo.transform.tag == "NPC") hitinfo.transform.gameObject.GetComponent<NPC>().Interact();
+                GetComponentInParent<PlayerController3D>().isTalk = true;
+                Cursor.lockState = CursorLockMode.None;
             }
         }
     }
@@ -63,26 +66,17 @@ public class ActionController3D : MonoBehaviour
             if (hitinfo.transform.tag == "Item" || hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("Item"))
             {
                 cussor.sprite = cussorImages[1];
-                ItemInfoAppear();
             }
             if(hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("NPC")) 
             {
                 cussor.sprite = cussorImages[2];
-                ItemInfoAppear();
             }
+            pickupActivated = true;
         }
         else{
-            InfoDisappear();
             cussor.sprite = cussorImages[0];
+            pickupActivated = false;
         }
-            
     }
-    void ItemInfoAppear()
-    {
-        pickupActivated = true;
-    }
-    void InfoDisappear()
-    {
-        pickupActivated = false;
-    }
+
 }

@@ -125,7 +125,7 @@ public class DialogManager : SerializedMonoBehaviour
         
         DialogUIanimator.SetTrigger("IsOn");
         // ShowDialog(0);
-        PlayerController2D.instance.ChangeState(PlayerState.dialog);
+        //PlayerController2D.instance.ChangeState(PlayerState.dialog);
     }
 
     IEnumerator typing()
@@ -181,7 +181,7 @@ public class DialogManager : SerializedMonoBehaviour
             EndDialog();
             if (currentDialogText.isCutscene)
             {
-                TimelineController.instance.loopOut();
+                //TimelineController.instance.loopOut();
             }
             return;
         }
@@ -211,6 +211,6 @@ public class DialogManager : SerializedMonoBehaviour
             }
         }
         // HidePanel();
-        PlayerController2D.instance.ChangeState(PlayerState.play);
+        //PlayerController2D.instance.ChangeState(PlayerState.play);
     }
 }
