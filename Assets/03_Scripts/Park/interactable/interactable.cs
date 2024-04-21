@@ -7,6 +7,8 @@ public enum interactType
 {
     NPC,
     Object,
+    Door,
+
 }
 public interface interactable2D
 {

@@ -73,6 +73,12 @@ public class Mouse : MonoBehaviour
                     currentCursor.sprite = cursor_Object1;
                     currentCursor.color = canAlpha;
                 }
+                if (obj.type == interactType.Door)
+                {
+                    type = MouseType.obj1;
+                    currentCursor.sprite = cursor_Object1;
+                    currentCursor.color = canAlpha;
+                }
             }
             else
             {
@@ -83,6 +89,12 @@ public class Mouse : MonoBehaviour
                     currentCursor.color = cantAlpha;
                 }
                 if (obj.type == interactType.Object)
+                {
+                    type = MouseType.obj0;
+                    currentCursor.sprite = cursor_Object0;
+                    currentCursor.color = cantAlpha;
+                }
+                if (obj.type == interactType.Door)
                 {
                     type = MouseType.obj0;
                     currentCursor.sprite = cursor_Object0;
