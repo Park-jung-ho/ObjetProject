@@ -1,22 +1,28 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ActionController3D : MonoBehaviour
 {
+    public enum ItemType{
+        Null,
+        Apple,
+        Box
+    }
+    public ItemType holdItem;
     [SerializeField]
     float range; // 습득거리
-
     bool pickupActivated = false; //습득가능 여부
-
     RaycastHit hitinfo; //충돌체 정보 저장
-
     [SerializeField]
     LayerMask layerMask;
     public OnItem3D onItem3D;
-
+    public Image cussor;
+    public Sprite[] cussorImages;
     void Start()
     {
-
+        cussor.sprite = cussorImages[0];
+        holdItem = ItemType.Null;
     }
 
     // Update is called once per frame
@@ -51,27 +57,25 @@ public class ActionController3D : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitinfo, range, layerMask))
         {
-            Debug.Log(hitinfo);
             if (hitinfo.transform.tag == "Item" || hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("Item"))
             {
+                cussor.sprite = cussorImages[1];
                 ItemInfoAppear();
             }
+            if(hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("NPC")) cussor.sprite = cussorImages[2];
         }
-        else
+        else{
             InfoDisappear();
+            cussor.sprite = cussorImages[0];
+        }
+            
     }
     void ItemInfoAppear()
     {
         pickupActivated = true;
-        hitinfo.transform.GetComponent<ItemPickUp3D>().isPress = true;
     }
     void InfoDisappear()
     {
-        ItemPickUp3D[] rayitems = FindObjectsOfType<ItemPickUp3D>();
-        for (int i = 0; i < rayitems.Length; i++)
-        {
-            rayitems[i].isPress = false;
-        }
         pickupActivated = false;
     }
 }
