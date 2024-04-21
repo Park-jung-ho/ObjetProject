@@ -23,6 +23,10 @@ public class Mouse : MonoBehaviour
     public Sprite cursor_Object0;
     [FoldoutGroup("Object")]
     public Sprite cursor_Object1;
+    [FoldoutGroup("Door")]
+    public Sprite cursor_Door0;
+    [FoldoutGroup("Door")]
+    public Sprite cursor_Door1;
 
     
     void Start()
@@ -76,7 +80,7 @@ public class Mouse : MonoBehaviour
                 if (obj.type == interactType.Door)
                 {
                     type = MouseType.obj1;
-                    currentCursor.sprite = cursor_Object1;
+                    currentCursor.sprite = cursor_Door1;
                     currentCursor.color = canAlpha;
                 }
             }
@@ -97,7 +101,7 @@ public class Mouse : MonoBehaviour
                 if (obj.type == interactType.Door)
                 {
                     type = MouseType.obj0;
-                    currentCursor.sprite = cursor_Object0;
+                    currentCursor.sprite = cursor_Door0;
                     currentCursor.color = cantAlpha;
                 }
             }

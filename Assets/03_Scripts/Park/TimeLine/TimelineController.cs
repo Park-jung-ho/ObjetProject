@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using PixelCrushers.DialogueSystem;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -42,13 +41,7 @@ public class TimelineController : MonoBehaviour
         playableDirector.playableAsset = tl;
         playableDirector.Play();
     }
-    public void playCutsceneAuto()
-    {
-        int id = DialogueLua.GetVariable("timeline").AsInt;
-        if (id == -1) return;
-        playableDirector.playableAsset = timelines[id];
-        playableDirector.Play();
-    }
+    
 
     public void loop()
     {

@@ -17,7 +17,7 @@ MonoBehaviour:
   isQuest: 0
   sentences:
   - dialogType: 0
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
     next: 1
     GoToNextStory: 0
     nextStoryNode: 0
@@ -28,7 +28,7 @@ MonoBehaviour:
     choices: []
     qusetID: 
   - dialogType: 0
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
     next: -1
     GoToNextStory: 0
     nextStoryNode: 0
