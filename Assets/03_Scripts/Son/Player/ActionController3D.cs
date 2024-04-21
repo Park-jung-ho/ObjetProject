@@ -44,12 +44,15 @@ public class ActionController3D : MonoBehaviour
     {
         if (pickupActivated)
         {
-            if (hitinfo.transform != null)
+            if (hitinfo.transform != null && hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("Item"))
             {
                 string typename = hitinfo.transform.GetComponent<ItemPickUp3D>().item.itemType.ToString();
                 onItem3D.ItemChange(typename);
                 if (hitinfo.transform.tag == "Apple") Destroy(hitinfo.transform.gameObject);
                 if (hitinfo.transform.tag == "Box") hitinfo.transform.gameObject.SetActive(false);
+            }
+            if(hitinfo.transform != null && hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("NPC")) {
+                if(hitinfo.transform.tag == "NPC") hitinfo.transform.gameObject.GetComponent<NPC>().Interact();
             }
         }
     }
@@ -62,7 +65,11 @@ public class ActionController3D : MonoBehaviour
                 cussor.sprite = cussorImages[1];
                 ItemInfoAppear();
             }
-            if(hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("NPC")) cussor.sprite = cussorImages[2];
+            if(hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("NPC")) 
+            {
+                cussor.sprite = cussorImages[2];
+                ItemInfoAppear();
+            }
         }
         else{
             InfoDisappear();
