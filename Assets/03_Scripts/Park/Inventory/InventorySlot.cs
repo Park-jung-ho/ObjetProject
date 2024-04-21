@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,8 +33,24 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         else
         {
             InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
-            transform.GetChild(0).GetComponent<InventoryItem>().parentAfterDrag = inventoryItem.parentAfterDrag;
+            InventoryItem CurrentinventoryItem = transform.GetChild(0).GetComponent<InventoryItem>();
+            if (inventoryItem.item.name == CurrentinventoryItem.item.name)
+            {
+                int moveCnt = Math.Min(inventoryItem.count,CurrentinventoryItem.MaxCount - CurrentinventoryItem.count);
+                CurrentinventoryItem.count += moveCnt;
+                inventoryItem.count -= moveCnt;
+                CurrentinventoryItem.RefreshCount();
+                inventoryItem.RefreshCount();
+                if (inventoryItem.count == 0)
+                {
+                    Destroy(inventoryItem.gameObject);
+                }
+                return;
+            }
+
+            CurrentinventoryItem.parentAfterDrag = inventoryItem.parentAfterDrag;
             transform.GetChild(0).SetParent(inventoryItem.parentAfterDrag);
+            CurrentinventoryItem.transform.position = inventoryItem.parentAfterDrag.position;
             inventoryItem.parentAfterDrag = transform;
         }
     }

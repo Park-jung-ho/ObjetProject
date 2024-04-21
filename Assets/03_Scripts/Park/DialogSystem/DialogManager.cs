@@ -38,7 +38,7 @@ public class DialogManager : SerializedMonoBehaviour
 
     [SerializeField]
     private bool isTyping;
-
+    private bool CantClick = false;
 
 
     void Awake()
@@ -64,9 +64,16 @@ public class DialogManager : SerializedMonoBehaviour
     {
     
     }
-    
+    public void NotClick(bool on)
+    {
+        CantClick = on;
+    }
     public void OnClick()
     {
+        if (CantClick)
+        {
+            return;
+        }
         if (isTyping)
         {
             isTyping = false;
@@ -86,7 +93,7 @@ public class DialogManager : SerializedMonoBehaviour
         // image.gameObject.SetActive(true);
         // NPCname.gameObject.SetActive(true);
     }
-    void HidePanel()
+    public void HidePanel()
     {
         DialogPanel.SetActive(false);
         // image.gameObject.SetActive(false);
@@ -111,13 +118,13 @@ public class DialogManager : SerializedMonoBehaviour
             return;
         }
         currentDialog = dialog;
+        NPCname.text = currentDialog.NPCname;
+        image.sprite = currentDialog.sentences[0].image;
 
         OpenPanel();
-        DialogUIanimator.SetTrigger("IsOn");
-
-        NPCname.text = currentDialog.NPCname;
         
-        ShowDialog(0);
+        DialogUIanimator.SetTrigger("IsOn");
+        // ShowDialog(0);
         PlayerController2D.instance.ChangeState(PlayerState.dialog);
     }
 
@@ -174,7 +181,7 @@ public class DialogManager : SerializedMonoBehaviour
             EndDialog();
             if (currentDialogText.isCutscene)
             {
-                TimelineController.instance.playCutscene(currentDialogText.cutSceneID);
+                TimelineController.instance.loopOut();
             }
             return;
         }
@@ -188,11 +195,12 @@ public class DialogManager : SerializedMonoBehaviour
 
     public void EndDialog()
     {
+        DialogUIanimator.SetTrigger("IsOff");
+        
         if (currentDialogText.GoToNextStory)
         {
             GameManager.instance.SetStory(currentDialogText.nextStoryNode);
         }
-        DialogUIanimator.SetTrigger("IsOff");
         text.text = "";
         NPCname.text = "";
         if (currentDialogText.dialogType == DialogType.Choice)
@@ -202,7 +210,7 @@ public class DialogManager : SerializedMonoBehaviour
                 choices[i].transform.parent.gameObject.SetActive(false);
             }
         }
-        HidePanel();
+        // HidePanel();
         PlayerController2D.instance.ChangeState(PlayerState.play);
     }
 }

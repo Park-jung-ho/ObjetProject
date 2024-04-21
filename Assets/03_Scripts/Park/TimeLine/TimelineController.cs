@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using PixelCrushers.DialogueSystem;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
@@ -11,6 +12,11 @@ public class TimelineController : MonoBehaviour
     public PlayableDirector playableDirector;
     public TimelineAsset[] timelines; 
     private bool isLoop = false;
+
+    private double LoopTime;
+
+    [ShowInInspector]
+    private double LoopOutTime;
 
     void Awake()
     {
@@ -24,15 +30,6 @@ public class TimelineController : MonoBehaviour
             Debug.LogError("TimelineController 중복!!");
             Destroy(gameObject);
         }
-    }
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
     }
 
     public void playCutscene(int id)
@@ -52,12 +49,29 @@ public class TimelineController : MonoBehaviour
         playableDirector.playableAsset = timelines[id];
         playableDirector.Play();
     }
-    public void loopWhileDialogue(float t)
+
+    public void loop()
     {
         if (!isLoop) return;
-        playableDirector.time -= t;
+        playableDirector.time = LoopTime;
         playableDirector.Evaluate();
     }
+    public void loopOut()
+    {
+        isLoop = false;
+        playableDirector.time = LoopOutTime;
+        playableDirector.Evaluate();
+    }
+
+    public void SetLoopTime()
+    {
+        LoopTime = playableDirector.time;
+    }
+    public void SetLoopOutTime()
+    {
+        LoopOutTime = playableDirector.time;
+    }
+
     public void setLoop(bool type)
     {
         isLoop = type;
