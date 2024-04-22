@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -108,6 +109,11 @@ public class GameManager : MonoBehaviour
             Debug.Log("triggerController is null");
         }
         // add here...
+    }
+    [Button]
+    public void windowError()
+    {
+        NativeWinAlert.Error("asddsfawef","fwefwe");
     }
 }
 

@@ -39,6 +39,7 @@ public class DialogManager : SerializedMonoBehaviour
     [SerializeField]
     private bool isTyping;
     private bool CantClick = false;
+    private bool OnDialog;
 
 
     void Awake()
@@ -90,16 +91,10 @@ public class DialogManager : SerializedMonoBehaviour
     void OpenPanel()
     {
         DialogPanel.SetActive(true);
-        // image.gameObject.SetActive(true);
-        // NPCname.gameObject.SetActive(true);
     }
     public void HidePanel()
     {
         DialogPanel.SetActive(false);
-        // image.gameObject.SetActive(false);
-        // NPCname.gameObject.SetActive(false);
-        // TextPanel.SetActive(false);
-        // ChoicePanel.SetActive(false);
     }
 
     public void AddDialog(Dialog dialog)
@@ -112,11 +107,13 @@ public class DialogManager : SerializedMonoBehaviour
 
     public void StartDialog(Dialog dialog)
     {
+        if (OnDialog) return;
         if (dialog == null)
         {
             Debug.LogWarning("input dialog is NULL!!!!!");
             return;
         }
+        OnDialog = true;
         currentDialog = dialog;
         NPCname.text = currentDialog.NPCname;
         image.sprite = currentDialog.sentences[0].image;
@@ -125,7 +122,10 @@ public class DialogManager : SerializedMonoBehaviour
         
         DialogUIanimator.SetTrigger("IsOn");
         // ShowDialog(0);
-        PlayerController2D.instance.ChangeState(PlayerState.dialog);
+        if (PlayerController2D.instance != null)
+        {
+            PlayerController2D.instance.ChangeState(PlayerState.dialog);
+        }
     }
 
     IEnumerator typing()
@@ -195,6 +195,11 @@ public class DialogManager : SerializedMonoBehaviour
 
     public void EndDialog()
     {
+        if (!OnDialog)
+        {
+            return;
+        }
+        OnDialog = false;
         DialogUIanimator.SetTrigger("IsOff");
         
         if (currentDialogText.GoToNextStory)
@@ -210,7 +215,10 @@ public class DialogManager : SerializedMonoBehaviour
                 choices[i].transform.parent.gameObject.SetActive(false);
             }
         }
-        // HidePanel();
-        PlayerController2D.instance.ChangeState(PlayerState.play);
+        
+        if (PlayerController2D.instance != null)
+        {
+            PlayerController2D.instance.ChangeState(PlayerState.play);
+        }
     }
 }
