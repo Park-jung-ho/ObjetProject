@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class ActionController3D : MonoBehaviour
 {
-    public enum ItemType{
+    public enum ItemType
+    {
         Null,
         Apple,
         Box
@@ -17,11 +18,11 @@ public class ActionController3D : MonoBehaviour
     [SerializeField]
     LayerMask layerMask;
     public OnItem3D onItem3D;
-    public Image cussor;
-    public Sprite[] cussorImages;
+    public Image cusor;
+    public Sprite[] cusorImages;
     void Start()
     {
-        cussor.sprite = cussorImages[0];
+        cusor.sprite = cusorImages[0];
         holdItem = ItemType.Null;
     }
 
@@ -51,10 +52,14 @@ public class ActionController3D : MonoBehaviour
                 if (hitinfo.transform.tag == "Apple") Destroy(hitinfo.transform.gameObject);
                 if (hitinfo.transform.tag == "Box") hitinfo.transform.gameObject.SetActive(false);
             }
-            if(hitinfo.transform != null && hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("NPC") && !GetComponentInParent<PlayerController3D>().isTalk) {
-                Cursor.visible = true; 
-                if(hitinfo.transform.tag == "NPC") hitinfo.transform.gameObject.GetComponent<NPC>().Interact();
+            if (hitinfo.transform != null && hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("NPC") && !GetComponentInParent<PlayerController3D>().isTalk)
+            {
+                Cursor.visible = true;
+                if (hitinfo.transform.tag == "NPC") hitinfo.transform.gameObject.GetComponent<NPC>().Interact();
                 GetComponentInParent<PlayerController3D>().isTalk = true;
+                Debug.Log("Hello");
+                cusor.gameObject.SetActive(false);
+                Cursor.SetCursor(cusorImages[1].texture, Vector2.zero, CursorMode.Auto);
                 Cursor.lockState = CursorLockMode.None;
             }
         }
@@ -65,18 +70,18 @@ public class ActionController3D : MonoBehaviour
         {
             if (hitinfo.transform.tag == "Item" || hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("Item"))
             {
-                cussor.sprite = cussorImages[1];
+                cusor.sprite = cusorImages[1];
             }
-            if(hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("NPC")) 
+            if (hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("NPC"))
             {
-                cussor.sprite = cussorImages[2];
+                cusor.sprite = cusorImages[2];
             }
             pickupActivated = true;
         }
-        else{
-            cussor.sprite = cussorImages[0];
+        else
+        {
+            cusor.sprite = cusorImages[0];
             pickupActivated = false;
         }
     }
-
 }

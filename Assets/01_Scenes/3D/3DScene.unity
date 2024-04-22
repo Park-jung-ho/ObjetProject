@@ -296,10 +296,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2560
   onItem3D: {fileID: 489255873}
-  cussor: {fileID: 323331107}
-  cussorImages:
+  cusor: {fileID: 323331107}
+  cusorImages:
   - {fileID: 21300000, guid: 1a4fb8703faf9fa4fafcfb8b94b3b393, type: 3}
-  - {fileID: 1250850983, guid: 6f71ecec8debd9041b2266ff6c2f69f0, type: 3}
+  - {fileID: 21300000, guid: cd97a73d3d27ab54ab90083866572f40, type: 3}
   - {fileID: 1914569377, guid: 6f71ecec8debd9041b2266ff6c2f69f0, type: 3}
 --- !u!114 &283577059
 MonoBehaviour:
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323331105}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7eca757266ed1942a34fb8e7578a648, type: 3}
   m_Name: 
