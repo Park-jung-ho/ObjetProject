@@ -110,11 +110,6 @@ public class GameManager : MonoBehaviour
         }
         // add here...
     }
-    [Button]
-    public void windowError()
-    {
-        NativeWinAlert.Error("asddsfawef","fwefwe");
-    }
 }
 
 public enum GameState
