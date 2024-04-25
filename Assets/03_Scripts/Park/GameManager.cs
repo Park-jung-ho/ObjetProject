@@ -110,6 +110,18 @@ public class GameManager : MonoBehaviour
         }
         // add here...
     }
+
+    public void EndGame(string text, string title)
+    {
+        Debug.Log("ENDGAME");
+        Cursor.visible = true;
+        MessageBoxExample.windowError(text,title);
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
+    }
 }
 
 public enum GameState

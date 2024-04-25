@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: apple
   m_EditorClassIdentifier: 
   type: 0
-  image: {fileID: 2112732419, guid: 68d9dbbac10e0854a93607ebb164132b, type: 3}
+  image: {fileID: 21300000, guid: 63288bc85e374c8439baf3d3378da3e5, type: 3}
   ID: apple
   stackable: 1

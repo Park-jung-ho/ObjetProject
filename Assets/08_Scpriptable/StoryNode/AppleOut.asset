@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c387e3eb48f059459e4511cd24c16e4, type: 3}
+  m_Name: AppleOut
+  m_EditorClassIdentifier: 
+  NodeID: 
+  StartNPCName: timmy
+  dialog: {fileID: 11400000, guid: 91ad2db7ca2ee9e47abab26d23499be4, type: 2}
+  quest: {fileID: 11400000, guid: 641b7f935c79f9f479e5944b9807addc, type: 2}
+  CutSceneTriggeridx: 
+  NextStoryNode: []

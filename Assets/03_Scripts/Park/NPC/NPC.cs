@@ -78,6 +78,10 @@ public class NPC : MonoBehaviour, interactable2D
         questClear = canend;
         ChangeQuestState(QuestState.CanStart);
     }
+    public void ChangeQuestEndDialog(Dialog canend)
+    {
+        questClear = canend;
+    }
     public void ChangeQuestState(QuestState newState)
     {
         questState = newState;

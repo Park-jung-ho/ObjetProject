@@ -112,6 +112,7 @@ public class InventoryManager : MonoBehaviour
             if (count <= 0) break;
         }
     }
+
     public void ChangeItemCount(string ItemID, int count)
     {
         bool del = false;
@@ -123,6 +124,7 @@ public class InventoryManager : MonoBehaviour
             {
                 if (del)
                 {
+                    slotItem.count = 0;
                     Destroy(slotItem.gameObject);
                 }
                 else
@@ -133,6 +135,8 @@ public class InventoryManager : MonoBehaviour
                 }
             }
         }
+
+        if (QuestManager.instance != null) QuestManager.instance.setQuestUI();
     }
 
 

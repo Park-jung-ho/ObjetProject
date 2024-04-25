@@ -5,6 +5,7 @@ using System.Linq;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -176,6 +177,7 @@ public class DialogManager : SerializedMonoBehaviour
 
     public void ShowDialog(int id)
     {
+        EventTest.ChangeDialogID(id);
         if (id == -1)
         {
             EndDialog();

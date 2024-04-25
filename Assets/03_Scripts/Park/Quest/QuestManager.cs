@@ -23,6 +23,9 @@ public class QuestManager : SerializedMonoBehaviour
     [SerializeField]
     private NPC questNPC;
 
+    // eventValTest
+    private bool AppleQ1 = false;
+
     void Awake()
     {
         if (instance == null)
@@ -40,6 +43,7 @@ public class QuestManager : SerializedMonoBehaviour
 
     public void setQuestUI()
     {
+        if (currentQuest == null) return;
         questTitle.text = currentQuest.questTitle;
         currentCount = InventoryManager.instance.FindItem(currentQuest.itemName);
 
@@ -95,9 +99,9 @@ public class QuestManager : SerializedMonoBehaviour
 
     public void EndQuest()
     {
-        if (currentQuest.isTrick > 0)
+        if (currentQuest.isTrick)
         {
-            questTrick(currentQuest.isTrick);
+            questTrick(currentQuest.TrickID);
             return;
         }
         InventoryManager.instance.DelItem(currentQuest.itemName,currentQuest.count);
@@ -105,15 +109,22 @@ public class QuestManager : SerializedMonoBehaviour
         QuestUI.SetActive(false);
         currentQuest = null;
     }
-
+    
     public void questTrick(int num)
     {
         if (num == 1)
         {
             InventoryManager.instance.ChangeItemCount(currentQuest.itemName,5);
-            GameManager.instance.triggerController.setCutSceneTriggerOn(1);
+            if (AppleQ1)
+            {
+                EventTest.eventID = "AppleOut";
+                EventTest.eventDialogID = -1;
+                return;
+            }
+            AppleQ1 = true;
+            NPCManager.instance.findNPC(currentQuest.npcName).ChangeQuestEndDialog(currentQuest.ChangeClearDialog);
+            // GameManager.instance.triggerController.setCutSceneTriggerOn(1);
         }
-        setQuestUI();
     }
 }
 

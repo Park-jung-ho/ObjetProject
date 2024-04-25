@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf46e6c68c0df346a310138126e82a4, type: 3}
+  m_Name: AppleOutQ2
+  m_EditorClassIdentifier: 
+  NPCname: "\uD2F0\uBBF8"
+  ID: 3
+  isQuest: 0
+  sentences:
+  - dialogType: 0
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
+    next: 1
+    GoToNextStory: 0
+    nextStoryNode: 0
+    isCutscene: 0
+    cutSceneID: 0
+    text: "\uC774\uBC88\uC5D4 \uAE08\uBC29 \uC654\uB124?"
+    choices: []
+    qusetID: 
+  - dialogType: 0
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
+    next: 2
+    GoToNextStory: 0
+    nextStoryNode: 0
+    isCutscene: 0
+    cutSceneID: 0
+    text: "\uC5B4? \uADF8\uB7F0\uB370 \uC0AC\uACFC\uAC00...\u314B\u314B"
+    choices: []
+    qusetID: 
+  - dialogType: 1
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
+    next: 0
+    GoToNextStory: 0
+    nextStoryNode: 0
+    isCutscene: 0
+    cutSceneID: 0
+    text: "\uB610 5\uAC1C\uB9CC \uAC00\uC838\uC654\uC5B4?"
+    choices:
+    - text: ????
+      next: 3
+    - text: ????
+      next: 3
+    qusetID: 
+  - dialogType: 0
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
+    next: -1
+    GoToNextStory: 0
+    nextStoryNode: 0
+    isCutscene: 0
+    cutSceneID: 0
+    text: "\uB2E4\uC2DC \uAC14\uB2E4\uC640~"
+    choices: []
+    qusetID: 
