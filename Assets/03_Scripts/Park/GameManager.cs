@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(this);
         Application.targetFrameRate = 60;
+        Screen.SetResolution(1920,1080,false);
     }
     void OnEnable() 
     {

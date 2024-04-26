@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/01_Scenes/2D/Title.unity
-    guid: 99563f76e94e4af47b63b0c1909187ef
+    guid: c0e7e9a2818fb884382bef30a3e75945
   - enabled: 1
     path: Assets/01_Scenes/2D/2DMap.unity
     guid: ffbaf37e2aad58242a5f2ff192c495ae

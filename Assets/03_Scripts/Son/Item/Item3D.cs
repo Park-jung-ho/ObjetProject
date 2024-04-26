@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector.Editor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "New Item/item")]
