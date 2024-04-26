@@ -27,7 +27,7 @@ MonoBehaviour:
     choices: []
     qusetID: 
   - dialogType: 0
-    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
+    image: {fileID: 21300000, guid: 04cd48bc8fd75464490a2f1d3258d9fa, type: 3}
     next: 2
     GoToNextStory: 0
     nextStoryNode: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     choices: []
     qusetID: 
   - dialogType: 1
-    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
+    image: {fileID: 21300000, guid: c79c6e0bc56ab8f4481a3b9a1c3c1151, type: 3}
     next: 0
     GoToNextStory: 0
     nextStoryNode: 0

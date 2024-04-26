@@ -17,7 +17,7 @@ MonoBehaviour:
   isQuest: 0
   sentences:
   - dialogType: 0
-    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
+    image: {fileID: 21300000, guid: 04cd48bc8fd75464490a2f1d3258d9fa, type: 3}
     next: -1
     GoToNextStory: 0
     nextStoryNode: 0

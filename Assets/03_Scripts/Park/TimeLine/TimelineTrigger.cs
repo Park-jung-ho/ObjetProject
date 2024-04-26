@@ -12,7 +12,7 @@ public class TimelineTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            TimelineController.instance.playCutscene(cutsceneID);
+            if (cutsceneID != -1) TimelineController.instance.playCutscene(cutsceneID);
             TriggerOn?.Invoke();
             gameObject.SetActive(false);
         }
