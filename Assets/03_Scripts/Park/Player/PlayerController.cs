@@ -60,7 +60,8 @@ public class PlayerController2D : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        if (state == PlayerState.dialog)
+        if (state == PlayerState.dialog ||
+            state == PlayerState.sign)
         {
             moveInput = Vector3.zero;
             return;
@@ -86,9 +87,9 @@ public class PlayerController2D : MonoBehaviour
     {
         state = newState;
     }
-    public PlayerState CurrentState()
+    public bool CurrentState(PlayerState playerState)
     {
-        return state;
+        return playerState == state;
     }
 }
 
@@ -96,4 +97,5 @@ public enum PlayerState
 {
     play,
     dialog,
+    sign,
 }

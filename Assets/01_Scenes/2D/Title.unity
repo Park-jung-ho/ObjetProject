@@ -2006,6 +2006,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1078724877}
+    - target: {fileID: 621312325803391327, guid: c8dfeee75089ed546ba8feca14cd2515, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: IntroScene
+      objectReference: {fileID: 0}
     - target: {fileID: 3949729230267605918, guid: c8dfeee75089ed546ba8feca14cd2515, type: 3}
       propertyPath: m_Name
       value: Mainmenu

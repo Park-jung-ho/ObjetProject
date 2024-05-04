@@ -27,6 +27,8 @@ public class Mouse : MonoBehaviour
     public Sprite cursor_Door0;
     [FoldoutGroup("Door")]
     public Sprite cursor_Door1;
+    [FoldoutGroup("sign")]
+    public Sprite cursor_sign;
 
     
     void Start()
@@ -51,7 +53,8 @@ public class Mouse : MonoBehaviour
         }
         // Debug.DrawRay(pos,pos,Color.red,1f);
         if (obj == null ||
-            PlayerController2D.instance.CurrentState() == PlayerState.dialog)
+            PlayerController2D.instance.CurrentState(PlayerState.dialog) ||
+            PlayerController2D.instance.CurrentState(PlayerState.sign))
         {
             if (type != MouseType.idle)
             {
@@ -83,6 +86,12 @@ public class Mouse : MonoBehaviour
                     currentCursor.sprite = cursor_Door1;
                     currentCursor.color = canAlpha;
                 }
+                if (obj.type == interactType.sign)
+                {
+                    type = MouseType.sign;
+                    currentCursor.sprite = cursor_sign;
+                    currentCursor.color = canAlpha;
+                }
             }
             else
             {
@@ -104,6 +113,12 @@ public class Mouse : MonoBehaviour
                     currentCursor.sprite = cursor_Door0;
                     currentCursor.color = cantAlpha;
                 }
+                if (obj.type == interactType.sign)
+                {
+                    type = MouseType.sign;
+                    currentCursor.sprite = cursor_sign;
+                    currentCursor.color = cantAlpha;
+                }
             }
             
         }
@@ -123,4 +138,5 @@ public enum MouseType
     npc1,
     obj0,
     obj1,
+    sign,
 }
