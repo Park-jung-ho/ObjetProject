@@ -16,6 +16,7 @@ public class Item : ScriptableObject
 
 public enum ItemType
 {
+    item,
     questItem,
 
 }

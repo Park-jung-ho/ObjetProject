@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3bbd195c0ff87f4cbc7cacb25e293ad, type: 3}
-  m_Name: apple
+  m_Name: New Item
   m_EditorClassIdentifier: 
   type: 0
-  image: {fileID: 21300000, guid: 63288bc85e374c8439baf3d3378da3e5, type: 3}
-  ID: apple
+  image: {fileID: 21300000, guid: 39cacc93c6c183f44992bf2421362f78, type: 3}
+  ID: 
   stackable: 1

@@ -91,9 +91,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8811556731885450505}
   - component: {fileID: 8303542763856885000}
-  - component: {fileID: 7854293726476512659}
   - component: {fileID: 6591235344179898317}
   - component: {fileID: 5030222157866403833}
+  - component: {fileID: 92793663604612508}
   m_Layer: 0
   m_Name: Random_item
   m_TagString: apple
@@ -169,20 +169,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7854293726476512659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6794498625617372357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c3390d8f5eb67a448cfe5c666474cc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 0a291b42a9916c74ebde21286a1f1bd2, type: 2}
-  isInteractable: 0
 --- !u!58 &6591235344179898317
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -239,3 +225,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &92793663604612508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794498625617372357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c54a6c97e49a64fb29e7f40c54f185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  isInteractable: 0
