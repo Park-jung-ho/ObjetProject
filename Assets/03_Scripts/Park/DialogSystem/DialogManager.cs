@@ -22,6 +22,7 @@ public class DialogManager : SerializedMonoBehaviour
     public float typingTime;
     [Title("TEXT PANEL")]
     public GameObject TextPanel;
+    public GameObject NextIcon;
     public TMP_Text text;
     [Title("CHOICE PANEL")]
     public GameObject ChoicePanel;
@@ -155,6 +156,10 @@ public class DialogManager : SerializedMonoBehaviour
             // add typing sound here
             yield return new WaitForSeconds(waitTime);
         }
+        if (currentDialogText.dialogType == DialogType.Text)
+        {
+            NextIcon.SetActive(true);
+        }
         if (currentDialogText.dialogType == DialogType.Choice)
         {
             ChoicePanel.SetActive(true);
@@ -168,7 +173,6 @@ public class DialogManager : SerializedMonoBehaviour
         {
             QuestManager.instance.StartQuest(currentDialogText.qusetID);
         }
-
 
 
 
@@ -191,7 +195,7 @@ public class DialogManager : SerializedMonoBehaviour
         currentDialogText = currentDialog.sentences[id];
 
         image.sprite = currentDialogText.image;
-
+        NextIcon.SetActive(false);
         StartCoroutine("typing");
     }
 

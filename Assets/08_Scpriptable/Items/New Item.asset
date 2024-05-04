@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: New Item
   m_EditorClassIdentifier: 
   type: 0
-  image: {fileID: 21300000, guid: 39cacc93c6c183f44992bf2421362f78, type: 3}
+  image: {fileID: 21300000, guid: 35a9a65de165de549b3aaef179e8ff15, type: 3}
   ID: 
   stackable: 1

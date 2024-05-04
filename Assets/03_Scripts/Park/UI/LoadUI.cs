@@ -23,4 +23,9 @@ public class LoadUI : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    public void OffToOn()
+    {
+        Debug.Log("OFF");
+        gameObject.GetComponent<Animator>().Play("on");
+    }
 }
