@@ -86,6 +86,8 @@ public class PlayerController2D : MonoBehaviour
     public void ChangeState(PlayerState newState)
     {
         state = newState;
+        moveInput = Vector3.zero;
+        animator.SetFloat("speed",moveInput.sqrMagnitude);
     }
     public bool CurrentState(PlayerState playerState)
     {
