@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public Item item;
     public Image image;
@@ -27,6 +27,15 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         countText.text = count.ToString();
         bool textActive = count > 1;
         countText.gameObject.SetActive(textActive);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (item.type == ItemType.note)
+        {
+            InventoryManager.instance.NoteUI.SetActive(true);
+            InventoryManager.instance.noteText.text = item.noteText;
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3bbd195c0ff87f4cbc7cacb25e293ad, type: 3}
   m_Name: New Item
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
+  noteText: "\uB098\uB294\n\uC774\uACF3\uC744\n\uB5A0\uB09C\uB2E4"
   image: {fileID: 21300000, guid: 35a9a65de165de549b3aaef179e8ff15, type: 3}
   ID: 
   stackable: 1

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -8,6 +9,10 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager instance;
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
+
+    public GameObject NoteUI;
+    public TMP_Text noteText;
+
 
     [SerializeField]
     private int selectedSlot = -1;
