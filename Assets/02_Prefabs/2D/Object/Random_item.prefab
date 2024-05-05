@@ -237,5 +237,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c54a6c97e49a64fb29e7f40c54f185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: f5f352ac39b291a428cc2d874254db7d, type: 2}
   isInteractable: 0
