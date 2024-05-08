@@ -49,4 +49,9 @@ public class NpcMove : MonoBehaviour
             anim.SetBool("isWalk", false);
         }
     }
+    void OnTriggerStay(Collider other) {
+        if(other.tag == "Target"){
+            moveType = MoveType.Look;
+        }
+    }
 }
