@@ -14,8 +14,10 @@ public class NpcMove : MonoBehaviour
     MoveType moveType;
     GameObject player;
     float distanceToTarget;
+    Animator anim;
     void Start()
     {
+        anim = GetComponent<Animator>();
         moveType = MoveType.Look;
         player = GameObject.Find("Player");
         distanceToTarget = Vector3.Distance(transform.position, player.transform.position);
@@ -34,6 +36,7 @@ public class NpcMove : MonoBehaviour
             float step = moveSpeed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, moveTarget.position, step);
             if (distanceToTarget > 8f) moveType = MoveType.Look;
+            anim.SetBool("isWalk", true);
         }
 
         if (moveType == MoveType.Look)
@@ -43,6 +46,7 @@ public class NpcMove : MonoBehaviour
             Quaternion lookRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
             if (distanceToTarget < 8f) moveType = MoveType.Move;
+            anim.SetBool("isWalk", false);
         }
     }
 }
