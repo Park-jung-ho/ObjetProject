@@ -29,8 +29,10 @@ public class Mouse : MonoBehaviour
     public Sprite cursor_Door1;
     [FoldoutGroup("sign")]
     public Sprite cursor_sign;
+    [FoldoutGroup("tree")]
+    public Sprite cursor_tree;
 
-    
+
     void Start()
     {
         // Cursor.SetCursor(cursor_idle,Vector2.zero,CursorMode.ForceSoftware);
@@ -92,6 +94,12 @@ public class Mouse : MonoBehaviour
                     currentCursor.sprite = cursor_sign;
                     currentCursor.color = canAlpha;
                 }
+                if (obj.type == interactType.tree)
+                {
+                    type = MouseType.tree;
+                    currentCursor.sprite = cursor_tree;
+                    currentCursor.color = canAlpha;
+                }
             }
             else
             {
@@ -119,6 +127,12 @@ public class Mouse : MonoBehaviour
                     currentCursor.sprite = cursor_sign;
                     currentCursor.color = cantAlpha;
                 }
+                if (obj.type == interactType.tree)
+                {
+                    type = MouseType.tree;
+                    currentCursor.sprite = cursor_tree;
+                    currentCursor.color = cantAlpha;
+                }
             }
             
         }
@@ -139,4 +153,6 @@ public enum MouseType
     obj0,
     obj1,
     sign,
+    tree,
+
 }

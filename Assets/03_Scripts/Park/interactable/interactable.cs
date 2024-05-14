@@ -9,6 +9,8 @@ public enum interactType
     Object,
     Door,
     sign,
+    tree,
+
 
 }
 public interface interactable2D

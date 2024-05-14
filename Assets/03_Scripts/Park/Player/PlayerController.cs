@@ -93,6 +93,12 @@ public class PlayerController2D : MonoBehaviour
     {
         return playerState == state;
     }
+
+    public void animTrigger(string Triggername)
+    {
+        animator.SetTrigger(Triggername);
+    }
+
 }
 
 public enum PlayerState
@@ -100,4 +106,6 @@ public enum PlayerState
     play,
     dialog,
     sign,
+    death,
+    
 }

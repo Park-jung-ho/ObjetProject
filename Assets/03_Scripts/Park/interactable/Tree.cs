@@ -7,23 +7,16 @@ using UnityEngine;
 public class AppleTree : MonoBehaviour, interactable2D
 {
     public interactType type {get; set;}
-    public int appleCount = 10;
-    public string Interact_quest_ID;
     [SerializeField]
     private bool isInteractable = false;
 
-    [ShowInInspector]
-    public Stack<Transform> apples;
-
+    private Animator animator;
+    private bool die;
     
     void Start()
     {
-        apples = new Stack<Transform>();
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            apples.Push(transform.GetChild(i));
-        }
-        type = interactType.Object;
+        animator = GetComponent<Animator>();
+        type = interactType.tree;
     }
 
     void Update()
@@ -41,26 +34,43 @@ public class AppleTree : MonoBehaviour, interactable2D
 
     public void Interact()
     {
-        if (apples.Count == 0) return;
-        Transform apple = apples.Pop();
-        
-        apple.GetComponent<DOTweenAnimation>().DOPlayById("drop");
+        onFall();
+        //apple.GetComponent<DOTweenAnimation>().DOPlayById("drop");
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
         isInteractable = true;
-        // EnableKey();
     }
     public void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
         isInteractable = false;
-        // DisableKey();
     }
 
-    public void respawnApple(Transform apple)
+    // anim
+    public void onFall()
     {
-        apples.Push(apple);
+        // check L R
+        if (die) return;
+        die = true;
+        float Px = PlayerController2D.instance.transform.position.x;
+        if (Px <= transform.position.x)
+        {
+            PlayerController2D.instance.animTrigger("axeR");
+            animator.SetTrigger("fallR");
+        }
+        else
+        {
+            PlayerController2D.instance.animTrigger("axeL");
+            animator.SetTrigger("fallL");
+        }
+        Invoke("respawnTree", 5f);
+
+    }
+    public void respawnTree()
+    {
+        animator.SetTrigger("respawn");
+        die = false;
     }
 }
