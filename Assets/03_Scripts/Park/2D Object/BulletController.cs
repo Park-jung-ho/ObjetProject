@@ -40,12 +40,12 @@ public class BulletController : MonoBehaviour
     public void ShootToPlayer(float speed)
     {
         GameObject newBullet = bullets.Pop();
+        newBullet.transform.parent = transform.parent;
         Bullet bulletInfo = newBullet.GetComponent<Bullet>();
         newBullet.transform.position = MakeNewPos();
         bulletInfo.bulletController = this;
         bulletInfo.speed = speed;
         bulletInfo.pos = (PlayerController2D.instance.transform.position-newBullet.transform.position).normalized;
-        newBullet.transform.parent = transform.parent;
         newBullet.SetActive(true);
     }
 

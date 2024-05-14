@@ -22,13 +22,14 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Vector2 kpos = (PlayerController2D.instance.transform.position - transform.position).normalized;
+            PlayerController2D.instance.ChangeState(PlayerState.stunned,kpos);
             bulletController.pushStack(gameObject);
         }
     }
 
     void OnBecameInvisible()
     {
-        Debug.Log("OUT");
         bulletController.pushStack(gameObject);
     }
 }

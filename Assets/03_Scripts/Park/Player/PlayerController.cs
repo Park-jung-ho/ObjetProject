@@ -13,6 +13,8 @@ public class PlayerController2D : MonoBehaviour
     public Mouse cursor;
     private Vector3 moveInput;
     public float moveSpeed;
+    public float KnockBackPower;
+    public float KnockBackTime;
 
     private Rigidbody2D rigidbody2d;
     private Animator animator;
@@ -49,7 +51,14 @@ public class PlayerController2D : MonoBehaviour
     
     void FixedUpdate()
     {
+        if (state == PlayerState.sign ||
+            state == PlayerState.stunned)
+            {
+                return;
+            }
+
         move();
+        
     }
     
     void move()
@@ -85,9 +94,21 @@ public class PlayerController2D : MonoBehaviour
 
     public void ChangeState(PlayerState newState)
     {
+        if (state == newState) return;
         state = newState;
         moveInput = Vector3.zero;
         animator.SetFloat("speed",moveInput.sqrMagnitude);
+    }
+    public void ChangeState(PlayerState newState, Vector2 pos)
+    {
+        if (state == newState) return;
+        state = newState;
+        moveInput = Vector3.zero;
+        animator.SetFloat("speed",moveInput.sqrMagnitude);
+        if (state == PlayerState.stunned)
+        {
+            StartCoroutine(KnockBack(pos));
+        }
     }
     public bool CurrentState(PlayerState playerState)
     {
@@ -99,6 +120,34 @@ public class PlayerController2D : MonoBehaviour
         animator.SetTrigger(Triggername);
     }
 
+    IEnumerator KnockBack(Vector2 pos)
+    {
+        float Ktime = 0f;
+        if (pos.x <= 0)
+        {
+            animator.SetTrigger("hitR");
+        }
+        else
+        {
+            animator.SetTrigger("hitL");
+        }
+        while (Ktime < KnockBackTime)
+        {
+            Ktime += Time.deltaTime;
+            rigidbody2d.velocity = pos * KnockBackPower;
+            // rigidbody2d.AddForce(pos * KnockBackPower,ForceMode2D.Impulse);
+            yield return null;
+        }
+        // yield return new WaitForSeconds(KnockBackTime);
+        ChangeState(PlayerState.play);
+    }
+    
+    [Button]
+    public void kbTest(Vector2 pos)
+    {
+        state = PlayerState.stunned;
+        StartCoroutine(KnockBack(pos));
+    }
 }
 
 public enum PlayerState
@@ -106,6 +155,7 @@ public enum PlayerState
     play,
     dialog,
     sign,
+    stunned,
     death,
     
 }
