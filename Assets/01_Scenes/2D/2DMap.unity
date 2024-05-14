@@ -3253,6 +3253,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6666640614025345487, guid: 9f55ff2404305fa4a9f305d61197692a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 25e76c9f1bebb1546a7794685aade0a7, type: 2}
     - target: {fileID: 6716055215732117121, guid: 9f55ff2404305fa4a9f305d61197692a, type: 3}
       propertyPath: m_Name
       value: player
