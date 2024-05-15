@@ -20,8 +20,9 @@ public class PlayerController2D : MonoBehaviour
     private Animator animator;
     private PlayerInput playerInput;
 
-    
     [SerializeField]
+    private List<RuntimeAnimatorController> runtimeAnimators;
+    
     private interactable2D InteractingObject;
 
     void Awake()
@@ -92,6 +93,10 @@ public class PlayerController2D : MonoBehaviour
         else if (state == PlayerState.dialog) DialogManager.instance.OnClick();
     }
 
+    public void ChangeAnimator(int idx)
+    {
+        animator.runtimeAnimatorController = runtimeAnimators[idx];
+    }
     public void ChangeState(PlayerState newState)
     {
         if (state == newState) return;

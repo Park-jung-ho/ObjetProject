@@ -36,6 +36,11 @@ public class TimelineController : MonoBehaviour
         playableDirector.playableAsset = timelines[id];
         playableDirector.Play();
     }
+    // public void playCutscene(TimelineAsset cut)
+    // {
+    //     playableDirector.playableAsset = cut;
+    //     playableDirector.Play();
+    // }
     public void playCutscene(PlayableAsset tl)
     {
         playableDirector.playableAsset = tl;

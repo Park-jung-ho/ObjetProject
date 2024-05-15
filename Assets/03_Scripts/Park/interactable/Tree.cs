@@ -11,12 +11,17 @@ public class AppleTree : MonoBehaviour, interactable2D
     private bool isInteractable = false;
 
     private Animator animator;
+    [SerializeField]
+    private int Maxhp;
+
+    private int hp;
     private bool die;
     
     void Start()
     {
         animator = GetComponent<Animator>();
         type = interactType.tree;
+        hp = Maxhp;
     }
 
     void Update()
@@ -51,10 +56,26 @@ public class AppleTree : MonoBehaviour, interactable2D
     // anim
     public void onFall()
     {
-        // check L R
         if (die) return;
-        die = true;
         float Px = PlayerController2D.instance.transform.position.x;
+        if (hp > 0)
+        {
+            hp--;
+            if (Px <= transform.position.x)
+            {
+                PlayerController2D.instance.animTrigger("axeR");
+            }
+            else
+            {
+                PlayerController2D.instance.animTrigger("axeL");
+            }
+            GetComponent<DOTweenAnimation>().DORestart();
+            // GetComponent<DOTweenAnimation>().DOPlay();
+
+            // GetComponent<DOTweenAnimation>().DOPlayById("punch");
+            return;
+        }
+        die = true;
         if (Px <= transform.position.x)
         {
             PlayerController2D.instance.animTrigger("axeR");
@@ -65,11 +86,12 @@ public class AppleTree : MonoBehaviour, interactable2D
             PlayerController2D.instance.animTrigger("axeL");
             animator.SetTrigger("fallL");
         }
-        Invoke("respawnTree", 5f);
+        // Invoke("respawnTree", 5f);
 
     }
     public void respawnTree()
     {
+        hp = Maxhp;
         animator.SetTrigger("respawn");
         die = false;
     }

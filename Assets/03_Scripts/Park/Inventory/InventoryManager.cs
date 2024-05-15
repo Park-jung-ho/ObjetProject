@@ -29,6 +29,25 @@ public class InventoryManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void Start()
+    {
+        ChangeSelectedSlot(selectedSlot);
+    }
+    void Update()
+    {
+        float wheel = Input.GetAxis("Mouse ScrollWheel");
+        if (wheel > 0)
+        {
+            int newidx = selectedSlot + 1 == 8 ? 0 : selectedSlot + 1;
+            ChangeSelectedSlot(newidx);
+        }
+        if (wheel < 0)
+        {
+            int newidx = selectedSlot - 1 == -1 ? 7 : selectedSlot - 1;
+            ChangeSelectedSlot(newidx);
+        }
+
+    }
 
     [Button]
     public void ChangeSelectedSlot(int slotIdx)
@@ -150,5 +169,6 @@ public class InventoryManager : MonoBehaviour
         GameObject newItem = Instantiate(inventoryItemPrefab,slot.transform);
         InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
         inventoryItem.InitialiseItem(item);
+        if (inventorySlots[selectedSlot] == slot) inventoryItem.Select();
     }
 }

@@ -25,5 +25,6 @@ public enum ItemType
     item,
     questItem,
     note,
-
+    weapon,
+    
 }

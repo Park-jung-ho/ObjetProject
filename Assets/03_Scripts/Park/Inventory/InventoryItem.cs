@@ -28,7 +28,20 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         bool textActive = count > 1;
         countText.gameObject.SetActive(textActive);
     }
-
+    public void Select()
+    {
+        if (item.type == ItemType.weapon)
+        {
+            PlayerController2D.instance.ChangeAnimator(1);
+        }
+    }
+    public void DeSelect()
+    {
+        if (item.type == ItemType.weapon)
+        {
+            PlayerController2D.instance.ChangeAnimator(0);
+        }
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         if (item.type == ItemType.note)

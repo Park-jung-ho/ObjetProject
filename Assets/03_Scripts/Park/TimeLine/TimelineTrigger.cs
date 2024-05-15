@@ -3,16 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Playables;
 
 public class TimelineTrigger : MonoBehaviour
 {
     public UnityEvent TriggerOn;
-    public int cutsceneID;
+    public PlayableAsset cutscene; 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            if (cutsceneID != -1) TimelineController.instance.playCutscene(cutsceneID);
+            if (cutscene != null) TimelineController.instance.playCutscene(cutscene);
             TriggerOn?.Invoke();
             gameObject.SetActive(false);
         }
