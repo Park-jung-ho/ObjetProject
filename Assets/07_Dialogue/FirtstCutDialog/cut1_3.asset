@@ -18,11 +18,34 @@ MonoBehaviour:
   sentences:
   - dialogType: 0
     image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
+    next: 1
+    GoToNextStory: 0
+    nextStoryNode: 0
+    isCutscene: 0
+    cutSceneID: 4
+    text: "\uC5EC\uAE30\uB294 \uC774 \uC870\uADF8\uB9CC \uB9C8\uC744\uC758 \uC720\uC77C\uD55C
+      \uC790\uB791\uAC70\uB9AC\n\uC0AC\uACFC \uB18D\uC7A5\uC774\uC57C"
+    choices: []
+    qusetID: 
+  - dialogType: 0
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
+    next: 2
+    GoToNextStory: 0
+    nextStoryNode: 0
+    isCutscene: 0
+    cutSceneID: 1
+    text: "\uADF8\uB9CC\uD07C \uC560\uC9C0\uC911\uC9C0\uD558\uBA70 \uB098\uBB34\uB4E4\uC744
+      \uAD00\uB9AC\uD558\uACE0 \uC788\uC9C0"
+    choices: []
+    qusetID: 
+  - dialogType: 0
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
     next: -1
     GoToNextStory: 0
     nextStoryNode: 0
     isCutscene: 1
-    cutSceneID: 4
-    text: "\uB134"
+    cutSceneID: 2
+    text: "\uC774 \uB098\uBB34\uB4E4\uC774 \uC5C6\uC5B4\uC9C4\uB2E4\uBA74 \uC815\uB9D0
+      \uC2AC\uD50C\uAC70\uC57C..."
     choices: []
     qusetID: 

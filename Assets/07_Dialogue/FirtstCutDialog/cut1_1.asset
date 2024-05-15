@@ -12,28 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf46e6c68c0df346a310138126e82a4, type: 3}
   m_Name: cut1_1
   m_EditorClassIdentifier: 
-  NPCname: "\uC874"
+  NPCname: "\uD2F0\uBBF8"
   ID: 0
   isQuest: 0
   sentences:
   - dialogType: 0
-    image: {fileID: 21300000, guid: 2490cf3af9bbea74786f9608f4333313, type: 3}
-    next: 1
-    GoToNextStory: 0
-    nextStoryNode: 0
-    isCutscene: 0
-    cutSceneID: 0
-    text: "\uD2F0\uBBF8!!!!!!!!!!!"
-    choices: []
-    qusetID: 
-  - dialogType: 0
-    image: {fileID: 21300000, guid: 2490cf3af9bbea74786f9608f4333313, type: 3}
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
     next: -1
     GoToNextStory: 0
     nextStoryNode: 0
     isCutscene: 1
-    cutSceneID: 2
-    text: "\uD55C\uCC38 \uCC3E\uC558\uC796\uC544 \uD2F0\uBBF8. \uBA40\uB9AC \uB098\uC624\uBA74
-      \uC548\uB41C\uB2E4\uB2C8\uAE4C"
+    cutSceneID: 0
+    text: "\uC5EC\uAE30\uAC00 \uC55E\uC73C\uB85C \uB124\uAC00 \uC0B4\uAC8C \uB420
+      \uC9D1\uC774\uC57C"
     choices: []
     qusetID: 

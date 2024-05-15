@@ -23,8 +23,8 @@ MonoBehaviour:
     nextStoryNode: 0
     isCutscene: 0
     cutSceneID: 0
-    text: "\uC548\uB155 \uB098\uB294 \uD2F0\uBBF8\uC57C. \uC0AC\uD0D5\uC744 \uBA39\uB294
-      \uAC78 \uC88B\uC544\uD574."
+    text: "\uC548\uB155! \uC624\uB298 \uC0C8\uB85C \uC774\uC0AC\uC624\uAE30\uB85C
+      \uD55C \uC0AC\uB78C\uC774\uC9C0?"
     choices: []
     qusetID: 
   - dialogType: 0
@@ -34,6 +34,7 @@ MonoBehaviour:
     nextStoryNode: 0
     isCutscene: 1
     cutSceneID: 1
-    text: "\uB108\uB3C4 \uC0AC\uD0D5 \uC88B\uC544\uD574?"
+    text: "\uB098\uB294 **\uD2F0\uBBF8**\uB77C\uACE0\uD574. \uC774 \uB9C8\uC744\uC744
+      \uC18C\uAC1C\uD574\uC904\uAC8C"
     choices: []
     qusetID: 

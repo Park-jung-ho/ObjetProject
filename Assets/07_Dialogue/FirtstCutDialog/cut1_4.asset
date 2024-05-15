@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf46e6c68c0df346a310138126e82a4, type: 3}
   m_Name: cut1_4
   m_EditorClassIdentifier: 
-  NPCname: "\uC874"
+  NPCname: "\uD2F0\uBBF8"
   ID: 0
   isQuest: 0
   sentences:
-  - dialogType: 1
-    image: {fileID: 21300000, guid: 2490cf3af9bbea74786f9608f4333313, type: 3}
-    next: -1
+  - dialogType: 0
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
+    next: 1
     GoToNextStory: 0
     nextStoryNode: 0
     isCutscene: 0
     cutSceneID: 0
-    text: "\uC548\uB155\uD558\uC138\uC694. \uC624\uB298 \uC0C8\uB85C \uC774\uC0AC\uC624\uC2E0
-      \uBD84\uC774\uACA0\uAD70\uC694."
+    text: "\uB2E4\uB978 \uACF3\uC740 \uCC9C\uCC9C\uD788 \uB458\uB7EC\uBCF4\uB3C4\uB85D
+      \uD574."
     choices:
     - text: "\uB9DE\uC544\uC694"
       next: 1
@@ -32,23 +32,22 @@ MonoBehaviour:
       next: 2
     qusetID: 
   - dialogType: 0
-    image: {fileID: 21300000, guid: 2490cf3af9bbea74786f9608f4333313, type: 3}
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
+    next: 2
+    GoToNextStory: 0
+    nextStoryNode: 0
+    isCutscene: 0
+    cutSceneID: 1
+    text: "\uB098\uB294 \uAE09\uD55C \uC77C\uC774 \uC788\uC5B4 \uBA3C\uC800 \uAC00\uBCFC\uAC8C."
+    choices: []
+    qusetID: 
+  - dialogType: 0
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
     next: -1
     GoToNextStory: 0
     nextStoryNode: 0
     isCutscene: 1
-    cutSceneID: 5
-    text: "\uBC18\uAC11\uC2B5\uB2C8\uB2E4. \uC81C\uAC00 \uC9D1\uAE4C\uC9C0 \uC548\uB0B4\uD574\uB4DC\uB9B4\uAC8C\uC694."
-    choices: []
-    qusetID: 
-  - dialogType: 0
-    image: {fileID: 21300000, guid: 2490cf3af9bbea74786f9608f4333313, type: 3}
-    next: 1
-    GoToNextStory: 0
-    nextStoryNode: 0
-    isCutscene: 0
-    cutSceneID: 0
-    text: "\uC6CC\uB099 \uC655\uB798\uAC00 \uC801\uC740 \uB3D9\uB124\uB77C\uC11C
-      \uB9D0\uC774\uC8E0."
+    cutSceneID: 2
+    text: "\uB098\uC911\uC5D0 \uB610 \uBCF4\uC790!"
     choices: []
     qusetID: 
