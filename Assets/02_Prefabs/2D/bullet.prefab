@@ -49,8 +49,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletController: {fileID: 0}
-  speed: 0
+  respawnTime: 0.8
+  delay: 0.5
+  speed: 6
   pos: {x: 0, y: 0, z: 0}
+  isOn: 0
 --- !u!58 &1907176402490933624
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -83,9 +86,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.05714488}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25713372
 --- !u!50 &2947065369843744627
 Rigidbody2D:
   serializedVersion: 4

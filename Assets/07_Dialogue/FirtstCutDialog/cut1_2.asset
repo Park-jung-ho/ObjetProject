@@ -23,7 +23,8 @@ MonoBehaviour:
     nextStoryNode: 0
     isCutscene: 0
     cutSceneID: 0
-    text: "\uADF8\uB9AC\uACE0 \uC5EC\uAE30\uB294 \uB0B4\uAC00 \uC0AC\uB294 \uC9D1\uC774\uC57C."
+    text: "\uADF8\uB9AC\uACE0 \uC5EC\uAE30\uB294 \uB0B4\uAC00 \uC0B4\uACE0 \uC788\uB294
+      \uC9D1\uC774\uC57C."
     choices: []
     qusetID: 
   - dialogType: 1

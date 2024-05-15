@@ -555,11 +555,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_LocalPosition.x
@@ -612,7 +612,7 @@ PrefabInstance:
     - target: {fileID: 8205753148113500204, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 4159597373b61bf4595191f5608241d1, type: 3}
     - target: {fileID: 9097709325669132224, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Name
       value: InventorySlot (1)
@@ -666,11 +666,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_LocalPosition.x
@@ -720,10 +720,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4758032336091509484, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
+      propertyPath: selected.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758032336091509484, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
+      propertyPath: selected.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758032336091509484, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
+      propertyPath: selected.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8205753148113500204, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 4159597373b61bf4595191f5608241d1, type: 3}
     - target: {fileID: 9097709325669132224, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Name
       value: InventorySlot
@@ -773,11 +785,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_LocalPosition.x
@@ -830,7 +842,7 @@ PrefabInstance:
     - target: {fileID: 8205753148113500204, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 4159597373b61bf4595191f5608241d1, type: 3}
     - target: {fileID: 9097709325669132224, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Name
       value: InventorySlot (2)
@@ -880,11 +892,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_LocalPosition.x
@@ -937,7 +949,7 @@ PrefabInstance:
     - target: {fileID: 8205753148113500204, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 4159597373b61bf4595191f5608241d1, type: 3}
     - target: {fileID: 9097709325669132224, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Name
       value: InventorySlot (3)
@@ -987,11 +999,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1044,7 +1056,7 @@ PrefabInstance:
     - target: {fileID: 8205753148113500204, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 4159597373b61bf4595191f5608241d1, type: 3}
     - target: {fileID: 9097709325669132224, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Name
       value: InventorySlot (5)
@@ -1094,11 +1106,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1151,7 +1163,7 @@ PrefabInstance:
     - target: {fileID: 8205753148113500204, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 4159597373b61bf4595191f5608241d1, type: 3}
     - target: {fileID: 9097709325669132224, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Name
       value: InventorySlot (6)
@@ -1201,11 +1213,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1258,7 +1270,7 @@ PrefabInstance:
     - target: {fileID: 8205753148113500204, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 4159597373b61bf4595191f5608241d1, type: 3}
     - target: {fileID: 9097709325669132224, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Name
       value: InventorySlot (7)
@@ -1308,11 +1320,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4663499302147724543, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1365,7 +1377,7 @@ PrefabInstance:
     - target: {fileID: 8205753148113500204, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 4159597373b61bf4595191f5608241d1, type: 3}
     - target: {fileID: 9097709325669132224, guid: 2b6968a707a60f845ab3ac3eb4667294, type: 3}
       propertyPath: m_Name
       value: InventorySlot (4)

@@ -322,29 +322,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1669912223157520206, guid: a06adc1c3b5ec5d4cad91e1f4c70fdc8, type: 3}
-      propertyPath: delay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1669912223157520206, guid: a06adc1c3b5ec5d4cad91e1f4c70fdc8, type: 3}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1669912223157520206, guid: a06adc1c3b5ec5d4cad91e1f4c70fdc8, type: 3}
-      propertyPath: respawnTime
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2678860861873702620, guid: a06adc1c3b5ec5d4cad91e1f4c70fdc8, type: 3}
       propertyPath: m_Name
       value: bullet
-      objectReference: {fileID: 0}
-    - target: {fileID: 2678860861873702620, guid: a06adc1c3b5ec5d4cad91e1f4c70fdc8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5049732387379608978, guid: a06adc1c3b5ec5d4cad91e1f4c70fdc8, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
