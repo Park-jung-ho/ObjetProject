@@ -109,6 +109,15 @@ public class QuestManager : SerializedMonoBehaviour
         QuestUI.SetActive(false);
         currentQuest = null;
     }
+
+    public bool CanClearQuest()
+    {
+        if (questNPC != null && questNPC.CheckState(QuestState.CanEnd))
+        {
+            return true;
+        }
+        return false;
+    }
     
     public void questTrick(int num)
     {

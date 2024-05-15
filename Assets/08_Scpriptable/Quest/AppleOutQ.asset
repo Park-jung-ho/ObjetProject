@@ -19,7 +19,7 @@ MonoBehaviour:
   count: 10
   NotClearDialog: {fileID: 11400000, guid: 1bde018d69cd1d64f9b02ccc93fe06f8, type: 2}
   ClearDialog: {fileID: 11400000, guid: 79ec32c4e37eeed4498793cb61fb909e, type: 2}
-  isTrick: 1
+  isTrick: 0
   TrickID: 1
   ChangeClearDialog: {fileID: 11400000, guid: 2dbec1b6d23f3cd409cf209a5cf6f3a4, type: 2}
   NextStoryID: 0

@@ -82,6 +82,10 @@ public class NPC : MonoBehaviour, interactable2D
     {
         questClear = canend;
     }
+    public bool CheckState(QuestState newState)
+    {
+        return questState == newState;
+    }
     public void ChangeQuestState(QuestState newState)
     {
         questState = newState;

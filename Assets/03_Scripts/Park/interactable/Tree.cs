@@ -13,7 +13,7 @@ public class AppleTree : MonoBehaviour, interactable2D
     [SerializeField]
     private bool isInteractable = false;
 
-
+    public bool cut;
 
     private Animator animator;
     [SerializeField]
@@ -92,6 +92,7 @@ public class AppleTree : MonoBehaviour, interactable2D
         {
             drop.SetActive(true);
         }
+        cut = true;
     }
 
     public void cooltime()

@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c387e3eb48f059459e4511cd24c16e4, type: 3}
-  m_Name: TreeStory
+  m_Name: AppleQ
   m_EditorClassIdentifier: 
   NodeID: 
   StartNPCName: timmy
-  dialog: {fileID: 11400000, guid: cc059be0e762c7e4da38a42f6c25340d, type: 2}
-  quest: {fileID: 11400000, guid: d031b12f5cbfbf145bf2856787321c73, type: 2}
-  CutSceneTriggeridx: 
-  NextStoryNode:
-  - {fileID: 11400000, guid: 19ea5ed9db1ac614887a6d1fc3857696, type: 2}
+  dialog: {fileID: 11400000, guid: 91ad2db7ca2ee9e47abab26d23499be4, type: 2}
+  quest: {fileID: 11400000, guid: 641b7f935c79f9f479e5944b9807addc, type: 2}
+  CutSceneTriggeridx: 03000000
+  NextStoryNode: []
