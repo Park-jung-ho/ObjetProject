@@ -30,6 +30,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
     public void Select()
     {
+        InventoryManager.instance.selectItemID = item.ID;
         if (item.type == ItemType.weapon)
         {
             PlayerController2D.instance.ChangeAnimator(1);
@@ -37,6 +38,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     }
     public void DeSelect()
     {
+        InventoryManager.instance.selectItemID = "";
         if (item.type == ItemType.weapon)
         {
             PlayerController2D.instance.ChangeAnimator(0);

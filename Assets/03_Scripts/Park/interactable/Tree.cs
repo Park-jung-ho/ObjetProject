@@ -6,9 +6,12 @@ using UnityEngine;
 
 public class AppleTree : MonoBehaviour, interactable2D
 {
+    public List<Bullet> apples;
     public interactType type {get; set;}
     [SerializeField]
     private bool isInteractable = false;
+
+
 
     private Animator animator;
     [SerializeField]
@@ -16,6 +19,7 @@ public class AppleTree : MonoBehaviour, interactable2D
 
     private int hp;
     private bool die;
+    private bool cool;
     
     void Start()
     {
@@ -39,24 +43,17 @@ public class AppleTree : MonoBehaviour, interactable2D
 
     public void Interact()
     {
+        if (PlayerController2D.instance.cursor.type != MouseType.tree) return;
         onFall();
-        //apple.GetComponent<DOTweenAnimation>().DOPlayById("drop");
     }
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!other.CompareTag("Player")) return;
-        isInteractable = true;
-    }
-    public void OnTriggerExit2D(Collider2D other)
-    {
-        if (!other.CompareTag("Player")) return;
-        isInteractable = false;
-    }
+    
 
     // anim
     public void onFall()
     {
-        if (die) return;
+        if (die || cool) return;
+        cool = true;
+        Invoke("cooltime",0.3f);
         float Px = PlayerController2D.instance.transform.position.x;
         if (hp > 0)
         {
@@ -70,9 +67,7 @@ public class AppleTree : MonoBehaviour, interactable2D
                 PlayerController2D.instance.animTrigger("axeL");
             }
             GetComponent<DOTweenAnimation>().DORestart();
-            // GetComponent<DOTweenAnimation>().DOPlay();
 
-            // GetComponent<DOTweenAnimation>().DOPlayById("punch");
             return;
         }
         die = true;
@@ -87,8 +82,17 @@ public class AppleTree : MonoBehaviour, interactable2D
             animator.SetTrigger("fallL");
         }
         // Invoke("respawnTree", 5f);
-
+        foreach (Bullet apple in apples)
+        {
+            apple.off();
+        }
     }
+
+    public void cooltime()
+    {
+        cool = false;
+    }
+
     public void respawnTree()
     {
         hp = Maxhp;

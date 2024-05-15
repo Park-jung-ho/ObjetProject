@@ -10,7 +10,7 @@ public class BulletController : MonoBehaviour
     public bool AutoShoot;
     public float coolTime;
     public float curTime;
-    private Stack<GameObject> bullets;
+    public Stack<GameObject> bullets;
 
 
     

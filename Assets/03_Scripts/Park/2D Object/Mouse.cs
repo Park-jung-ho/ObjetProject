@@ -96,6 +96,7 @@ public class Mouse : MonoBehaviour
                 }
                 if (obj.type == interactType.tree)
                 {
+                    if (InventoryManager.instance.selectItemID != "axe") return;
                     type = MouseType.tree;
                     currentCursor.sprite = cursor_tree;
                     currentCursor.color = canAlpha;
@@ -129,6 +130,7 @@ public class Mouse : MonoBehaviour
                 }
                 if (obj.type == interactType.tree)
                 {
+                    if (InventoryManager.instance.selectItemID != "axe") return;
                     type = MouseType.tree;
                     currentCursor.sprite = cursor_tree;
                     currentCursor.color = cantAlpha;

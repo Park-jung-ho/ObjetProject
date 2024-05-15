@@ -15,7 +15,9 @@ public class InventoryManager : MonoBehaviour
 
 
     [SerializeField]
-    private int selectedSlot = -1;
+    private int selectedSlot;
+
+    public string selectItemID;
 
     void Awake()
     {
