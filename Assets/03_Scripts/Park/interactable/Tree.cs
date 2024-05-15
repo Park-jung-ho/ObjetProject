@@ -7,6 +7,8 @@ using UnityEngine;
 public class AppleTree : MonoBehaviour, interactable2D
 {
     public List<Bullet> apples;
+    public List<GameObject> drops;
+
     public interactType type {get; set;}
     [SerializeField]
     private bool isInteractable = false;
@@ -85,6 +87,10 @@ public class AppleTree : MonoBehaviour, interactable2D
         foreach (Bullet apple in apples)
         {
             apple.off();
+        }
+        foreach (GameObject drop in drops)
+        {
+            drop.SetActive(true);
         }
     }
 

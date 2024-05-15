@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -38,12 +39,11 @@ public class Bullet : MonoBehaviour
 
     IEnumerator hide()
     {
-        transform.GetChild(0).gameObject.SetActive(false);
         isOn = false;
-        yield return new WaitForSeconds(respawnTime);
         transform.position = idlePos;
+        GetComponent<DOTweenAnimation>().DORestart();
+        yield return new WaitForSeconds(respawnTime);
         pos = (PlayerController2D.instance.transform.position - transform.position).normalized;
-        transform.GetChild(0).gameObject.SetActive(true);
         yield return new WaitForSeconds(delay);
         isOn = true;
     }
