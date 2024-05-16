@@ -46,9 +46,9 @@ MonoBehaviour:
     text: "...\uC774\uAC8C \uB3C4\uB300\uCCB4 \uC5B4\uB5BB\uAC8C \uB41C\uAC70\uC57C?"
     choices:
     - text: "\uC0AC\uACFC\uAC00 \uB098\uB97C \uBA3C\uC800 \uACF5\uACA9\uD588\uC5B4"
-      next: 4
+      next: 3
     - text: "\uB098\uB3C4 \uC798 \uBAA8\uB974\uACA0\uC5B4"
-      next: 6
+      next: 4
     qusetID: 
   - dialogType: 0
     image: {fileID: 21300000, guid: 267cefa78fa77f0489c203c5f7dd0429, type: 3}
@@ -63,27 +63,17 @@ MonoBehaviour:
     qusetID: 
   - dialogType: 0
     image: {fileID: 21300000, guid: 267cefa78fa77f0489c203c5f7dd0429, type: 3}
-    next: 7
+    next: 5
     GoToNextStory: 0
     nextStoryNode: 0
     isCutscene: 0
-    cutSceneID: 6
+    cutSceneID: 5
     text: "\uC798... \uBAA8\uB974\uACA0\uB2E4\uACE0?\n\uC5B4\uB5BB\uAC8C \uC778\uAC04\uC774
       \uADF8\uAC78 \uBAA8\uB97C \uC218\uAC00 \uC788\uC5B4!"
     choices: []
     qusetID: 
   - dialogType: 0
     image: {fileID: 21300000, guid: 5fc8617e4165b3d4d8f84c6df1b1bfa5, type: 3}
-    next: -1
-    GoToNextStory: 0
-    nextStoryNode: 0
-    isCutscene: 1
-    cutSceneID: 5
-    text: "\uB108\uB294 \uC778\uAC04\uB3C4 \uC544\uB2C8\uC57C!"
-    choices: []
-    qusetID: 
-  - dialogType: 0
-    image: {fileID: 0}
     next: -1
     GoToNextStory: 0
     nextStoryNode: 0

@@ -23,7 +23,8 @@ MonoBehaviour:
     nextStoryNode: 0
     isCutscene: 0
     cutSceneID: 0
-    text: "\uB098\uBB34 \uC880 \uCE90\uC640"
+    text: "\uB554\uAC10\uC774 \uD544\uC694\uD55C\uB370 \uB098\uB294 \uB3C4\uB07C\uC9C8\uC744
+      \uD560 \uC904 \uBAB0\uB77C.\n\uB098\uBB34 \uCE90\uB294 \uAC83\uC880 \uB3C4\uC640\uC904\uB798?"
     choices:
     - text: "\uADF8\uB798"
       next: 1

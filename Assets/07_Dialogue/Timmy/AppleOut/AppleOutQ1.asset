@@ -23,7 +23,7 @@ MonoBehaviour:
     nextStoryNode: 0
     isCutscene: 0
     cutSceneID: 0
-    text: "\uC65C\uC774\uB9AC \uC624\uB798\uAC78\uB838\uC5B4?"
+    text: "\uC65C \uC774\uB9AC \uC624\uB798\uAC78\uB838\uC5B4?"
     choices: []
     qusetID: 
   - dialogType: 0

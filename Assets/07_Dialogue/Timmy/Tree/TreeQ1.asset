@@ -23,6 +23,7 @@ MonoBehaviour:
     nextStoryNode: 0
     isCutscene: 0
     cutSceneID: 0
-    text: "\uACE0\uB9C8\uC6CC"
+    text: "\uB355\uBD84\uC5D0 \uACC4\uD68D\uD588\uB358 \uC77C\uC744 \uD560 \uC218
+      \uC788\uAC8C \uB410\uC5B4.\n\uACE0\uB9C8\uC6CC!"
     choices: []
     qusetID: 

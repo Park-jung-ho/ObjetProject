@@ -16,6 +16,18 @@ MonoBehaviour:
   ID: 0
   isQuest: 1
   sentences:
+  - dialogType: 0
+    image: {fileID: 0}
+    next: 1
+    GoToNextStory: 0
+    nextStoryNode: 0
+    isCutscene: 0
+    cutSceneID: 0
+    text: "\uB9C8\uC744\uC5D0 \uC0AC\uACFC\uB97C \uC218\uD655\uD560 \uC0AC\uB78C\uC774
+      \uC5C6\uC5B4\uC11C \uC0AC\uACFC \uB530\uB294 \uC77C\uC774 \uBC00\uB9AC\uACE0
+      \uC788\uC5B4. "
+    choices: []
+    qusetID: 
   - dialogType: 1
     image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
     next: 0
@@ -23,12 +35,13 @@ MonoBehaviour:
     nextStoryNode: 0
     isCutscene: 0
     cutSceneID: 0
-    text: "\uC57C! \uAC00\uC11C \uC0AC\uACFC\uC880 \uB530\uC640!"
+    text: "\uC624\uB298 \uC774\uC0AC \uC628 \uC0AC\uB78C\uC5D0\uAC8C \uBBF8\uC548\uD55C
+      \uC77C\uC774\uC9C0\uB9CC \uC0AC\uACFC\uB97C \uC880 \uB530\uB2E4\uC904\uB798?"
     choices:
     - text: "\uADF8\uB798"
-      next: 1
-    - text: "\uC2EB\uC5B4"
       next: 2
+    - text: "\uC2EB\uC5B4"
+      next: 3
     qusetID: 
   - dialogType: 2
     image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
@@ -47,6 +60,6 @@ MonoBehaviour:
     nextStoryNode: 0
     isCutscene: 0
     cutSceneID: 0
-    text: "\uC65C???"
+    text: "\uC5B4\uCA54 \uC218 \uC5C6\uC9C0..."
     choices: []
     qusetID: 
