@@ -18,7 +18,8 @@ public static class MessageBoxExample
 
     public static void windowError(string text, string caption)
     {
-        MessageBox(IntPtr.Zero, text, caption, (uint)0x00000030L);
+        MessageBox(IntPtr.Zero, text, " ", (uint)0x00000030L);
+        // MessageBox(IntPtr.Zero, text, caption, (uint)0x00000030L);
         // // 메시지 박스 정보를 담은 튜플 생성
         // Tuple<string, string> msg1 = new Tuple<string, string>(text, caption);
         // Tuple<string, string> msg2 = new Tuple<string, string>(text, caption);

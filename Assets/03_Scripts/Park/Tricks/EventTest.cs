@@ -18,7 +18,7 @@ public static class EventTest
     {
         if (eventID == "AppleOut")
         {
-            GameManager.instance.EndGame("넌 그냥 나가라 ㅋㅋ","티미");
+            GameManager.instance.SendMessage("넌 그냥 나가라 ㅋㅋ","티미");
         }
     }
 
