@@ -15,12 +15,14 @@ public class NpcMove : MonoBehaviour
     GameObject player;
     float distanceToTarget;
     Animator anim;
+    bool isarive;
     void Start()
     {
         anim = GetComponent<Animator>();
         moveType = MoveType.Look;
         player = GameObject.Find("Player");
         distanceToTarget = Vector3.Distance(transform.position, player.transform.position);
+        isarive = false;
     }
 
     void Update()
@@ -28,6 +30,7 @@ public class NpcMove : MonoBehaviour
         distanceToTarget = Vector3.Distance(transform.position, player.transform.position);
         if (moveType == MoveType.Move)
         {
+            if (isarive) return;
             Debug.Log("Move");
             Vector3 direction = (moveTarget.transform.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(direction);
@@ -49,8 +52,11 @@ public class NpcMove : MonoBehaviour
             anim.SetBool("isWalk", false);
         }
     }
-    void OnTriggerStay(Collider other) {
-        if(other.tag == "Target"){
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Target")
+        {
+            isarive = true;
             moveType = MoveType.Look;
         }
     }
