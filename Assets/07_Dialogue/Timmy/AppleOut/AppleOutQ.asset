@@ -17,7 +17,7 @@ MonoBehaviour:
   isQuest: 1
   sentences:
   - dialogType: 0
-    image: {fileID: 0}
+    image: {fileID: 21300000, guid: e741c1b9b2b83734786fe0460d333766, type: 3}
     next: 1
     GoToNextStory: 0
     nextStoryNode: 0
@@ -35,8 +35,7 @@ MonoBehaviour:
     nextStoryNode: 0
     isCutscene: 0
     cutSceneID: 0
-    text: "\uC624\uB298 \uC774\uC0AC \uC628 \uC0AC\uB78C\uC5D0\uAC8C \uBBF8\uC548\uD55C
-      \uC77C\uC774\uC9C0\uB9CC \uC0AC\uACFC\uB97C \uC880 \uB530\uB2E4\uC904\uB798?"
+    text: "\uBBF8\uC548\uD558\uC9C0\uB9CC \uC0AC\uACFC\uB97C \uC880 \uB530\uB2E4\uC904\uB798?"
     choices:
     - text: "\uADF8\uB798"
       next: 2
