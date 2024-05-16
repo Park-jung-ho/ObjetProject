@@ -151,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 70135}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.7, y: 8, z: -10}
+  m_LocalPosition: {x: -1.13, y: -11.47, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -372,6 +372,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 779987735}
     m_Modifications:
+    - target: {fileID: 865464210463827673, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b6823d26d600e9340a4b63529973da6b, type: 3}
     - target: {fileID: 4519771058229369807, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_Name
       value: ProgressBar (4)
@@ -459,6 +463,18 @@ PrefabInstance:
     - target: {fileID: 4809820734902317358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984903996027460157, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.21332467
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -560,11 +576,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2763058001994428785, guid: 73db605858a958f4c9192c4c6a328325, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.110001
+      value: 20.79
       objectReference: {fileID: 0}
     - target: {fileID: 2763058001994428785, guid: 73db605858a958f4c9192c4c6a328325, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.95
+      value: -1.17
       objectReference: {fileID: 0}
     - target: {fileID: 2763058001994428785, guid: 73db605858a958f4c9192c4c6a328325, type: 3}
       propertyPath: m_LocalPosition.z
@@ -977,6 +993,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 779987735}
     m_Modifications:
+    - target: {fileID: 865464210463827673, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 827783447374fa746bc675ce127e39a0, type: 3}
     - target: {fileID: 4519771058229369807, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_Name
       value: ProgressBar (3)
@@ -1065,6 +1085,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4984903996027460157, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.29049903
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1135,6 +1167,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 779987735}
     m_Modifications:
+    - target: {fileID: 865464210463827673, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1bb358b29db3a1f4aac9cd4188f5fb6a, type: 3}
     - target: {fileID: 4519771058229369807, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_Name
       value: ProgressBar (5)
@@ -1222,6 +1258,18 @@ PrefabInstance:
     - target: {fileID: 4809820734902317358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984903996027460157, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.15030876
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1621,6 +1669,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8299869361533917878, guid: 3cc8d1776a1e91349b0a16e38b1e8002, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519102632249005174, guid: 3cc8d1776a1e91349b0a16e38b1e8002, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519102632249005174, guid: 3cc8d1776a1e91349b0a16e38b1e8002, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1804,7 +1864,7 @@ Transform:
   m_GameObject: {fileID: 713286971}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.7, y: 8, z: -10}
+  m_LocalPosition: {x: -1.13, y: -11.47, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2685,7 +2745,7 @@ Transform:
   m_GameObject: {fileID: 1141505573}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.7, y: 8, z: -10}
+  m_LocalPosition: {x: -1.13, y: -11.47, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2963,6 +3023,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6490169701377089072, guid: bd7556292d498df4c87c2f9c89415841, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a5649dc8adace0c449f93dbfc84bc9fe, type: 3}
     - target: {fileID: 8278110905231168506, guid: bd7556292d498df4c87c2f9c89415841, type: 3}
       propertyPath: m_Name
       value: Glitch_Collider
@@ -2999,6 +3063,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 779987735}
     m_Modifications:
+    - target: {fileID: 865464210463827673, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 003bbdd00934067479eb81367c6af8a4, type: 3}
     - target: {fileID: 4519771058229369807, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_Name
       value: ProgressBar (1)
@@ -3087,6 +3155,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4984903996027460157, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.99222225
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0077778
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3133,6 +3213,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 779987735}
     m_Modifications:
+    - target: {fileID: 865464210463827673, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ad65834dc0f458f49be15c414c505367, type: 3}
     - target: {fileID: 4519771058229369807, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_Name
       value: ProgressBar (6)
@@ -3220,6 +3304,18 @@ PrefabInstance:
     - target: {fileID: 4809820734902317358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984903996027460157, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.11654455
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3471,6 +3567,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 779987735}
     m_Modifications:
+    - target: {fileID: 865464210463827673, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 827783447374fa746bc675ce127e39a0, type: 3}
     - target: {fileID: 4519771058229369807, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_Name
       value: ProgressBar (2)
@@ -3558,6 +3658,18 @@ PrefabInstance:
     - target: {fileID: 4809820734902317358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984903996027460157, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.38133514
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -46031,6 +46143,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 779987735}
     m_Modifications:
+    - target: {fileID: 865464210463827673, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ad65834dc0f458f49be15c414c505367, type: 3}
     - target: {fileID: 4519771058229369807, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_Name
       value: ProgressBar (7)
@@ -46118,6 +46234,18 @@ PrefabInstance:
     - target: {fileID: 4809820734902317358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984903996027460157, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.09596146
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -46250,6 +46378,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 779987735}
     m_Modifications:
+    - target: {fileID: 865464210463827673, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3281ce81c2e185b478054759dcfda012, type: 3}
     - target: {fileID: 4519771058229369807, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_Name
       value: ProgressBar (8)
@@ -46337,6 +46469,18 @@ PrefabInstance:
     - target: {fileID: 4809820734902317358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984903996027460157, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.072602876
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47664,6 +47808,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 779987735}
     m_Modifications:
+    - target: {fileID: 865464210463827673, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 631d7a095f56a424a90c16b0b1df0350, type: 3}
     - target: {fileID: 4519771058229369807, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_Name
       value: ProgressBar
@@ -47751,6 +47899,18 @@ PrefabInstance:
     - target: {fileID: 4809820734902317358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4984903996027460157, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.028577192
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646034877132655358, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47876,11 +48036,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 459017888746250719, guid: 9f55ff2404305fa4a9f305d61197692a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -50.7
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 459017888746250719, guid: 9f55ff2404305fa4a9f305d61197692a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: -11.47
       objectReference: {fileID: 0}
     - target: {fileID: 459017888746250719, guid: 9f55ff2404305fa4a9f305d61197692a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -50448,6 +50608,10 @@ PrefabInstance:
     - target: {fileID: 5692944514131621620, guid: 708f0a9ffe72dd54e81bd15bfb1663fb, type: 3}
       propertyPath: m_Name
       value: Glitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692944514131621620, guid: 708f0a9ffe72dd54e81bd15bfb1663fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7587450763618297039, guid: 708f0a9ffe72dd54e81bd15bfb1663fb, type: 3}
       propertyPath: Vignette
