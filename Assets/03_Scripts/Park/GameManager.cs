@@ -116,6 +116,7 @@ public class GameManager : MonoBehaviour
     {
         Cursor.visible = true;
         MessageBoxExample.windowError(text,title);
+        ExitGame();
     }
 
     public void ExitGame()
