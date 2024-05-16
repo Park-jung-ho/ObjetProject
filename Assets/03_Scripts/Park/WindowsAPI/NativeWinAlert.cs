@@ -16,7 +16,7 @@ public static class MessageBoxExample
         MessageBox(IntPtr.Zero, message.Item1, message.Item2, 0);
     }
 
-    public static void windowError(string text, string caption)
+    public static void windowError(string text)
     {
         MessageBox(IntPtr.Zero, text, " ", (uint)0x00000030L);
         // MessageBox(IntPtr.Zero, text, caption, (uint)0x00000030L);

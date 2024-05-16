@@ -112,10 +112,10 @@ public class GameManager : MonoBehaviour
         // add here...
     }
 
-    public void SendMessage(string text, string title)
+    public void SendMessageBox(string text)
     {
         Cursor.visible = true;
-        MessageBoxExample.windowError(text,title);
+        MessageBoxExample.windowError(text);
         ExitGame();
     }
 
