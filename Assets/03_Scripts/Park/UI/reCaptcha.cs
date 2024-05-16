@@ -8,21 +8,28 @@ public class reCaptcha : MonoBehaviour
     public List<reCaptchaImage> reCaptchaImages;
     public List<bool> inputs;
     public List<bool> keys;
-    public Button button;
+    public GameObject button;
     
     void Start()
     {
         for (int i = 0; i < reCaptchaImages.Count; i++)
         {
             reCaptchaImages[i].ID = i;
+            reCaptchaImages[i].reCapUI = this;
         }
     }
     
     void Update()
     {
-        if (inputs == keys)
+        bool good = true;
+        for (int i = 0; i < 9; i++)
         {
-            
+            good = inputs[i] == keys[i];
+            if (!good) break;
+        }
+        if (good)
+        {
+            button.SetActive(true);
         }
     }
 }

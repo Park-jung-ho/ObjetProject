@@ -1,20 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class reCaptchaImage : MonoBehaviour
+public class reCaptchaImage : MonoBehaviour, IPointerClickHandler
 {
     public int ID;
     public reCaptcha reCapUI;
-    public SpriteRenderer spriteRenderer;
+    public Image image;
     public List<Sprite> sprites;
     private void Start() {
-        reCapUI = transform.parent.GetComponent<reCaptcha>();
+        image = GetComponent<Image>();
+    }
+    
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        SwapImage();
     }
     public void SwapImage()
     {
-        spriteRenderer.sprite = spriteRenderer.sprite == sprites[0] ? sprites[0] : sprites[1];
-        if (spriteRenderer.sprite == sprites[1])
+        image.sprite = image.sprite == sprites[0] ? sprites[1] : sprites[0];
+        if (image.sprite == sprites[1])
         {
             reCapUI.inputs[ID] = true;
         }
