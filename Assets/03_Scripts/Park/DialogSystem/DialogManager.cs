@@ -40,8 +40,11 @@ public class DialogManager : SerializedMonoBehaviour
 
     [SerializeField]
     private bool isTyping;
+    [SerializeField]
     private bool CantClick = false;
+    [SerializeField]
     private bool OnDialog;
+    public bool OnAnimation;
 
 
     void Awake()
@@ -73,7 +76,7 @@ public class DialogManager : SerializedMonoBehaviour
     }
     public void OnClick()
     {
-        if (CantClick)
+        if (CantClick || OnAnimation)
         {
             return;
         }
@@ -109,7 +112,7 @@ public class DialogManager : SerializedMonoBehaviour
 
     public void StartDialog(Dialog dialog)
     {
-        if (OnDialog) return;
+        if (OnDialog || OnAnimation) return;
         if (dialog == null)
         {
             Debug.LogWarning("input dialog is NULL!!!!!");
@@ -121,7 +124,7 @@ public class DialogManager : SerializedMonoBehaviour
         image.sprite = currentDialog.sentences[0].image;
 
         OpenPanel();
-        
+        OnAnimation = true;
         DialogUIanimator.SetTrigger("IsOn");
         // ShowDialog(0);
         if (PlayerController2D.instance != null)
@@ -184,10 +187,14 @@ public class DialogManager : SerializedMonoBehaviour
         EventTest.ChangeDialogID(id);
         if (id == -1)
         {
-            EndDialog();
-            if (currentDialogText.isCutscene)
+            if (OnDialog)
             {
-                TimelineController.instance.loopOut();
+                OnDialog = false;
+                EndDialog();
+                if (currentDialogText.isCutscene)
+                {
+                    TimelineController.instance.loopOut();
+                }
             }
             return;
         }
@@ -201,11 +208,7 @@ public class DialogManager : SerializedMonoBehaviour
 
     public void EndDialog()
     {
-        if (!OnDialog)
-        {
-            return;
-        }
-        OnDialog = false;
+        OnAnimation = true;
         DialogUIanimator.SetTrigger("IsOff");
         
         if (currentDialogText.GoToNextStory)

@@ -143,6 +143,11 @@ public class Mouse : MonoBehaviour
     public void Onclick()
     {
         if (obj == null || !obj.CanClick()) return;
+        if (TimelineController.instance != null &&
+            TimelineController.instance.playableDirector.time > 0)
+        {
+            return;       
+        }
         obj.Interact();
     }
 }

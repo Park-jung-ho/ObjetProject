@@ -12,4 +12,8 @@ public class DialogAnim : MonoBehaviour
     {
         DialogManager.instance.HidePanel();
     }
+    public void endAnimation()
+    {
+        DialogManager.instance.OnAnimation = false;
+    }
 }

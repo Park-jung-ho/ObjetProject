@@ -18,4 +18,8 @@ public class GlitchController : MonoBehaviour
     {
         Onshake.Invoke();
     }
+    void OnDestroy()
+    {
+        mat.SetFloat("_Vignette",0);
+    }
 }

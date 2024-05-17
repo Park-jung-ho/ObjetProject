@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public TriggerController triggerController;
     
     [SerializeField]
-    private StoryNode currentStoryNode;
+    public StoryNode currentStoryNode;
 
     
     void Awake()
@@ -41,11 +41,11 @@ public class GameManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) 
     {
         if (scene.name == "Title") gameState = GameState.Title;
-        if (scene.name != "Title") gameState = GameState.InGame;
+        if (scene.name == "2DMap") gameState = GameState.InGame;
         // 씬 로드 시 필요한 실행 여기에
         if (gameState == GameState.InGame)
         {
-            triggerController = FindObjectOfType<TriggerController>();
+            // triggerController = FindObjectOfType<TriggerController>();
             LoadStory();
         }
     }
@@ -98,6 +98,10 @@ public class GameManager : MonoBehaviour
             }
         }
         // set cutSceneTrigger
+        if (triggerController == null)
+        {
+            triggerController = FindObjectOfType<TriggerController>();
+        }
         if (triggerController != null)
         {
             foreach (int idx in currentStoryNode.CutSceneTriggeridx)

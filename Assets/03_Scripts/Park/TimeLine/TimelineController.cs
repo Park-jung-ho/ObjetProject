@@ -45,6 +45,7 @@ public class TimelineController : MonoBehaviour
     {
         playableDirector.playableAsset = tl;
         playableDirector.Play();
+    
     }
     
 
@@ -74,5 +75,13 @@ public class TimelineController : MonoBehaviour
     {
         isLoop = type;
     }
-    
+
+    public void NextStoryNode(int idx)
+    {
+        GameManager.instance.SetStory(idx);
+    }
+    public void SendMessageBox(string text)
+    {
+        GameManager.instance.SendMessageBox(text);
+    }
 }

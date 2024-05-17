@@ -18,6 +18,7 @@ public class TriggerController : MonoBehaviour
             trigger.SetActive(false);
         }    
     }
+    
 
     public void setTriggerOn(int[] idxs)
     {

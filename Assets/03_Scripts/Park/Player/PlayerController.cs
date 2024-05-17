@@ -52,14 +52,10 @@ public class PlayerController2D : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (state == PlayerState.sign ||
-            state == PlayerState.stunned)
-            {
-                return;
-            }
-
-        move();
-        
+        if (state != PlayerState.sign && state != PlayerState.stunned)
+        {
+            move();
+        }   
     }
     
     void move()
@@ -103,6 +99,7 @@ public class PlayerController2D : MonoBehaviour
         state = newState;
         moveInput = Vector3.zero;
         animator.SetFloat("speed",moveInput.sqrMagnitude);
+        rigidbody2d.velocity = Vector2.zero;
     }
     public void ChangeState(PlayerState newState, Vector2 pos)
     {

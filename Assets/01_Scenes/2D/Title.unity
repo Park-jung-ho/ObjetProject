@@ -928,7 +928,7 @@ PrefabInstance:
     - target: {fileID: 8344776029073544018, guid: e8b461388bdc1384d9447c045c2d028a, type: 3}
       propertyPath: currentStoryNode
       value: 
-      objectReference: {fileID: 11400000, guid: 6768f02fc1bf571479ba4e7d1a021ef7, type: 2}
+      objectReference: {fileID: 11400000, guid: 39e34f89ed980e741a70a0f42fda80fe, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1403,6 +1403,10 @@ PrefabInstance:
     - target: {fileID: 4611860788413312849, guid: 58258a2a3867e7e46955f46ed599f85c, type: 3}
       propertyPath: m_Name
       value: TimeLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611860788413312849, guid: 58258a2a3867e7e46955f46ed599f85c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5623416831014806840, guid: 58258a2a3867e7e46955f46ed599f85c, type: 3}
       propertyPath: m_Events.m_Events.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -1038,6 +1038,7 @@ MonoBehaviour:
   cursor_Door0: {fileID: 0}
   cursor_Door1: {fileID: 0}
   cursor_sign: {fileID: 0}
+  cursor_tree: {fileID: 0}
 --- !u!4 &1121213839
 Transform:
   m_ObjectHideFlags: 0
@@ -1942,6 +1943,10 @@ PrefabInstance:
     - target: {fileID: 4611860788413312849, guid: 58258a2a3867e7e46955f46ed599f85c, type: 3}
       propertyPath: m_Name
       value: TimeLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611860788413312849, guid: 58258a2a3867e7e46955f46ed599f85c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5623416831014806840, guid: 58258a2a3867e7e46955f46ed599f85c, type: 3}
       propertyPath: m_Events.m_Events.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target

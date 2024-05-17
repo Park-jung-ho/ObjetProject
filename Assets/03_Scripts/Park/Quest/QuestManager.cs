@@ -82,9 +82,9 @@ public class QuestManager : SerializedMonoBehaviour
         }
         questNPC = NPCManager.instance.findNPC(currentQuest.npcName);
         
-        setQuestUI();
         
         questNPC.ChangeQuestState(QuestState.Started);
+        setQuestUI();
     }
 
     public void isQuestItem(string itemID)

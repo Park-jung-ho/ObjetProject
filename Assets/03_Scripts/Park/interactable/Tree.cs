@@ -22,6 +22,7 @@ public class AppleTree : MonoBehaviour, interactable2D
     private int hp;
     private bool die;
     private bool cool;
+    public bool OnGame;
     
     void Start()
     {
@@ -45,10 +46,14 @@ public class AppleTree : MonoBehaviour, interactable2D
 
     public void Interact()
     {
-        if (PlayerController2D.instance.cursor.type != MouseType.tree) return;
+        if (!OnGame || PlayerController2D.instance.cursor.type != MouseType.tree) return;
         onFall();
     }
     
+    public void AppleGameOn()
+    {
+        OnGame = true;
+    }
 
     // anim
     public void onFall()
