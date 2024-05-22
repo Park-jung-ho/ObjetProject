@@ -13,7 +13,10 @@ public class reCaptchaImage : MonoBehaviour, IPointerClickHandler
     private void Start() {
         image = GetComponent<Image>();
     }
-    
+    public void InitImage()
+    {
+        image.sprite = sprites[0];
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         SwapImage();

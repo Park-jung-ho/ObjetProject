@@ -50,6 +50,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             InventoryManager.instance.NoteUI.SetActive(true);
             InventoryManager.instance.noteText.text = item.noteText;
+            transform.parent.GetComponent<InventorySlot>().OnPointerClick(eventData);
         }
     }
 

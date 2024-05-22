@@ -5,14 +5,20 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour, IDropHandler
+public class InventorySlot : MonoBehaviour, IDropHandler, IPointerClickHandler
 {
+    public int idx;
     public Image image;
     public Color selected, notselected;
+
 
     void Awake()
     {
         DeSelect();
+    }
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        InventoryManager.instance.ChangeSelectedSlot(idx);
     }
     public void Select()
     {

@@ -33,7 +33,14 @@ public class AppleTree : MonoBehaviour, interactable2D
 
     void Update()
     {
-        
+        if (OnGame)
+        {
+            type = interactType.tree;
+        }
+        else
+        {
+            type = interactType.None;
+        }
     }
     public void trigger(bool can)
     {
@@ -60,7 +67,7 @@ public class AppleTree : MonoBehaviour, interactable2D
     {
         if (die || cool) return;
         cool = true;
-        Invoke("cooltime",0.3f);
+        Invoke("cooltime",0.5f);
         float Px = PlayerController2D.instance.transform.position.x;
         if (hp > 0)
         {
@@ -89,6 +96,8 @@ public class AppleTree : MonoBehaviour, interactable2D
             animator.SetTrigger("fallL");
         }
         // Invoke("respawnTree", 5f);
+        type = interactType.None;
+        OnGame = false;
         foreach (Bullet apple in apples)
         {
             apple.off();

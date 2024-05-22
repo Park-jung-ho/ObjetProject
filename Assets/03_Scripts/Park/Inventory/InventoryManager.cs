@@ -34,26 +34,51 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         ChangeSelectedSlot(selectedSlot);
+        int idx = 0;
+        foreach (InventorySlot slot in inventorySlots)
+        {
+            slot.idx = idx++;
+        }
     }
     void Update()
     {
+        getKeyNum();
         float wheel = Input.GetAxis("Mouse ScrollWheel");
-        if (wheel > 0)
+        if (wheel < 0)
         {
             int newidx = selectedSlot + 1 == 8 ? 0 : selectedSlot + 1;
             ChangeSelectedSlot(newidx);
         }
-        if (wheel < 0)
+        if (wheel > 0)
         {
             int newidx = selectedSlot - 1 == -1 ? 7 : selectedSlot - 1;
             ChangeSelectedSlot(newidx);
         }
 
     }
-
+    void getKeyNum()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            ChangeSelectedSlot(0);
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+            ChangeSelectedSlot(1);
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+            ChangeSelectedSlot(2);
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+            ChangeSelectedSlot(3);
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+            ChangeSelectedSlot(4);
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+            ChangeSelectedSlot(5);
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
+            ChangeSelectedSlot(6);
+        else if (Input.GetKeyDown(KeyCode.Alpha8))
+            ChangeSelectedSlot(7);
+    }
     [Button]
     public void ChangeSelectedSlot(int slotIdx)
     {
+        if (selectedSlot == slotIdx) return;
         if (selectedSlot > -1) inventorySlots[selectedSlot].DeSelect();
         inventorySlots[slotIdx].Select();
         selectedSlot = slotIdx;
