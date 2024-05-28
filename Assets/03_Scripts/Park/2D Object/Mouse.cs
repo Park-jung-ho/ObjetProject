@@ -31,7 +31,10 @@ public class Mouse : MonoBehaviour
     public Sprite cursor_sign;
     [FoldoutGroup("tree")]
     public Sprite cursor_tree;
+    [FoldoutGroup("search")]
+    public Sprite cursor_search;
 
+    public bool DontChangeCursor;
 
     void Start()
     {
@@ -55,6 +58,7 @@ public class Mouse : MonoBehaviour
         }
         // Debug.DrawRay(pos,pos,Color.red,1f);
         if (obj == null ||
+            DontChangeCursor ||
             PlayerController2D.instance.CurrentState(PlayerState.dialog) ||
             PlayerController2D.instance.CurrentState(PlayerState.sign))
         {
@@ -101,6 +105,13 @@ public class Mouse : MonoBehaviour
                     currentCursor.sprite = cursor_tree;
                     currentCursor.color = canAlpha;
                 }
+                if (obj.type == interactType.search)
+                {
+                    if (InventoryManager.instance.selectItemID != "search") return;
+                    type = MouseType.search;
+                    currentCursor.sprite = cursor_search;
+                    currentCursor.color = canAlpha;
+                }
             }
             else
             {
@@ -135,6 +146,13 @@ public class Mouse : MonoBehaviour
                     currentCursor.sprite = cursor_tree;
                     currentCursor.color = cantAlpha;
                 }
+                if (obj.type == interactType.search)
+                {
+                    if (InventoryManager.instance.selectItemID != "search") return;
+                    type = MouseType.search;
+                    currentCursor.sprite = cursor_search;
+                    currentCursor.color = cantAlpha;
+                }
             }
             
         }
@@ -161,5 +179,6 @@ public enum MouseType
     obj1,
     sign,
     tree,
+    search,
 
 }

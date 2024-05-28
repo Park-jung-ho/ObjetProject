@@ -10,6 +10,7 @@ public enum interactType
     Door,
     sign,
     tree,
+    search,
     None,
 
 }
