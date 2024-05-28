@@ -1,22 +1,29 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ActionController3D : MonoBehaviour
 {
+    public enum ItemType
+    {
+        Null,
+        Apple,
+        Box
+    }
+    public ItemType holdItem;
     [SerializeField]
     float range; // 습득거리
-
     bool pickupActivated = false; //습득가능 여부
-
     RaycastHit hitinfo; //충돌체 정보 저장
-
     [SerializeField]
     LayerMask layerMask;
     public OnItem3D onItem3D;
-
+    public Image cusor;
+    public Sprite[] cusorImages;
     void Start()
     {
-
+        cusor.sprite = cusorImages[0];
+        holdItem = ItemType.Null;
     }
 
     // Update is called once per frame
@@ -28,7 +35,7 @@ public class ActionController3D : MonoBehaviour
     }
     void TryAction()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             CheckItem();
             CanPickUp();
@@ -38,12 +45,22 @@ public class ActionController3D : MonoBehaviour
     {
         if (pickupActivated)
         {
-            if (hitinfo.transform != null)
+            if (hitinfo.transform != null && hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("Item"))
             {
                 string typename = hitinfo.transform.GetComponent<ItemPickUp3D>().item.itemType.ToString();
                 onItem3D.ItemChange(typename);
                 if (hitinfo.transform.tag == "Apple") Destroy(hitinfo.transform.gameObject);
                 if (hitinfo.transform.tag == "Box") hitinfo.transform.gameObject.SetActive(false);
+            }
+            if (hitinfo.transform != null && hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("NPC") && !GetComponentInParent<PlayerController3D>().isTalk)
+            {
+                Cursor.visible = true;
+                if (hitinfo.transform.tag == "NPC") hitinfo.transform.gameObject.GetComponent<NPC>().Interact();
+                GetComponentInParent<PlayerController3D>().isTalk = true;
+                Debug.Log("Hello");
+                cusor.gameObject.SetActive(false);
+                Cursor.SetCursor(cusorImages[1].texture, Vector2.zero, CursorMode.Auto);
+                Cursor.lockState = CursorLockMode.None;
             }
         }
     }
@@ -51,27 +68,20 @@ public class ActionController3D : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitinfo, range, layerMask))
         {
-            Debug.Log(hitinfo);
             if (hitinfo.transform.tag == "Item" || hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("Item"))
             {
-                ItemInfoAppear();
+                cusor.sprite = cusorImages[1];
             }
+            if (hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("NPC"))
+            {
+                cusor.sprite = cusorImages[2];
+            }
+            pickupActivated = true;
         }
         else
-            InfoDisappear();
-    }
-    void ItemInfoAppear()
-    {
-        pickupActivated = true;
-        hitinfo.transform.GetComponent<ItemPickUp3D>().isPress = true;
-    }
-    void InfoDisappear()
-    {
-        ItemPickUp3D[] rayitems = FindObjectsOfType<ItemPickUp3D>();
-        for (int i = 0; i < rayitems.Length; i++)
         {
-            rayitems[i].isPress = false;
+            cusor.sprite = cusorImages[0];
+            pickupActivated = false;
         }
-        pickupActivated = false;
     }
 }

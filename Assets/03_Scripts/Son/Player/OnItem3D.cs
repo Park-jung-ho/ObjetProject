@@ -26,7 +26,7 @@ public class OnItem3D : MonoBehaviour
         {
             if (items[i].name == typeName.ToString())
             {
-                if (isItem) DropItem(i);
+                if (isItem) DropItem(lastItemNum);
                 items[i].SetActive(true);
                 lastItemNum = i;
                 isItem = true;

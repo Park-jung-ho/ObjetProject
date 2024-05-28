@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_Scenes/2D/2DMap.unity
     guid: ffbaf37e2aad58242a5f2ff192c495ae
+  - enabled: 1
+    path: Assets/01_Scenes/3D/3DMultiScene.unity
+    guid: 8df6fa09ae8bb7f4ebcf5ad554dcd5f8
+  - enabled: 1
+    path: Assets/01_Scenes/3D/3DScene.unity
+    guid: 517e0991976501e498f3cd354166207a
   m_configObjects: {}
