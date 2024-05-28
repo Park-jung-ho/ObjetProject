@@ -30,15 +30,15 @@ public class RotateObj : MonoBehaviour
         }
     }
 
-    public void PointerDown()
+    public void PointerDown(int num)
     {
         m_IsButtonDowning = true;
-        number = 0;
+        number = num;
     }
 
-    public void PointerUp(int num)
+    public void PointerUp()
     {
         m_IsButtonDowning = false;
-        number = num;
+        number = 0;
     }
 }
