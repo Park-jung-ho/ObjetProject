@@ -23,7 +23,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerClickHandler
     public void Select()
     {
         image.color = selected;
-        if (transform.childCount > 0)
+        if (transform.childCount > 1)
         {
             transform.GetChild(0).GetComponent<InventoryItem>().Select();
         }
@@ -31,7 +31,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerClickHandler
     public void DeSelect()
     {
         image.color = notselected;
-        if (transform.childCount > 0)
+        if (transform.childCount > 1)
         {
             transform.GetChild(0).GetComponent<InventoryItem>().DeSelect();
         }
@@ -39,7 +39,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerClickHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (transform.childCount == 0)
+        if (transform.childCount == 1)
         {
             InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
             inventoryItem.parentAfterDrag = transform;

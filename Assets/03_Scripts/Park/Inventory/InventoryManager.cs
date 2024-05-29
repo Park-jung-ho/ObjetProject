@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -194,7 +195,9 @@ public class InventoryManager : MonoBehaviour
     public void SpawnNewItem(Item item, InventorySlot slot)
     {
         GameObject newItem = Instantiate(inventoryItemPrefab,slot.transform);
+        newItem.GetComponent<RectTransform>().SetAsFirstSibling();
         InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
+        inventoryItem.countText = slot.transform.GetChild(1).GetComponent<Text>();
         inventoryItem.InitialiseItem(item);
         if (inventorySlots[selectedSlot] == slot) inventoryItem.Select();
     }

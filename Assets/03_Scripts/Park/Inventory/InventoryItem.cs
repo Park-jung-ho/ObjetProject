@@ -9,7 +9,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 {
     public Item item;
     public Image image;
-    public TMP_Text countText;
+    public Text countText;
     public int count = 1;
     public int MaxCount = 99;
 

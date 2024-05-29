@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99711e118be12af49b75f3d6f185c793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idx: 0
   image: {fileID: 8205753148113500204}
   selected: {r: 1, g: 1, b: 1, a: 1}
   notselected: {r: 1, g: 1, b: 1, a: 0}
