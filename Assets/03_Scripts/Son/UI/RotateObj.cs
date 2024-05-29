@@ -15,16 +15,16 @@ public class RotateObj : MonoBehaviour
             switch (number)
             {
                 case 1:
-                    rotateObj.transform.Rotate(new Vector3(0, 30, 0) * Time.deltaTime); // 30도 방향으로 회전
+                    rotateObj.transform.Rotate(new Vector3(0, 30, 0) * Time.deltaTime *2); // 30도 방향으로 회전
                     break;
                 case 2:
-                    rotateObj.transform.Rotate(new Vector3(0, -30, 0) * Time.deltaTime); // 30도 방향으로 회전
+                    rotateObj.transform.Rotate(new Vector3(0, -30, 0) * Time.deltaTime *2); // 30도 방향으로 회전
                     break;
                 case 3:
-                    rotateObj.transform.Rotate(new Vector3(30, 0, 0) * Time.deltaTime); // 30도 방향으로 회전
+                    rotateObj.transform.Rotate(new Vector3(30, 0, 0) * Time.deltaTime *2); // 30도 방향으로 회전
                     break;
                 case 4:
-                    rotateObj.transform.Rotate(new Vector3(-30, 0, 0) * Time.deltaTime); // 30도 방향으로 회전
+                    rotateObj.transform.Rotate(new Vector3(-30, 0, 0) * Time.deltaTime *2); // 30도 방향으로 회전
                     break;
             }
         }
