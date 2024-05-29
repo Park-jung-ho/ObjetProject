@@ -1765,10 +1765,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 4178320680281049076, guid: 3cc8d1776a1e91349b0a16e38b1e8002, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6447606800485008039, guid: 3cc8d1776a1e91349b0a16e38b1e8002, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1847,18 +1843,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6447606800485008039, guid: 3cc8d1776a1e91349b0a16e38b1e8002, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299869361533917878, guid: 3cc8d1776a1e91349b0a16e38b1e8002, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8519102632249005174, guid: 3cc8d1776a1e91349b0a16e38b1e8002, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8519102632249005174, guid: 3cc8d1776a1e91349b0a16e38b1e8002, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -59582,7 +59566,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 101
   m_TargetDisplay: 0
 --- !u!1001 &3794166482242405941
 PrefabInstance:
