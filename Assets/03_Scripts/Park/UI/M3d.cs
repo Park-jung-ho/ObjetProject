@@ -13,6 +13,7 @@ public class M3d : MonoBehaviour
     }
     void Update()
     {
-        transform.position = Input.mousePosition;
+        Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        cursor.transform.position = pos;
     }
 }

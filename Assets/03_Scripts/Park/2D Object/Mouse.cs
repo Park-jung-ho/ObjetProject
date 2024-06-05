@@ -13,6 +13,7 @@ public class Mouse : MonoBehaviour
 
     [SerializeField]
     private interactable2D obj;
+    public string objname;
 
     public Sprite cursor_idle;
     [FoldoutGroup("Npc")]
@@ -40,7 +41,7 @@ public class Mouse : MonoBehaviour
     {
         // Cursor.SetCursor(cursor_idle,Vector2.zero,CursorMode.ForceSoftware);
         Cursor.visible = false;
-        currentCursor = GetComponent<SpriteRenderer>();
+        // currentCursor = GetComponent<SpriteRenderer>();
         currentCursor.sprite = cursor_idle;
     }
 
@@ -49,12 +50,48 @@ public class Mouse : MonoBehaviour
         if (Cursor.visible) Cursor.visible = false;
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = pos;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hitt;
+        if (Physics.Raycast(ray, out hitt))
+        {
+            // Debug.Log(hitt.transform.name);
+            obj = hitt.collider.GetComponent<interactable2D>();
+            if (obj != null)
+            {
+                objname = hitt.collider.name;
+                if (obj.type == interactType.Object)
+                {
+                    type = MouseType.obj1;
+                    currentCursor.sprite = cursor_Object1;
+                    currentCursor.color = canAlpha;
+                }
+            }
+            else
+            {
+                if (type != MouseType.idle)
+                {
+                    obj = null;
+                    objname = "";
+                    type = MouseType.idle;
+                    currentCursor.sprite = cursor_idle;
+                    currentCursor.color = canAlpha;
+                }
+            }
+            return;
+        }
+
+
+
+
         RaycastHit2D[] hits = Physics2D.RaycastAll(pos,Vector2.zero,Mathf.Infinity,LayerMask.GetMask("Default"));
         obj = null;
+        objname = "";
         foreach (RaycastHit2D hit in hits)
         {
             if (obj != null) break;
             obj = hit.collider.GetComponent<interactable2D>();
+            objname = hit.collider.name;
         }
         // Debug.DrawRay(pos,pos,Color.red,1f);
         if (obj == null ||
@@ -65,6 +102,7 @@ public class Mouse : MonoBehaviour
             if (type != MouseType.idle)
             {
                 obj = null;
+                objname = "";
                 type = MouseType.idle;
                 currentCursor.sprite = cursor_idle;
                 currentCursor.color = canAlpha;

@@ -5,9 +5,21 @@ using UnityEngine;
 public class RotateObj : MonoBehaviour
 {
     public GameObject rotateObj;
+    public Transform objUI;
     public bool m_IsButtonDowning;
     int number = 0;
 
+
+    public void init_obj()
+    {
+        int idx = objUI.childCount;
+        for (int i = 0; i < idx; i++)
+        {
+            objUI.GetChild(i).gameObject.SetActive(false);
+        }
+        rotateObj.SetActive(true);
+        rotateObj.transform.rotation = Quaternion.Euler(0f,0f,0f);
+    }
     void Update()
     {
         if (m_IsButtonDowning)
