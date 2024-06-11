@@ -50,35 +50,37 @@ public class Mouse : MonoBehaviour
         if (Cursor.visible) Cursor.visible = false;
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = pos;
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitt;
-        if (Physics.Raycast(ray, out hitt))
+        if (type == MouseType.search)
         {
-            // Debug.Log(hitt.transform.name);
-            obj = hitt.collider.GetComponent<interactable2D>();
-            if (obj != null)
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitt;
+            if (Physics.Raycast(ray, out hitt))
             {
-                objname = hitt.collider.name;
-                if (obj.type == interactType.Object)
+                // Debug.Log(hitt.transform.name);
+                obj = hitt.collider.GetComponent<interactable2D>();
+                if (obj != null)
                 {
-                    type = MouseType.obj1;
-                    currentCursor.sprite = cursor_Object1;
-                    currentCursor.color = canAlpha;
+                    objname = hitt.collider.name;
+                    if (obj.type == interactType.Object)
+                    {
+                        type = MouseType.obj1;
+                        currentCursor.sprite = cursor_Object1;
+                        currentCursor.color = canAlpha;
+                    }
                 }
-            }
-            else
-            {
-                if (type != MouseType.idle)
+                else
                 {
-                    obj = null;
-                    objname = "";
-                    type = MouseType.idle;
-                    currentCursor.sprite = cursor_idle;
-                    currentCursor.color = canAlpha;
+                    if (type != MouseType.idle)
+                    {
+                        obj = null;
+                        objname = "";
+                        type = MouseType.idle;
+                        currentCursor.sprite = cursor_idle;
+                        currentCursor.color = canAlpha;
+                    }
                 }
+                return;
             }
-            return;
         }
 
 
