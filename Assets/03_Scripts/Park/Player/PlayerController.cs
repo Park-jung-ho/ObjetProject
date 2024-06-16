@@ -81,6 +81,7 @@ public class PlayerController2D : MonoBehaviour
         {
             animator.SetFloat("lx",moveInput.x);
             animator.SetFloat("ly",moveInput.y);
+            AudioManager.instance.PlaySFX("walking");
         }
     }
     void OnClick()

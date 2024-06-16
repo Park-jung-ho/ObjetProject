@@ -16,8 +16,8 @@ public class BusLoading : MonoBehaviour
     {
         BusOut.Invoke();
     }
-    void move()
+    void moveScene(string mapname)
     {
-        SceneManager.LoadScene("2DMap");
+        SceneManager.LoadScene(mapname);
     }
 }

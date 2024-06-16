@@ -40,9 +40,11 @@ public class SignObject : MonoBehaviour, interactable2D
         signUI.SetActive(true);
         textUI.text = text;
         animator.SetTrigger("IsOn");
+        AudioManager.instance.PlaySFX("UIon");
     }
     public void exitSign()
     {
+        AudioManager.instance.PlaySFX("UIoff");
         textUI.text = "";
         animator.SetTrigger("IsOff");
     }

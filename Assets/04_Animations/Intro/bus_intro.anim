@@ -840,8 +840,8 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 10.016666
-    functionName: move
-    data: 
+    functionName: moveScene
+    data: 2DMap
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
