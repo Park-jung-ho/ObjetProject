@@ -9,7 +9,10 @@ public class SignObject : MonoBehaviour, interactable2D
 
     public GameObject signUI;
     public TMP_Text textUI;
-    public string text;
+    
+    public List<string> texts;
+
+    private int idx;
 
     [SerializeField]
     private bool isInteractable = false;
@@ -36,14 +39,23 @@ public class SignObject : MonoBehaviour, interactable2D
     }
     public void Interact()
     {
+        signUI.GetComponent<SignAnim>().signObject = this;
+        idx = 0;
         PlayerController2D.instance.ChangeState(PlayerState.sign);
         signUI.SetActive(true);
-        textUI.text = text;
+        textUI.text = texts[idx];
         animator.SetTrigger("IsOn");
         AudioManager.instance.PlaySFX("UIon");
     }
+
     public void exitSign()
     {
+        if (idx + 1 < texts.Count)
+        {
+            idx++;
+            textUI.text = texts[idx];
+            return;
+        }
         AudioManager.instance.PlaySFX("UIoff");
         textUI.text = "";
         animator.SetTrigger("IsOff");
