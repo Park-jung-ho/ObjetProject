@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class RotTest : MonoBehaviour
@@ -28,11 +29,17 @@ public class RotTest : MonoBehaviour
     {
         if (dragging)
         {
-            float x = Input.GetAxis("Mouse X") * rotspeed * Time.fixedDeltaTime;
-            float y = Input.GetAxis("Mouse Y") * rotspeed * Time.fixedDeltaTime;
+            float x = Input.GetAxis("Mouse X") * rotspeed;
+            float y = Input.GetAxis("Mouse Y") * rotspeed;
+            // float x = Input.GetAxis("Mouse X") * rotspeed * Time.fixedDeltaTime;
+            // float y = Input.GetAxis("Mouse Y") * rotspeed * Time.fixedDeltaTime;
 
             _rigidbody.AddTorque(Vector3.down * x);
             _rigidbody.AddTorque(Vector3.right * y);
+        }
+        else
+        {
+            _rigidbody.angularVelocity = Vector3.zero;
         }
     }
 }
