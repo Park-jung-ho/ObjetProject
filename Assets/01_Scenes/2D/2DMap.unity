@@ -904,6 +904,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8236576377632889105, guid: 1c3ee43d24b140c44a15e0f92c157275, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1956625642}
+    - targetCorrespondingSourceObject: {fileID: 8236576377632889105, guid: 1c3ee43d24b140c44a15e0f92c157275, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1956625650}
     - targetCorrespondingSourceObject: {fileID: 6163028144629030259, guid: 1c3ee43d24b140c44a15e0f92c157275, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1675254656}
@@ -34698,6 +34704,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 7240617274901195887, guid: 8141e1273e8b9fa4789c92339fe88751, type: 3}
   m_PrefabInstance: {fileID: 1809385209}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1888268141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8236576377632889105, guid: 1c3ee43d24b140c44a15e0f92c157275, type: 3}
+  m_PrefabInstance: {fileID: 204595249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1929254550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34906,6 +34917,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3379631874882045787, guid: 1c3ee43d24b140c44a15e0f92c157275, type: 3}
   m_PrefabInstance: {fileID: 204595249}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1956625642
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888268141}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 1
+  m_AngularDrag: 1
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1956625650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888268141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dbc5f5116ed647febc1d06a71cf7350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotspeed: 100
 --- !u!1 &1963367233
 GameObject:
   m_ObjectHideFlags: 0
