@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: note
   m_EditorClassIdentifier: 
   type: 2
-  noteText: "\uB098\uB294\n\uC774\uACF3\uC744\n\uB5A0\uB09C\uB2E4"
+  noteText: "\uC9C4\uC815\uD55C\n\uBAA8\uC2B5\uC73C\uB85C\n\uB3CC\uC544\uAC04\uB2E4"
   image: {fileID: 21300000, guid: 35a9a65de165de549b3aaef179e8ff15, type: 3}
   ID: 
   stackable: 1
