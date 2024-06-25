@@ -36,6 +36,7 @@ public class Mouse : MonoBehaviour
     public Sprite cursor_search;
 
     public bool DontChangeCursor;
+    public bool CanSearch3D;
 
     void Start()
     {
@@ -50,7 +51,7 @@ public class Mouse : MonoBehaviour
         if (Cursor.visible) Cursor.visible = false;
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = pos;
-        if (type == MouseType.search)
+        if (CanSearch3D)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitt;

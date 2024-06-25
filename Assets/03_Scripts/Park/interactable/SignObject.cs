@@ -9,7 +9,9 @@ public class SignObject : MonoBehaviour, interactable2D
 
     public GameObject signUI;
     public TMP_Text textUI;
-    
+
+
+    [TextArea(4, 10)]
     public List<string> texts;
 
     private int idx;

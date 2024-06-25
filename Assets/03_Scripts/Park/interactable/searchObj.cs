@@ -56,9 +56,11 @@ public class searchObj : MonoBehaviour, interactable2D
         UIObj.GetComponent<RotateObj>().rotateObj = Obj3d;
         UIObj.GetComponent<RotateObj>().init_obj();
         PlayerController2D.instance.cursor.DontChangeCursor = true;
+        PlayerController2D.instance.cursor.CanSearch3D = true;
     }
     public void exitUI()
     {
         PlayerController2D.instance.cursor.DontChangeCursor = false;
+        PlayerController2D.instance.cursor.CanSearch3D = false;
     }
 }
