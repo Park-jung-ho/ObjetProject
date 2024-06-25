@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RamdomItem : MonoBehaviour, interactable2D
 {
@@ -8,6 +9,8 @@ public class RamdomItem : MonoBehaviour, interactable2D
     public Item item;
     [SerializeField]
     private bool isInteractable = false;
+
+    public UnityEvent TriggerOn;
 
     void Start()
     {
@@ -34,6 +37,7 @@ public class RamdomItem : MonoBehaviour, interactable2D
 
     public void GoToInven()
     {
+        TriggerOn?.Invoke();
         gameObject.SetActive(false);
     }
 

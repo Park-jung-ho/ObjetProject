@@ -1693,7 +1693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  currentCursor: {fileID: 21300000, guid: 2e71a8202d3b4a3448ec85ced5a40265, type: 3}
+  currentCursor: {fileID: 1121213840}
   canAlpha: {r: 1, g: 1, b: 1, a: 1}
   cantAlpha: {r: 1, g: 1, b: 1, a: 0.45490196}
   objname: 
@@ -1708,6 +1708,7 @@ MonoBehaviour:
   cursor_tree: {fileID: 0}
   cursor_search: {fileID: 0}
   DontChangeCursor: 0
+  CanSearch3D: 0
 --- !u!4 &1121213839
 Transform:
   m_ObjectHideFlags: 0

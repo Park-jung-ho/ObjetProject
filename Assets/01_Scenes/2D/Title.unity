@@ -672,6 +672,7 @@ MonoBehaviour:
   cursor_tree: {fileID: 0}
   cursor_search: {fileID: 0}
   DontChangeCursor: 0
+  CanSearch3D: 0
 --- !u!4 &1121213839
 Transform:
   m_ObjectHideFlags: 0
@@ -999,7 +1000,7 @@ PrefabInstance:
     - target: {fileID: 8344776029073544018, guid: e8b461388bdc1384d9447c045c2d028a, type: 3}
       propertyPath: currentStoryNode
       value: 
-      objectReference: {fileID: 11400000, guid: 39e34f89ed980e741a70a0f42fda80fe, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
